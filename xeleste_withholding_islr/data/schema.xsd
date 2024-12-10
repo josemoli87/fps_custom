@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="t_Rif">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[VvEeJjPpGg][0-9]{9}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="t_Porcentaje">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="100" />
+            <xs:fractionDigits value="2" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="t_Monto">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0" />
+            <xs:fractionDigits value="2" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="t_Numero_Factura">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]*" />
+            <xs:minLength value="1" />
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="t_Numero_Control">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="na|NA|[a-zA-Z0-9]*" />
+            <xs:minLength value="1" />
+            <xs:maxLength value="8" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="t_Periodo">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[2][0-9]{3}(([0][1-9])|([1][0-2]))" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="t_Codigo">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{3}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="RelacionRetencionesISLR">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" name="DetalleRetencion">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element minOccurs="1" maxOccurs="1" name="RifRetenido" type="t_Rif" />
+                            <xs:element minOccurs="1" maxOccurs="1" name="NumeroFactura" type="t_Numero_Factura" />
+                            <xs:element minOccurs="1" maxOccurs="1" name="NumeroControl" type="t_Numero_Control" />
+                            <xs:element minOccurs="1" maxOccurs="1" name="CodigoConcepto" type="t_Codigo" />
+                            <xs:element minOccurs="1" maxOccurs="1" name="MontoOperacion" type="t_Monto" />
+                            <xs:element minOccurs="1" maxOccurs="1" name="PorcentajeRetencion" type="t_Porcentaje" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="RifAgente" type="t_Rif" use="required" />
+            <xs:attribute name="Periodo" type="t_Periodo" use="required" />
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

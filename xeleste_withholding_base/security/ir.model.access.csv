@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_withholding_user,account.withholding all,model_account_withholding,base.group_user,1,1,1,0
+access_account_withholding_manager,account.withholding manager,model_account_withholding,account.group_account_manager,1,1,1,1
+access_account_withholding_line_user,account.withholding.line all,model_account_withholding_line,base.group_user,1,1,1,0
+access_account_withholding_line_manager,account.withholding.line manager,model_account_withholding_line,account.group_account_manager,1,1,1,1
+access_wizard_generate_withholding,wizard.generate.withholding.all,model_wizard_generate_withholding,account.group_account_invoice,1,1,1,1
+
+

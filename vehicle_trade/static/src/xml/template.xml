@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 mt32">
-                        <h4 class="tk-primary">All Static</h4>
+                        <h4 class="tk-primary">Tablero</h4>
                         <hr class="border-primary"/>
                     </div>
                     <div class="col-md-2 mb-4 mt8 mb16" t-on-click="() => this.viewVehicleStatus('all')">
@@ -13,7 +13,7 @@
                             <div class="card-body info-bg tk-card-body">
                                 <img alt="users" width="40"
                                      src="vehicle_trade/static/src/img/dashboard/1-vehicles.svg"/>
-                                <h4 class="tk-st-1">Vehicles</h4>
+                                <h4 class="tk-st-1">Vehículos</h4>
                                 <h6 class="tk-st-2">
                                     <t t-esc="state.vehiclesStats['total_vehicle']"/>
                                 </h6>
@@ -25,7 +25,7 @@
                             <div class="card-body active-bg tk-card-body">
                                 <img alt="users" width="40"
                                      src="vehicle_trade/static/src/img/dashboard/2-available.svg"/>
-                                <h4 class="tk-st-1">Available</h4>
+                                <h4 class="tk-st-1">Disponible</h4>
                                 <h6 class="tk-st-2">
                                     <t t-esc="state.vehiclesStats['available_vehicle']"/>
                                 </h6>
@@ -37,7 +37,7 @@
                             <div class="card-body warn-bg tk-card-body">
                                 <img alt="users" width="40"
                                      src="vehicle_trade/static/src/img/dashboard/3-discussion.svg"/>
-                                <h4 class="tk-st-1">Discussions</h4>
+                                <h4 class="tk-st-1">Negocios</h4>
                                 <h6 class="tk-st-2">
                                     <t t-esc="state.vehiclesStats['in_discussion_vehicle']"/>
                                 </h6>
@@ -49,7 +49,7 @@
                             <div class="card-body terminate-bg tk-card-body">
                                 <img alt="users" width="40"
                                      src="vehicle_trade/static/src/img/dashboard/4-sold.svg"/>
-                                <h4 class="tk-st-1">Sold</h4>
+                                <h4 class="tk-st-1">Vendido</h4>
                                 <h6 class="tk-st-2">
                                     <t t-esc="state.vehiclesStats['sold_vehicle']"/>
                                 </h6>
@@ -61,7 +61,7 @@
                             <div class="card-body purple-bg tk-card-body">
                                 <img alt="users" width="40"
                                      src="vehicle_trade/static/src/img/dashboard/5-vendor1.svg"/>
-                                <h4 class="tk-st-1">Vendors</h4>
+                                <h4 class="tk-st-1">Vendedores</h4>
                                 <h6 class="tk-st-2">
                                     <t t-esc="state.vehiclesStats['vehicle_vendors']"/>
                                 </h6>
@@ -73,7 +73,7 @@
                             <div class="card-body danger-bg tk-card-body">
                                 <img alt="users" width="40"
                                      src="vehicle_trade/static/src/img/dashboard/6-customer.svg"/>
-                                <h4 class="tk-st-1">Customers</h4>
+                                <h4 class="tk-st-1">Clientes</h4>
                                 <h6 class="tk-st-2">
                                     <t t-esc="state.vehiclesStats['vehicle_customers']"/>
                                 </h6>
@@ -84,12 +84,12 @@
 
                 <div class="row">
                     <div class="col-md-8 mt32">
-                        <h4 class="tk-primary">Monthly Vendor Bills</h4>
+                        <h4 class="tk-primary">Facturas Mensuales</h4>
                         <hr class="border-primary"/>
                         <div class="tk-os-chart" t-ref="vendor_bill_by_months"/>
                     </div>
                     <div class="col-md-4 mt32">
-                        <h4 class="tk-primary">Payment Status: Paid/Due Amounts</h4>
+                        <h4 class="tk-primary">Estado de pago: Montos pagados/vencidos</h4>
                         <hr class="border-primary"/>
                         <div class="tk-os-chart" t-ref="invoice_status_details"/>
                     </div>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="paperformat_withholdings" model="report.paperformat">
+        <field name="name">A4 - withholdings</field>
+        <field name="default" eval="True" />
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">20</field>
+        <field name="margin_bottom">32</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False" />
+        <field name="header_spacing">15</field>
+        <field name="dpi">90</field>
+    </record>
+
+
+    <template id="report_withholding">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="lang" t-value="o.partner_id.lang"/>
+                <div name="template">
+                <!--       Call report here         -->
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="account_report_withholding" model="ir.actions.report">
+        <field name="name">Report Withholding</field>
+        <field name="model">account.withholding</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">xeleste_withholding_base.report_withholding</field>
+        <field name="report_file">xeleste_withholding_base.report_withholding</field>
+        <field name="print_report_name">'Withholding - %s' % (object.number)</field>
+        <field name="binding_model_id" ref="model_account_withholding"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_withholdings"/>
+    </record>
+
+    </data>
+</odoo>

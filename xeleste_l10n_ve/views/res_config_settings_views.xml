@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.venezuelan.loc</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='invoicing_settings']" position="after">
+                <block title="Venezuelan Localization" id="l10n_ve_section" invisible="country_code != 'VE'">
+                    <setting id="withholdings" string="Withholdings" help="Settings for company taxes">
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="iva_withholding_percentage" class="col-lg-3"/>
+                                <field name="iva_withholding_percentage"/>
+                            </div>
+                        </div>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="person_type_ve" class="col-lg-3"/>
+                                <field name="person_type_ve"/>
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

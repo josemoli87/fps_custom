@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_partner_form_xeleste_l10n_ve" model="ir.ui.view">
+        <field name="name">res.partner.form.l10n.ve</field>
+        <field name="model">res.partner</field>
+        <field name="priority">20</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+        <data>
+             <xpath expr="//field[@name='property_account_position_id']" position="after">
+                <field name="retention_agent" invisible="'VE' not in fiscal_country_codes"/>
+                <label for="iva_withholding_percentage" invisible="'VE' not in fiscal_country_codes"/>
+                <div invisible="'VE' not in fiscal_country_codes">
+                    <field name="iva_withholding_percentage" class="oe_inline"/>
+                    <span class="o_form_label oe_inline">%</span>
+                </div>
+                <field name="person_type_ve" invisible="'VE' not in fiscal_country_codes"/>
+             </xpath>
+        </data>
+        </field>
+    </record>
+
+</odoo>

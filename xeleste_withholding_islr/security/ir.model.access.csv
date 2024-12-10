@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_table_islr_user,table.islr.all,model_table_islr,base.group_user,1,0,0,0
+access_table_islr_manager,table.islr.manager,model_table_islr,account.group_account_manager,1,1,1,1
+access_table_islr_line_user,table.islr.line.all,model_table_islr_line,base.group_user,1,0,0,0
+access_table_islr_line_manager,table.islr.line.manager,model_table_islr_line,account.group_account_manager,1,1,1,1
+access_xml_islr_user,xml.islr.user,model_xml_islr,base.group_user,1,1,1,1

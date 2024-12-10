@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="ir_sequence_control_number" model="ir.sequence">
+        <field name="name">Control Number 1</field>
+        <field name="padding">5</field>
+        <field name="prefix">00-</field>
+        <field name="code">control.number.1</field>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+</odoo>

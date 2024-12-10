@@ -3,7 +3,7 @@
 	<t t-inherit="web.res_config_edition" t-inherit-mode="extension" owl="1">
 		<xpath expr="//div[hasclass('user-heading')]//h3" position="replace">
             <h3 class="px-0">
-                Odoo <t t-esc="serverVersion"/> (<a target="_blank" href="https://www.odooai.cn" style="text-decoration: underline;">odooai.cn</a> Edition)
+                Fps <t t-esc="serverVersion"/> (<a target="_blank" href="https://fpsystem.net/" style="text-decoration: underline;">Fpsystem</a> Edition)
             </h3>
 		</xpath>
     </t>

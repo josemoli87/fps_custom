@@ -10,6 +10,6 @@ patch(WebClient.prototype,  {
     setup() {
         super.setup();
         const titleService = useService("title");
-        titleService.setParts({ zopenerp: "Custom" });
+        titleService.setParts({ zopenerp: "Fpsystem" });
     },
 });

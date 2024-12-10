@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="table_islr_1" model="table.islr">
+        <field name="name">Sueldos y Salarios</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="line_islr_001" model="table.islr.line">
+        <field name="table_id" ref="table_islr_1"/>
+        <field name="code">001</field>
+    </record>
+
+    <record id="table_islr_2" model="table.islr">
+        <field name="name">Actividades Profesionales No Mercantiles</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="line_islr_002" model="table.islr.line">
+        <field name="table_id" ref="table_islr_2"/>
+        <field name="code">002</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PNR</field>
+        <field name="amount">3</field>
+    </record>
+
+    <record id="line_islr_003" model="table.islr.line">
+        <field name="table_id" ref="table_islr_2"/>
+        <field name="code">003</field>
+        <field name="amount_base">90</field>
+        <field name="person_type">PNNR</field>
+        <field name="amount">34</field>
+    </record>
+
+    <record id="line_islr_004" model="table.islr.line">
+        <field name="table_id" ref="table_islr_2"/>
+        <field name="code">004</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PJD</field>
+        <field name="amount">5</field>
+    </record>
+
+    <record id="line_islr_005_1" model="table.islr.line">
+        <field name="table_id" ref="table_islr_2"/>
+        <field name="code">005</field>
+        <field name="amount_base">90</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">15</field>
+        <field name="base_min">0</field>
+        <field name="base_max">2000</field>
+    </record>
+
+    <record id="line_islr_005_2" model="table.islr.line">
+        <field name="table_id" ref="table_islr_2"/>
+        <field name="code">005</field>
+        <field name="amount_base">90</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">22</field>
+        <field name="base_min">2001</field>
+        <field name="base_max">3000</field>
+    </record>
+
+    <record id="line_islr_005_3" model="table.islr.line">
+        <field name="table_id" ref="table_islr_2"/>
+        <field name="code">005</field>
+        <field name="amount_base">90</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">34</field>
+        <field name="base_min">3001</field>
+    </record>
+
+    <record id="table_islr_3" model="table.islr">
+        <field name="name">Honorarios Profesionales Mancomunados No Mercantiles</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="line_islr_006" model="table.islr.line">
+        <field name="table_id" ref="table_islr_3"/>
+        <field name="code">006</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PNR</field>
+        <field name="amount">3</field>
+    </record>
+
+    <record id="line_islr_007" model="table.islr.line">
+        <field name="table_id" ref="table_islr_3"/>
+        <field name="code">007</field>
+        <field name="amount_base">90</field>
+        <field name="person_type">PNNR</field>
+        <field name="amount">34</field>
+    </record>
+
+    <record id="line_islr_008" model="table.islr.line">
+        <field name="table_id" ref="table_islr_3"/>
+        <field name="code">008</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PJD</field>
+        <field name="amount">5</field>
+    </record>
+
+    <record id="line_islr_009_1" model="table.islr.line">
+        <field name="table_id" ref="table_islr_3"/>
+        <field name="code">009</field>
+        <field name="amount_base">90</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">15</field>
+        <field name="base_min">0</field>
+        <field name="base_max">2000</field>
+    </record>
+
+    <record id="line_islr_009_2" model="table.islr.line">
+        <field name="table_id" ref="table_islr_3"/>
+        <field name="code">009</field>
+        <field name="amount_base">90</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">22</field>
+        <field name="base_min">2001</field>
+        <field name="base_max">3000</field>
+    </record>
+
+    <record id="line_islr_009_3" model="table.islr.line">
+        <field name="table_id" ref="table_islr_3"/>
+        <field name="code">009</field>
+        <field name="amount_base">90</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">34</field>
+        <field name="base_min">3001</field>
+    </record>
+
+    <record id="table_islr_4" model="table.islr">
+        <field name="name">Honorarios Profesionales pagados a Jinetes, Veterinarios, Preparadores o Entrenadores</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="line_islr_010" model="table.islr.line">
+        <field name="table_id" ref="table_islr_4"/>
+        <field name="code">010</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PNR</field>
+        <field name="amount">3</field>
+    </record>
+
+    <record id="line_islr_011" model="table.islr.line">
+        <field name="table_id" ref="table_islr_4"/>
+        <field name="code">011</field>
+        <field name="amount_base">90</field>
+        <field name="person_type">PNNR</field>
+        <field name="amount">34</field>
+    </record>
+
+    <record id="table_islr_5" model="table.islr">
+        <field name="name">Honorarios Profesionales pagados por Clínicas, Hospitales, Centros de Salud,Bufetes, Escritorios, Oficinas, Colegios Profesionales u otra Institución Profesionales No Mercantiles a Profesionales sin relación de dependencia</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="line_islr_012" model="table.islr.line">
+        <field name="table_id" ref="table_islr_5"/>
+        <field name="code">012</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PNR</field>
+        <field name="amount">3</field>
+    </record>
+
+    <record id="line_islr_013" model="table.islr.line">
+        <field name="table_id" ref="table_islr_5"/>
+        <field name="code">013</field>
+        <field name="amount_base">90</field>
+        <field name="person_type">PNNR</field>
+        <field name="amount">34</field>
+    </record>
+
+    <record id="table_islr_6" model="table.islr">
+        <field name="name">Comisiones pagadas por la venta de bienes inmuebles</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="line_islr_014" model="table.islr.line">
+        <field name="table_id" ref="table_islr_6"/>
+        <field name="code">014</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PNR</field>
+        <field name="amount">3</field>
+    </record>
+
+    <record id="line_islr_015" model="table.islr.line">
+        <field name="table_id" ref="table_islr_6"/>
+        <field name="code">015</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PNNR</field>
+        <field name="amount">34</field>
+    </record>
+
+    <record id="line_islr_016" model="table.islr.line">
+        <field name="table_id" ref="table_islr_6"/>
+        <field name="code">016</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PJD</field>
+        <field name="amount">5</field>
+    </record>
+
+    <record id="line_islr_017" model="table.islr.line">
+        <field name="table_id" ref="table_islr_6"/>
+        <field name="code">017</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">5</field>
+    </record>
+
+    <record id="table_islr_7" model="table.islr">
+        <field name="name">Cualquier otra Comisión distintas a Remuneraciones accesorias de los sueldos, salarios y demás remuneraciones similares</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="line_islr_018" model="table.islr.line">
+        <field name="table_id" ref="table_islr_7"/>
+        <field name="code">018</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PNR</field>
+        <field name="amount">3</field>
+    </record>
+
+    <record id="line_islr_019" model="table.islr.line">
+        <field name="table_id" ref="table_islr_7"/>
+        <field name="code">019</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PNNR</field>
+        <field name="amount">34</field>
+    </record>
+
+    <record id="line_islr_020" model="table.islr.line">
+        <field name="table_id" ref="table_islr_7"/>
+        <field name="code">020</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PJD</field>
+        <field name="amount">5</field>
+    </record>
+
+    <record id="line_islr_021" model="table.islr.line">
+        <field name="table_id" ref="table_islr_7"/>
+        <field name="code">021</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">5</field>
+    </record>
+
+    <record id="table_islr_8" model="table.islr">
+        <field name="name">Intereses de Capitales tomados en préstamo e invertidos en la producción de la renta</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="line_islr_022" model="table.islr.line">
+        <field name="table_id" ref="table_islr_8"/>
+        <field name="code">022</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PNNR</field>
+        <field name="amount">34</field>
+    </record>
+
+    <record id="line_islr_023_1" model="table.islr.line">
+        <field name="table_id" ref="table_islr_8"/>
+        <field name="code">023</field>
+        <field name="amount_base">95</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">15</field>
+        <field name="base_min">0</field>
+        <field name="base_max">2000</field>
+    </record>
+
+    <record id="line_islr_023_2" model="table.islr.line">
+        <field name="table_id" ref="table_islr_8"/>
+        <field name="code">023</field>
+        <field name="amount_base">95</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">22</field>
+        <field name="base_min">2001</field>
+        <field name="base_max">3000</field>
+    </record>
+
+    <record id="line_islr_023_3" model="table.islr.line">
+        <field name="table_id" ref="table_islr_8"/>
+        <field name="code">024</field>
+        <field name="amount_base">95</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">34</field>
+        <field name="base_min">3001</field>
+    </record>
+
+    <record id="table_islr_9" model="table.islr">
+        <field name="name">Intereses provenientes de préstamos y otros créditos pagaderos a instituciones financieras constituidas en el exterior y no domiciliadas en el país</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="line_islr_024" model="table.islr.line">
+        <field name="table_id" ref="table_islr_9"/>
+        <field name="code">025</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">4.95</field>
+    </record>
+
+    <record id="table_islr_10" model="table.islr">
+        <field name="name">Intereses pagados por las personas jurídicas o comunidades a cualquier otra persona natural, jurídica o comunidad</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="line_islr_025" model="table.islr.line">
+        <field name="table_id" ref="table_islr_10"/>
+        <field name="code">025</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PNR</field>
+        <field name="amount">3</field>
+    </record>
+
+    <record id="line_islr_026" model="table.islr.line">
+        <field name="table_id" ref="table_islr_10"/>
+        <field name="code">026</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PNNR</field>
+        <field name="amount">34</field>
+    </record>
+
+    <record id="line_islr_027" model="table.islr.line">
+        <field name="table_id" ref="table_islr_10"/>
+        <field name="code">027</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PJD</field>
+        <field name="amount">5</field>
+    </record>
+
+    <record id="line_islr_028_1" model="table.islr.line">
+        <field name="table_id" ref="table_islr_10"/>
+        <field name="code">028</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">15</field>
+        <field name="base_min">0</field>
+        <field name="base_max">2000</field>
+    </record>
+
+    <record id="line_islr_028_2" model="table.islr.line">
+        <field name="table_id" ref="table_islr_10"/>
+        <field name="code">028</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">22</field>
+        <field name="base_min">2001</field>
+        <field name="base_max">3000</field>
+    </record>
+
+    <record id="line_islr_028_3" model="table.islr.line">
+        <field name="table_id" ref="table_islr_10"/>
+        <field name="code">028</field>
+        <field name="amount_base">100</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">34</field>
+        <field name="base_min">3001</field>
+    </record>
+
+    <record id="table_islr_11" model="table.islr">
+        <field name="name">Enriquecimientos Netos de las Agencias Internacionales cuando el pagador sea una personas jurídica o comunidad domiciliada en el país</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="line_islr_029_1" model="table.islr.line">
+        <field name="table_id" ref="table_islr_11"/>
+        <field name="code">029</field>
+        <field name="amount_base">15</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">15</field>
+        <field name="base_min">0</field>
+        <field name="base_max">2000</field>
+    </record>
+
+    <record id="line_islr_029_2" model="table.islr.line">
+        <field name="table_id" ref="table_islr_11"/>
+        <field name="code">029</field>
+        <field name="amount_base">15</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">22</field>
+        <field name="base_min">2001</field>
+        <field name="base_max">3000</field>
+    </record>
+
+    <record id="line_islr_029_3" model="table.islr.line">
+        <field name="table_id" ref="table_islr_11"/>
+        <field name="code">029</field>
+        <field name="amount_base">15</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">34</field>
+        <field name="base_min">3001</field>
+    </record>
+
+    <record id="table_islr_12" model="table.islr">
+        <field name="name">Enriquecimientos Netos de Gastos de Transporte conformados por fletes pagados a agencias o empresas de transporte internacional constituidas y domiciliadas en el exterior</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="line_islr_030_1" model="table.islr.line">
+        <field name="table_id" ref="table_islr_12"/>
+        <field name="code">030</field>
+        <field name="amount_base">5</field>
+        <field name="person_type">PNNR</field>
+        <field name="amount">15</field>
+        <field name="base_min">0</field>
+        <field name="base_max">2000</field>
+    </record>
+
+    <record id="line_islr_030_2" model="table.islr.line">
+        <field name="table_id" ref="table_islr_12"/>
+        <field name="code">030</field>
+        <field name="amount_base">5</field>
+        <field name="person_type">PNNR</field>
+        <field name="amount">22</field>
+        <field name="base_min">2001</field>
+        <field name="base_max">3000</field>
+    </record>
+
+    <record id="line_islr_030_3" model="table.islr.line">
+        <field name="table_id" ref="table_islr_12"/>
+        <field name="code">030</field>
+        <field name="amount_base">5</field>
+        <field name="person_type">PNNR</field>
+        <field name="amount">34</field>
+        <field name="base_min">3001</field>
+    </record>
+
+    <record id="line_islr_031_1" model="table.islr.line">
+        <field name="table_id" ref="table_islr_12"/>
+        <field name="code">031</field>
+        <field name="amount_base">5</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">15</field>
+        <field name="base_min">0</field>
+        <field name="base_max">2000</field>
+    </record>
+
+    <record id="line_islr_031_2" model="table.islr.line">
+        <field name="table_id" ref="table_islr_12"/>
+        <field name="code">031</field>
+        <field name="amount_base">5</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">22</field>
+        <field name="base_min">2001</field>
+        <field name="base_max">3000</field>
+    </record>
+
+    <record id="line_islr_031_3" model="table.islr.line">
+        <field name="table_id" ref="table_islr_12"/>
+        <field name="code">031</field>
+        <field name="amount_base">5</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">34</field>
+        <field name="base_min">3001</field>
+    </record>
+
+    <record id="table_islr_13" model="table.islr">
+        <field name="name">Enriquecimientos Netos de Exhibición de Películas, Cine o la Televisión</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="line_islr_032" model="table.islr.line">
+        <field name="table_id" ref="table_islr_13"/>
+        <field name="code">032</field>
+        <field name="amount_base">25</field>
+        <field name="person_type">PNNR</field>
+        <field name="amount">34</field>
+    </record>
+
+    <record id="line_islr_033_1" model="table.islr.line">
+        <field name="table_id" ref="table_islr_13"/>
+        <field name="code">033</field>
+        <field name="amount_base">25</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">15</field>
+        <field name="base_min">0</field>
+        <field name="base_max">2000</field>
+    </record>
+
+    <record id="line_islr_033_2" model="table.islr.line">
+        <field name="table_id" ref="table_islr_13"/>
+        <field name="code">033</field>
+        <field name="amount_base">25</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">22</field>
+        <field name="base_min">2001</field>
+        <field name="base_max">3000</field>
+    </record>
+
+    <record id="line_islr_033_3" model="table.islr.line">
+        <field name="table_id" ref="table_islr_13"/>
+        <field name="code">033</field>
+        <field name="amount_base">25</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">34</field>
+        <field name="base_min">3001</field>
+    </record>
+
+    <record id="table_islr_14" model="table.islr">
+        <field name="name">Enriquecimientos obtenidos por concepto de regalías y demás participaciones análogas</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="line_islr_034" model="table.islr.line">
+        <field name="table_id" ref="table_islr_14"/>
+        <field name="code">034</field>
+        <field name="amount_base">90</field>
+        <field name="person_type">PNNR</field>
+        <field name="amount">34</field>
+    </record>
+
+    <record id="line_islr_035_1" model="table.islr.line">
+        <field name="table_id" ref="table_islr_14"/>
+        <field name="code">035</field>
+        <field name="amount_base">90</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">15</field>
+        <field name="base_min">0</field>
+        <field name="base_max">2000</field>
+    </record>
+
+    <record id="line_islr_035_2" model="table.islr.line">
+        <field name="table_id" ref="table_islr_14"/>
+        <field name="code">035</field>
+        <field name="amount_base">90</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">22</field>
+        <field name="base_min">2001</field>
+        <field name="base_max">3000</field>
+    </record>
+
+    <record id="line_islr_035_3" model="table.islr.line">
+        <field name="table_id" ref="table_islr_14"/>
+        <field name="code">035</field>
+        <field name="amount_base">90</field>
+        <field name="person_type">PJND</field>
+        <field name="amount">34</field>
+        <field name="base_min">3001</field>
+    </record>
+
+    <record id="table_islr_15" model="table.islr">
+        <field name="name">Enriquecimientos obtenidos por las Remuneraciones, Honorarios y pagos análogos por Asistencia Técnica</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="table_islr_16" model="table.islr">
+        <field name="name">Enriquecimientos obtenidos por Servicios Tecnológicos utilizados en el país o cedidos a Terceros</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="table_islr_17" model="table.islr">
+        <field name="name">Enriquecimientos Netos derivados de las Primas de Seguros y Reaseguros</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="table_islr_18" model="table.islr">
+        <field name="name">Ganancias Obtenidas por Juegos y Apuestas</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="table_islr_19" model="table.islr">
+        <field name="name">Ganancias Obtenidas por Premios de Loterías y de Hipódromos</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="table_islr_20" model="table.islr">
+        <field name="name">Pagos a Propietarios de Animales de Carrera por concepto de Premios</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="table_islr_21" model="table.islr">
+        <field name="name">Pagos a Empresas Contratistas o Subcontratistas domiciliadas o no en el país, por la ejecución de obras o de la prestación de servicios en base a valuaciones y ordenes de pago</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="table_islr_22" model="table.islr">
+        <field name="name">Pagos a los Arrendadores de los bienes inmuebles situados en el país</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="table_islr_23" model="table.islr">
+        <field name="name">Cánones de Arrendamientos de Bienes Muebles situados en el país</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="table_islr_24" model="table.islr">
+        <field name="name">Pagos de las Empresas Emisoras de Tarjetas de Crédito o Consumo por la Venta de Bienes y servicios, o cualquier otro concepto</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="table_islr_25" model="table.islr">
+        <field name="name">Pagos de las Empresas Emisoras de Tarjetas de Crédito por la venta de gasolina en las Estaciones de Servicios</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="table_islr_26" model="table.islr">
+        <field name="name">Pagos por Gastos de Transporte conformados por Fletes</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="table_islr_27" model="table.islr">
+        <field name="name">Pagos de las Empresas de Seguro, las Sociedades de Corretaje de Seguros y las Empresas de Reaseguros por las Prestaciones de Servicios que le son propios</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="table_islr_28" model="table.islr">
+        <field name="name">Pagos de las Empresas de Seguro a sus Contratistas por la Reparación de Daños sufridos de sus Asegurados</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="table_islr_29" model="table.islr">
+        <field name="name">Pagos de las Empresas de Seguros a Clínicas, Hospitales o Centros de Salud por la Atención Medica a sus Asegurados</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="table_islr_30" model="table.islr">
+        <field name="name">Cantidades que se paguen por adquisición de Fondos de Comercio situados en el país</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="table_islr_31" model="table.islr">
+        <field name="name">Pagos por Servicios de Publicidad y Propaganda y la Cesión de la Venta de Espacios para tales fines</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+    <record id="table_islr_32" model="table.islr">
+        <field name="name">Pagos por Servicios de Publicidad y Propaganda y la Cesión de la Venta de Espacios para tales fines a Emisoras de Radio</field>
+        <field name="date_start">1997-05-12</field>
+        <field name="description">DECRETO 1.808 DEL 23/04/97</field>
+    </record>
+
+
+
+    </data>
+</odoo>

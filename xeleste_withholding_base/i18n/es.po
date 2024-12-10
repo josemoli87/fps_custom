@@ -1,0 +1,1751 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* xeleste_withholding_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-09 20:39+0000\n"
+"PO-Revision-Date: 2024-06-09 20:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__invoices_count
+msgid "# Invoices"
+msgstr "# Facturas"
+
+#. module: xeleste_withholding_base
+#: model:ir.actions.report,print_report_name:xeleste_withholding_base.account_report_withholding
+msgid "'Withholding - %s' % (object.number)"
+msgstr "'Retención - %s' % (object.number)"
+
+#. module: xeleste_withholding_base
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.report_invoice_document
+msgid "2021-09-19"
+msgstr ""
+
+#. module: xeleste_withholding_base
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_withholding_form
+msgid "<span class=\"o_stat_text\">Journal Entry</span>"
+msgstr "<span class=\"o_stat_text\">Entrada de Diario</span>"
+
+#. module: xeleste_withholding_base
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_withholding_form
+msgid ""
+"<span invisible=\"invoices_count == 1\"> Invoices</span>\n"
+"                                    <span invisible=\"invoices_count != 1\"> Invoice</span>"
+msgstr ""
+"<span invisible=\"invoices_count == 1\"> Facturas</span>\n"
+"                                    <span invisible=\"invoices_count != 1\"> Factura</span>"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__access_warning
+msgid "Access warning"
+msgstr "Advertencia de acceso"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__message_needaction
+msgid "Action Needed"
+msgstr "Accion Necesaria"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de Excepción de Actividad"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__activity_state
+msgid "Activity State"
+msgstr "Estado de actividad"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icono de Tipo de Actividad"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__always_tax_exigible
+msgid "Always Tax Exigible"
+msgstr "Siempre Exigible a Impuestos"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_wizard_generate_withholding__auto_generate_after
+msgid "Always generate for this client"
+msgstr "Siempre Generar para Este Contacto"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__amount
+msgid "Amount"
+msgstr "Monto"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__amount_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding_line__amount_base
+msgid "Amount Base"
+msgstr "Monto Base"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__amount_residual
+msgid "Amount Due"
+msgstr "Monto Adeudado"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__amount_residual_signed
+msgid "Amount Due Signed"
+msgstr "Monto Adeudado con Signo"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding_line__amount_origin
+msgid "Amount Origin"
+msgstr "Monto de Origen"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__amount_signed
+msgid "Amount Signed"
+msgstr "Monto con Signo"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding_line__amount_withholding
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_withholding_form
+msgid "Amount Withholding"
+msgstr "Monto Retenido"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__amount_paid
+msgid "Amount paid"
+msgstr "Monto Pagado"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__amount_total_words
+msgid "Amount total in words"
+msgstr "Monto total en letras"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_res_company__apply_withholdings
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_res_config_settings__apply_withholdings
+msgid "Apply Withholdings"
+msgstr "Aplicar Retenciones"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__ubl_cii_xml_id
+msgid "Attachment"
+msgstr "Adjunto"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__message_attachment_count
+msgid "Attachment Count"
+msgstr "Recuento de Archivos Adjuntos"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__attachment_ids
+msgid "Attachments"
+msgstr "Adjuntos"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__authorized_transaction_ids
+msgid "Authorized Transactions"
+msgstr "Transacciones Autorizadas"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__purchase_vendor_bill_id
+msgid "Auto-complete"
+msgstr "Autocompletar"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__purchase_vendor_bill_id
+msgid "Auto-complete from a past bill / purchase order."
+msgstr "Autocompletar desde una factura/orden de compra anterior."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__invoice_vendor_bill_id
+msgid "Auto-complete from a past bill."
+msgstr "Autocompletar a partir de una factura anterior."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__purchase_id
+msgid "Auto-complete from a past purchase order."
+msgstr "Autocompletar desde una orden de compra anterior."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__auto_post
+msgid "Auto-post"
+msgstr "Publicación automática"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__auto_post_until
+msgid "Auto-post until"
+msgstr "Publicar automáticamente hasta"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields.selection,name:xeleste_withholding_base.selection__res_company__apply_withholdings__auto
+msgid "Automatic"
+msgstr "Automático"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_res_partner__auto_withholding
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_res_users__auto_withholding
+msgid "Automatically generate withholdings"
+msgstr "Generar retenciones automáticamente"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_wizard_generate_withholding__auto_generate_after
+msgid ""
+"Automatically generate withholdings when publishing the invoice for this "
+"client"
+msgstr ""
+"Generar retenciones automáticamente al publicar la factura de este "
+"contacto"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__partner_bank_id
+msgid ""
+"Bank Account Number to which the invoice will be paid. A Company bank "
+"account if this is a Customer Invoice or Vendor Credit Note, otherwise a "
+"Partner bank account number."
+msgstr ""
+"Número de cuenta bancaria a la que se pagará la factura. Una cuenta bancaria "
+"de la empresa si se trata de una factura de cliente o una nota de crédito de proveedor; "
+"de lo contrario, un número de cuenta bancaria del socio."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__bank_partner_id
+msgid "Bank Partner"
+msgstr "Socio bancario"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__campaign_id
+msgid "Campaign"
+msgstr "Campaña"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__extract_can_show_banners
+msgid "Can show the ocr banners"
+msgstr "Puede mostrar los banners ocr"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__extract_can_show_send_button
+msgid "Can show the ocr send button"
+msgstr "Puede mostrar el botón de envío de ocr"
+
+#. module: xeleste_withholding_base
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_wizard_generate_withholding_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__tax_cash_basis_created_move_ids
+msgid "Cash Basis Entries"
+msgstr "Entradas en efectivo"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__tax_cash_basis_origin_move_id
+msgid "Cash Basis Origin"
+msgstr "Origen de la base de efectivo"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__invoice_cash_rounding_id
+msgid "Cash Rounding Method"
+msgstr "Método de redondeo de efectivo"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__l10n_latam_document_type_id_code
+msgid "Code used by different localizations"
+msgstr "Código utilizado por diferentes localizaciones."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__commercial_partner_id
+msgid "Commercial Entity"
+msgstr "Entidad Comercial"
+
+#. module: xeleste_withholding_base
+#: model:ir.model,name:xeleste_withholding_base.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__company_currency_id
+msgid "Company Currency"
+msgstr "Moneda de la Empresa"
+
+#. module: xeleste_withholding_base
+#: model:ir.model,name:xeleste_withholding_base.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: xeleste_withholding_base
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_withholding_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: xeleste_withholding_base
+#: model:ir.model,name:xeleste_withholding_base.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__l10n_ve_control_number
+msgid "Control Number"
+msgstr "Número de Control"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__country_code
+msgid "Country Code"
+msgstr "Código de País"
+
+#. module: xeleste_withholding_base
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_wizard_generate_withholding_form
+msgid "Create Withholdings"
+msgstr "Crear Retenciones"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__create_uid
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding_line__create_uid
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_wizard_generate_withholding__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__create_date
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding_line__create_date
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_wizard_generate_withholding__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__currency_id
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding_line__currency_id
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_wizard_generate_withholding__currency_id
+msgid "Currency"
+msgstr "Divisa"
+
+#. module: xeleste_withholding_base
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_withholding_form
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__access_url
+msgid "Customer Portal URL"
+msgstr "URL del Portal del Cliente"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields.selection,name:xeleste_withholding_base.selection__account_withholding__withholding_type__inbound
+msgid "Customer Withholding"
+msgstr "Retención del Cliente"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__partner_id
+msgid "Customer/Vendor"
+msgstr "Cliente/Vendedor"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__debit_note_ids
+msgid "Debit Notes"
+msgstr "Notas Debito"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__deferred_move_ids
+msgid "Deferred Entries"
+msgstr "Entradas diferidas"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__deferred_entry_type
+msgid "Deferred Entry Type"
+msgstr "Tipo de Entrada Diferida"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__invoice_cash_rounding_id
+msgid ""
+"Defines the smallest coinage of the currency that can be used to pay by "
+"cash."
+msgstr ""
+"Define la moneda más pequeña de la moneda que se puede utilizar para pagar en "
+"efectivo."
+
+#. module: xeleste_withholding_base
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.account_invoice_view_form_inherit_withholding
+msgid "Delete"
+msgstr "Borrar"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__partner_shipping_id
+msgid "Delivery Address"
+msgstr "Dirección de Entrega"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__delivery_date
+msgid "Delivery Date"
+msgstr "Fecha de entrega"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__destination_account_id
+msgid "Destination Account"
+msgstr "Cuenta de Destino"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__direction_sign
+msgid "Direction Sign"
+msgstr "Señal de dirección"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__display_inactive_currency_warning
+msgid "Display Inactive Currency Warning"
+msgstr "Mostrar advertencia de moneda inactiva"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__display_name
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding_line__display_name
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_wizard_generate_withholding__display_name
+msgid "Display Name"
+msgstr "Nombre para Mostrar"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__display_qr_code
+msgid "Display QR-code"
+msgstr "Mostrar código QR"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__l10n_latam_document_type_id_code
+msgid "Doc Type"
+msgstr "Tipo de Documento"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__l10n_latam_document_number
+msgid "Document Number"
+msgstr "Número del Documento"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__l10n_latam_document_type_id
+msgid "Document Type"
+msgstr "Tipo de Documento"
+
+#. module: xeleste_withholding_base
+#. odoo-python
+#: code:addons/xeleste_withholding_base/models/account_withholding.py:0
+#, python-format
+msgid "Draft Withholing"
+msgstr "Borrador de Retención"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__invoice_date_due
+msgid "Due Date"
+msgstr "Fecha de Vencimiento"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__duplicated_ref_ids
+msgid "Duplicated Ref"
+msgstr "Referencia Duplicada"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__tax_totals
+msgid "Edit Tax amounts if you encounter rounding issues."
+msgstr "Edite los montos de los impuestos si tiene problemas de redondeo."
+
+#. module: xeleste_withholding_base
+#. odoo-python
+#: code:addons/xeleste_withholding_base/wizard/wizard_generate_withholdings.py:0
+#, python-format
+msgid ""
+"Error generating this type of retention. Contact your administrator.\n"
+" %s"
+msgstr ""
+"Error al generar este tipo de retención. Póngase en contacto con su administrador.\n"
+" %s"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__extract_error_message
+msgid "Error message"
+msgstr "Mensaje de error"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__expense_sheet_id
+msgid "Expense Sheet"
+msgstr "Hoja de gastos"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__extract_attachment_id
+msgid "Extract Attachment"
+msgstr "Extraer archivo adjunto"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__extract_detected_layout
+msgid "Extract Detected Layout Id"
+msgstr "Extraer ID de diseño detectado"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__extract_partner_name
+msgid "Extract Detected Partner Name"
+msgstr "Extraer el Nombre del Socio Detectado"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__extract_state_processed
+msgid "Extract State Processed"
+msgstr "Estado del Extracto Procesado"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__extract_word_ids
+msgid "Extract Word"
+msgstr "Extraer Palabra"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__extract_state
+msgid "Extract state"
+msgstr "Extraer Estado"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__extract_status
+msgid "Extract status"
+msgstr "Estado del Extracto"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__auto_post_origin_id
+msgid "First recurring entry"
+msgstr "Primera Entrada Recurrente"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__fiscal_position_id
+msgid "Fiscal Position"
+msgstr "Posición Fiscal"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__fiscal_position_id
+msgid ""
+"Fiscal positions are used to adapt taxes and accounts for particular "
+"customers or sales orders/invoices. The default value comes from the "
+"customer."
+msgstr ""
+"Las posiciones fiscales se utilizan para adaptar impuestos y cuentas para clientes particulares o pedidos/facturas de venta. El valor predeterminado proviene del cliente."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Socios)"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icono de fuente impresionante, p. tareas fa"
+
+#. module: xeleste_withholding_base
+#: model:ir.actions.act_window,name:xeleste_withholding_base.wizard_generate_withholding_action
+msgid "Generate Withholdings"
+msgstr "Generar Retenciones"
+
+#. module: xeleste_withholding_base
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_withholding_filter
+msgid "Group By"
+msgstr "Group By"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__has_message
+msgid "Has Message"
+msgstr "Tiene mensaje"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__has_reconciled_entries
+msgid "Has Reconciled Entries"
+msgstr "Tiene entradas conciliadas"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__hide_post_button
+msgid "Hide Post Button"
+msgstr "Ocultar botón de publicación"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__highest_name
+msgid "Highest Name"
+msgstr "Nombre más alto"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_res_company__apply_withholdings
+#: model:ir.model.fields,help:xeleste_withholding_base.field_res_config_settings__apply_withholdings
+msgid "How withholdings are created from the invoice"
+msgstr "Cómo se crean las retenciones a partir de la factura"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__id
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding_line__id
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_wizard_generate_withholding__id
+msgid "ID"
+msgstr ""
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__extract_document_uuid
+msgid "ID of the request to IAP-OCR"
+msgstr "ID de la solicitud a IAP-OCR"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__l10n_latam_use_documents
+msgid ""
+"If active: will be using for legal invoicing (invoices, debit/credit notes)."
+" If not set means that will be used to register accounting entries not "
+"related to invoicing legal documents. For Example: Receipts, Tax Payments, "
+"Register journal entries"
+msgstr ""
+"Si está activo: se utilizará para facturación legal (facturas, notas de débito/crédito). Si no se establece significa que se utilizará para registrar asientos contables no relacionados con documentos legales de facturación. Por ejemplo: recibos, pagos de impuestos, asientos de diario de registro"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, los mensajes nuevos requieren su atención."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__message_has_error
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__to_check
+msgid ""
+"If this checkbox is ticked, it means that the user was not sure of all the "
+"related information at the time of the creation of the move and that the "
+"move needs to be checked again."
+msgstr ""
+"Si esta casilla de verificación está marcada, significa que el usuario no estaba seguro de toda la información relacionada en el momento de la creación del movimiento y que es necesario verificar el movimiento nuevamente."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__restrict_mode_hash_table
+msgid ""
+"If ticked, the accounting entry or invoice receives a hash as soon as it is "
+"posted and cannot be modified anymore."
+msgstr ""
+"Si está marcada, el asiento contable o la factura recibe un hash tan pronto como se publica y ya no se puede modificar."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__inalterable_hash
+msgid "Inalterability Hash"
+msgstr "Hash de inalterabilidad"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__secure_sequence_number
+msgid "Inalteralbility No Gap Sequence #"
+msgstr "Inalteralbilidad Secuencia sin espacios #"
+
+#. module: xeleste_withholding_base
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_withholding_filter
+msgid "Inbound"
+msgstr "Entrante"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__invoice_incoterm_id
+msgid "Incoterm"
+msgstr ""
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__incoterm_location
+msgid "Incoterm Location"
+msgstr "Ubicación del Incoterm"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__invoice_incoterm_id
+msgid ""
+"International Commercial Terms are a series of predefined commercial terms "
+"used in international transactions."
+msgstr ""
+"Los Términos Comerciales Internacionales son una serie de términos comerciales predefinidos que se utilizan en transacciones internacionales."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_wizard_generate_withholding__invoice_id
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__invoice_filter_type_domain
+msgid "Invoice Filter Type Domain"
+msgstr "Dominio de tipo de filtro de factura"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__invoice_has_outstanding
+msgid "Invoice Has Outstanding"
+msgstr "La factura tiene pendiente"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__invoice_outstanding_credits_debits_widget
+msgid "Invoice Outstanding Credits Debits Widget"
+msgstr "Widget de débitos de créditos pendientes de factura"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__invoice_partner_display_name
+msgid "Invoice Partner Display Name"
+msgstr "Nombre para mostrar del socio de facturación"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__invoice_payments_widget
+msgid "Invoice Payments Widget"
+msgstr "Widget de pagos de facturas"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__tax_totals
+msgid "Invoice Totals"
+msgstr "Totales de factura"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__invoice_line_ids
+msgid "Invoice lines"
+msgstr "Líneas de factura"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__invoice_date
+msgid "Invoice/Bill Date"
+msgstr "Fecha de factura/factura"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__invoice_ids
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__invoice_ids
+msgid ""
+"Invoices whose journal items have been reconciled with these withholdings."
+msgstr ""
+"Facturas cuyas partidas contables hayan sido conciliadas con dichas retenciones."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__is_being_sent
+msgid "Is Being Sent"
+msgstr "Está siendo enviado"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__is_in_extractable_state
+msgid "Is In Extractable State"
+msgstr "Está en estado extraíble"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__is_matched
+msgid "Is Matched With a Bank Statement"
+msgstr "Se coteja con un extracto bancario"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__is_move_sent
+msgid "Is Move Sent"
+msgstr "¿Se envía el movimiento?"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__is_reconciled
+msgid "Is Reconciled"
+msgstr "Es reconciliado"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__is_storno
+msgid "Is Storno"
+msgstr "Es Storno"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__is_being_sent
+msgid "Is the move being sent asynchronously"
+msgstr "¿El movimiento se envía de forma asincrónica?"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__is_move_sent
+msgid ""
+"It indicates that the invoice/payment has been sent or the PDF has been "
+"generated."
+msgstr ""
+"Indica que se ha enviado la factura/pago o se ha generado el PDF."
+
+#. module: xeleste_withholding_base
+#: model:ir.model,name:xeleste_withholding_base.model_account_journal
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__journal_id
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_wizard_generate_withholding__journal_id
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_withholding_filter
+msgid "Journal"
+msgstr "Diario"
+
+#. module: xeleste_withholding_base
+#. odoo-python
+#: code:addons/xeleste_withholding_base/models/account_withholding.py:0
+#: model:ir.model,name:xeleste_withholding_base.model_account_move
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__move_id
+#, python-format
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__line_ids
+msgid "Journal Items"
+msgstr "Artículos del diario"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__l10n_latam_available_document_type_ids
+msgid "L10N Latam Available Document Type"
+msgstr "L10N Latam Tipo de documento disponible"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__write_uid
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding_line__write_uid
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_wizard_generate_withholding__write_uid
+msgid "Last Updated by"
+msgstr "Actualizado por última vez por"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__write_date
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding_line__write_date
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_wizard_generate_withholding__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__withholding_line_ids
+msgid "Lines"
+msgstr "Líneas"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__restrict_mode_hash_table
+msgid "Lock Posted Entries with Hash"
+msgstr "Bloquear entradas publicadas con hash"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__made_sequence_hole
+msgid "Made Sequence Hole"
+msgstr "Agujero de secuencia hecho"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjunto principal"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields.selection,name:xeleste_withholding_base.selection__res_company__apply_withholdings__manual
+msgid "Manual"
+msgstr ""
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__l10n_latam_manual_document_number
+msgid "Manual Number"
+msgstr "Número manual"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__medium_id
+msgid "Medium"
+msgstr "Medio"
+
+#. module: xeleste_withholding_base
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_withholding_form
+msgid "Memo"
+msgstr ""
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de entrega de mensaje"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__direction_sign
+msgid ""
+"Multiplicator depending on the document type, to convert a price into a "
+"balance"
+msgstr ""
+"Multiplicador según el tipo de documento, para convertir un precio en saldo"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Fecha límite de mi actividad"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__need_cancel_request
+msgid "Need Cancel Request"
+msgstr "Necesita cancelar solicitud"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__needed_terms
+msgid "Needed Terms"
+msgstr "Términos necesarios"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__needed_terms_dirty
+msgid "Needed Terms Dirty"
+msgstr "Términos necesarios sucio"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__amount_signed
+msgid "Negative value of amount field if withholding_type is outbound"
+msgstr "Valor negativo del campo monto si withholding_type es outbound"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Próximo evento del calendario de actividades"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Fecha límite para la próxima actividad"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la próxima actividad"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields.selection,name:xeleste_withholding_base.selection__res_company__apply_withholdings__no
+msgid "No Apply"
+msgstr "No Aplicar"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__name
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.account_invoice_view_form_inherit_withholding
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_withholding_filter
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_withholding_tree
+msgid "Number"
+msgstr "Número"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__number
+msgid "Number Withholding"
+msgstr "Número de Retención"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de Acciones"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__debit_note_count
+msgid "Number of Debit Notes"
+msgstr "Número de Notas de Débito"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren acción"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__invoice_origin
+msgid "Origin"
+msgstr "Origen"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding_line__move_id
+msgid "Origin Invoice"
+msgstr "Factura de origen"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding_line__move_line_id
+msgid "Origin Line"
+msgstr "Línea de Origen"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__debit_origin_id
+msgid "Original Invoice Debited"
+msgstr "Factura original cargada"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__deferred_original_move_ids
+msgid "Original Invoices"
+msgstr "Facturas originales"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__transfer_model_id
+msgid "Originating Model"
+msgstr "Modelo de origen"
+
+#. module: xeleste_withholding_base
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_withholding_filter
+msgid "Outbound"
+msgstr "Saliente"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__outstanding_account_id
+msgid "Outstanding Account"
+msgstr "Cuenta sobresaliente"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__invoice_pdf_report_id
+msgid "PDF Attachment"
+msgstr "Archivo adjunto"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__invoice_pdf_report_file
+msgid "PDF File"
+msgstr "Archivo PDF"
+
+#. module: xeleste_withholding_base
+#. odoo-javascript
+#: code:addons/xeleste_withholding_base/static/src/components/account_payment_field/account_payment.xml:0
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.report_invoice_document
+#, python-format
+msgid "Paid on"
+msgstr "Pagado el"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__partner_credit
+msgid "Partner Credit"
+msgstr "Crédito de Socio"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__partner_credit_warning
+msgid "Partner Credit Warning"
+msgstr "Advertencia de crédito para socios"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__payment_id
+msgid "Payment"
+msgstr "Pago"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__qr_code_method
+msgid "Payment QR-code"
+msgstr ""
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__payment_reference
+msgid "Payment Reference"
+msgstr "Referencia de pago"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__payment_state_before_switch
+msgid "Payment State Before Switch"
+msgstr "Estado de pago antes del cambio"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__payment_state
+msgid "Payment Status"
+msgstr "Estado de pago"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__payment_term_details
+msgid "Payment Term Details"
+msgstr "Detalles de las condiciones de pago"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__invoice_payment_term_id
+msgid "Payment Terms"
+msgstr "Términos de pago"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__payment_ids
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding_line__percentage
+msgid "Percentage Withholding"
+msgstr "Retención Porcentual"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__access_url
+msgid "Portal Access URL"
+msgstr "URL de Acceso al Portal"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__posted_before
+msgid "Posted Before"
+msgstr "Publicado Antes"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__preferred_payment_method_id
+msgid "Preferred Payment Method"
+msgstr "Método de Pago Preferido"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__purchase_id
+msgid "Purchase Order"
+msgstr "Orden de Compra"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__purchase_order_count
+msgid "Purchase Order Count"
+msgstr "Recuento de órdenes de Compra"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__quick_edit_mode
+msgid "Quick Edit Mode"
+msgstr "Modo de Edición Rápida"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__quick_encoding_vals
+msgid "Quick Encoding Vals"
+msgstr "Valores de codificación rápida"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__rating_ids
+msgid "Ratings"
+msgstr "Calificaciones"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__partner_bank_id
+msgid "Recipient Bank"
+msgstr "Banco Destinatario"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__ref
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: xeleste_withholding_base
+#. odoo-python
+#: code:addons/xeleste_withholding_base/models/account_move.py:0
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.account_invoice_view_form_inherit_withholding
+#, python-format
+msgid "Register Withholding"
+msgstr "Registrar Retenciones"
+
+#. module: xeleste_withholding_base
+#: model:ir.actions.report,name:xeleste_withholding_base.account_report_withholding
+msgid "Report Withholding"
+msgstr "Informe de Retención"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__reported
+msgid "Reported"
+msgstr "Reportado"
+
+#. module: xeleste_withholding_base
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_withholding_form
+msgid "Reset To Draft"
+msgstr "Restablecer al borrador"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__reversal_move_id
+msgid "Reversal Move"
+msgstr "Movimiento de inversión"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__reversed_entry_id
+msgid "Reversal of"
+msgstr "Reversión de"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error de entrega de SMS"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__sale_order_count
+msgid "Sale Order Count"
+msgstr "Recuento de pedidos de venta"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__team_id
+msgid "Sales Team"
+msgstr "Equipo de ventas"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__invoice_user_id
+msgid "Salesperson"
+msgstr "Vendedor"
+
+#. module: xeleste_withholding_base
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_withholding_filter
+msgid "Search Withholding"
+msgstr "Búsqueda de Retención"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__access_token
+msgid "Security Token"
+msgstr "Token de seguridad"
+
+#. module: xeleste_withholding_base
+#. odoo-python
+#: code:addons/xeleste_withholding_base/wizard/wizard_generate_withholdings.py:0
+#, python-format
+msgid "Select the journal."
+msgstr "Seleccione la revista."
+
+#. module: xeleste_withholding_base
+#. odoo-python
+#: code:addons/xeleste_withholding_base/wizard/wizard_generate_withholdings.py:0
+#, python-format
+msgid "Select the type of withholding to apply"
+msgstr "Seleccione el tipo de retención a aplicar"
+
+#. module: xeleste_withholding_base
+#. odoo-python
+#: code:addons/xeleste_withholding_base/wizard/wizard_generate_withholdings.py:0
+#, python-format
+msgid "Select the type of withholding to apply."
+msgstr "Seleccione el tipo de retención a aplicar"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__send_and_print_values
+msgid "Send And Print Values"
+msgstr "Enviar e imprimir valores"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__sequence_number
+msgid "Sequence Number"
+msgstr "Número de Secuencia"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__sequence_prefix
+msgid "Sequence Prefix"
+msgstr "Prefijo de secuencia"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__show_delivery_date
+msgid "Show Delivery Date"
+msgstr "Mostrar fecha de entrega"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__show_discount_details
+msgid "Show Discount Details"
+msgstr "Mostrar detalles del descuento"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__show_name_warning
+msgid "Show Name Warning"
+msgstr "Mostrar advertencia de nombre"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__show_payment_term_details
+msgid "Show Payment Term Details"
+msgstr "Mostrar detalles de las condiciones de pago"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__show_reset_to_draft_button
+msgid "Show Reset To Draft Button"
+msgstr "Mostrar botón Restablecer al borrador"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__source_id
+msgid "Source"
+msgstr "Fuente"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__invoice_source_email
+msgid "Source Email"
+msgstr "Correo electrónico de origen"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__auto_post
+msgid ""
+"Specify whether this entry is posted automatically on its accounting date, "
+"and any similar recurring invoices."
+msgstr ""
+"Especifique si esta entrada se contabiliza automáticamente en su fecha contable y en cualquier factura recurrente similar."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields.selection,name:xeleste_withholding_base.selection__account_journal__withholding_type__standard
+#: model:ir.model.fields.selection,name:xeleste_withholding_base.selection__account_withholding__withholding_method__standard
+msgid "Standard"
+msgstr ""
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__statement_id
+msgid "Statement"
+msgstr "Extracto"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__statement_line_id
+msgid "Statement Line"
+msgstr "Línea de Extracto"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__statement_line_ids
+msgid "Statements"
+msgstr "Extractos"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Atrasado: la fecha de vencimiento ya pasó\n"
+"Hoy: la fecha de la actividad es hoy\n"
+"Planificado: actividades futuras."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__stock_move_id
+msgid "Stock Move"
+msgstr "Movimiento de acciones"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__stock_valuation_layer_ids
+msgid "Stock Valuation Layer"
+msgstr "Capa de valoración de acciones"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__string_to_hash
+msgid "String To Hash"
+msgstr "Cadena a hash"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__suitable_journal_ids
+msgid "Suitable Journal"
+msgstr "Diario adecuado"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__amount_tax
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__tax_cash_basis_rec_id
+msgid "Tax Cash Basis Entry of"
+msgstr "Entrada de base fiscal en efectivo de"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__tax_closing_alert
+msgid "Tax Closing Alert"
+msgstr "Alerta de cierre de impuestos"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__tax_closing_end_date
+msgid "Tax Closing End Date"
+msgstr "Fecha de finalización del cierre de impuestos"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__tax_closing_show_multi_closing_warning
+msgid "Tax Closing Show Multi Closing Warning"
+msgstr "Cierre de impuestos Mostrar advertencia de cierre múltiple"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__tax_country_id
+msgid "Tax Country"
+msgstr "País fiscal"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__tax_country_code
+msgid "Tax Country Code"
+msgstr "Código de país fiscal"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__tax_lock_date_message
+msgid "Tax Lock Date Message"
+msgstr "Mensaje de fecha de bloqueo de impuestos"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__tax_report_control_error
+msgid "Tax Report Control Error"
+msgstr "Error de control del informe de impuestos"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__amount_tax_signed
+msgid "Tax Signed"
+msgstr "Impuesto firmado"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__tax_calculation_rounding_method
+msgid "Tax calculation rounding method"
+msgstr "Método de redondeo del cálculo de impuestos"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__is_matched
+msgid ""
+"Technical field indicating if the withholding has been matched with a "
+"statement line."
+msgstr ""
+"Campo técnico que indica si la retención ha sido casada con una línea de extracto."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__is_reconciled
+msgid "Technical field indicating if the withholding is already reconciled."
+msgstr "Campo técnico que indica si la retención ya está conciliada."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__bank_partner_id
+msgid "Technical field to get the domain on the bank"
+msgstr "Campo técnico para conseguir el dominio en el banco"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__narration
+msgid "Terms and Conditions"
+msgstr "Terms and Conditions"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__country_code
+msgid ""
+"The ISO country code in two chars. \n"
+"You can use this field for quick search."
+msgstr ""
+"El código ISO del país en dos caracteres. \n"
+"Puede utilizar este campo para una búsqueda rápida."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__tax_cash_basis_created_move_ids
+msgid ""
+"The cash basis entries created from the taxes on this entry, when "
+"reconciling its lines."
+msgstr ""
+"Los asientos de caja creados a partir de los impuestos sobre este asiento, al conciliar sus líneas."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__debit_note_ids
+msgid "The debit notes created for this invoice"
+msgstr "Las notas de débito creadas para esta factura."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__deferred_move_ids
+msgid "The deferred entries created by this invoice"
+msgstr "Los asientos diferidos creados por esta factura"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__partner_shipping_id
+msgid ""
+"The delivery address will be used in the computation of the fiscal position."
+msgstr ""
+"La dirección de entrega se utilizará en el cómputo de la posición fiscal."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__invoice_origin
+msgid "The document(s) that generated the invoice."
+msgstr "El documento(s) que generó la factura."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__tax_cash_basis_origin_move_id
+msgid ""
+"The journal entry from which this tax cash basis journal entry has been "
+"created."
+msgstr ""
+"El asiento de diario a partir del cual se creó este asiento de diario de base fiscal en efectivo."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__deferred_original_move_ids
+msgid "The original invoices that created the deferred entries"
+msgstr "Las facturas originales que crearon las entradas diferidas."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__payment_reference
+msgid "The payment reference to set on journal items."
+msgstr "La referencia de pago que se establecerá en los elementos del diario."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__currency_id
+#: model:ir.model.fields,help:xeleste_withholding_base.field_wizard_generate_withholding__currency_id
+msgid "The withholding's currency."
+msgstr "La moneda de la retención."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__campaign_id
+msgid ""
+"This is a name that helps you keep track of your different campaign efforts,"
+" e.g. Fall_Drive, Christmas_Special"
+msgstr ""
+"Este es un nombre que le ayuda a realizar un seguimiento de los diferentes esfuerzos de su campaña, p. Fall_Drive, Especial_Navidad"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__medium_id
+msgid "This is the method of delivery, e.g. Postcard, Email, or Banner Ad"
+msgstr "Este es el método de entrega, p.e. Postal, correo electrónico o anuncio publicitario"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__source_id
+msgid ""
+"This is the source of the link, e.g. Search Engine, another domain, or name "
+"of email list"
+msgstr ""
+"Esta es la fuente del enlace, p.e. Motor de búsqueda, otro dominio o nombre de la lista de correo electrónico"
+
+#. module: xeleste_withholding_base
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.account_invoice_view_form_inherit_withholding
+msgid ""
+"This operation is irreversible. Do you wish to proceed to the record "
+"deletion?"
+msgstr ""
+"Esta operación es irreversible. ¿Desea proceder a la eliminación del registro?"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__auto_post_until
+msgid "This recurring move will be posted up to and including this date."
+msgstr "Este movimiento recurrente se publicará hasta esta fecha inclusive."
+
+#. module: xeleste_withholding_base
+#. odoo-python
+#: code:addons/xeleste_withholding_base/models/account_withholding.py:0
+#, python-format
+msgid "This withholding is in a different period than your source document."
+msgstr "Esta retención es en un período diferente al de su documento fuente."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__to_check
+msgid "To Check"
+msgstr "Verificar"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__amount_total
+msgid "Total"
+msgstr ""
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__quick_edit_total_amount
+msgid "Total (Tax inc.)"
+msgstr "Total (impuestos incluidos)"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__amount_total_signed
+msgid "Total Signed"
+msgstr "Total con Signo"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__amount_total_in_currency_signed
+msgid "Total in Currency Signed"
+msgstr "Total en moneda firmada"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__transaction_ids
+msgid "Transactions"
+msgstr "Transacciones"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__move_type
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_wizard_generate_withholding__move_type
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_withholding_filter
+msgid "Type"
+msgstr "Tipo"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__type_name
+msgid "Type Name"
+msgstr "Tipo de nombre"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__qr_code_method
+msgid ""
+"Type of QR-code to be generated for the payment of this invoice, when "
+"printing it. If left blank, the first available and usable method will be "
+"used."
+msgstr ""
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_journal__withholding_type
+msgid "Type of Withholding"
+msgstr "Tipo de Retención"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción registrada."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__ubl_cii_xml_file
+msgid "UBL/CII File"
+msgstr "Archivo UBL/CII"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__ut_price
+msgid "UT Price"
+msgstr "Precio UT"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__amount_untaxed
+msgid "Untaxed Amount"
+msgstr "Monto libre de impuestos"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__amount_untaxed_signed
+msgid "Untaxed Amount Signed"
+msgstr "Monto libre de impuestos firmado"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__l10n_latam_use_documents
+msgid "Use Documents?"
+msgstr "¿Usar documentos?"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_journal__use_withholding
+msgid "Use for Withholding"
+msgstr "Uso para retención"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__quick_edit_total_amount
+msgid ""
+"Use this field to encode the total amount of the invoice.\n"
+"Odoo will automatically create one invoice line with default values to match it."
+msgstr ""
+"Utilice este campo para codificar el monto total de la factura.\n"
+"Odoo creará automáticamente una línea de factura con valores predeterminados que coincidan."
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__user_id
+msgid "User"
+msgstr "Usuario"
+
+#. module: xeleste_withholding_base
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_withholding_form
+msgid "Vendor"
+msgstr "Proveedor"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__invoice_vendor_bill_id
+msgid "Vendor Bill"
+msgstr "Factura del proveedor"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields.selection,name:xeleste_withholding_base.selection__account_withholding__withholding_type__outbound
+msgid "Vendor Withholding"
+msgstr "Retención de proveedores"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__warning_msg
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_wizard_generate_withholding__warning_msg
+msgid "Warning"
+msgstr "Advertencia"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,help:xeleste_withholding_base.field_account_withholding__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicación del sitio web"
+
+#. module: xeleste_withholding_base
+#. odoo-python
+#: code:addons/xeleste_withholding_base/models/account_withholding.py:0
+#, python-format
+msgid "Withheld invoices"
+msgstr "Facturas retenidas"
+
+#. module: xeleste_withholding_base
+#. odoo-javascript
+#: code:addons/xeleste_withholding_base/static/src/components/account_payment_field/account_payment.xml:0
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding_line__withholding_id
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_wizard_generate_withholding__withholding_method
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.report_invoice_document
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_withholding_form
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_withholding_tree
+#, python-format
+msgid "Withholding"
+msgstr "Retención"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__withholding_date
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_withholding_filter
+msgid "Withholding Date"
+msgstr "Fecha de Retención"
+
+#. module: xeleste_withholding_base
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_withholding_form
+msgid "Withholding Lines"
+msgstr "Líneas de Retención"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__withholding_method
+msgid "Withholding Method"
+msgstr "Método de Retención"
+
+#. module: xeleste_withholding_base
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__withholding_type
+msgid "Withholding Type"
+msgstr "Tipo de Retención"
+
+#. module: xeleste_withholding_base
+#: model:ir.model,name:xeleste_withholding_base.model_account_withholding_line
+msgid "Withholding's Lines"
+msgstr "Líneas de Retención"
+
+#. module: xeleste_withholding_base
+#: model:ir.actions.act_window,name:xeleste_withholding_base.account_withholding_customer_action
+#: model:ir.actions.act_window,name:xeleste_withholding_base.account_withholding_vendor_action
+#: model:ir.model,name:xeleste_withholding_base.model_account_withholding
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_bank_statement_line__withholding_ids
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_move__withholding_ids
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_payment__withholding_ids
+#: model:ir.model.fields,field_description:xeleste_withholding_base.field_account_withholding__withholding_ids
+#: model:ir.ui.menu,name:xeleste_withholding_base.menu_account_withholdings_customer
+#: model:ir.ui.menu,name:xeleste_withholding_base.menu_account_withholdings_vendor
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.account_invoice_view_form_inherit_withholding
+#: model_terms:ir.ui.view,arch_db:xeleste_withholding_base.view_account_journal_form_inherit_withholding
+msgid "Withholdings"
+msgstr "Retenciones"
+
+#. module: xeleste_withholding_base
+#: model:ir.model,name:xeleste_withholding_base.model_wizard_generate_withholding
+msgid "Wizard for generate Withholding Manual"
+msgstr "Asistente para generar Manual de Retenciones"
+
+#. module: xeleste_withholding_base
+#. odoo-python
+#: code:addons/xeleste_withholding_base/models/account_withholding.py:0
+#, python-format
+msgid ""
+"You can't create a new withholding without an outstanding withholdings "
+"account set either on the company or the %s withholding method in the %s "
+"journal."
+msgstr ""
+"No puede crear una nueva retención sin una cuenta de retenciones pendientes establecida en la empresa o en el método de retención %s en el diario %s."
+
+#. module: xeleste_withholding_base
+#. odoo-python
+#: code:addons/xeleste_withholding_base/wizard/wizard_generate_withholdings.py:0
+#, python-format
+msgid "You cannot apply withholdings to invoices with a zero amount."
+msgstr "No se pueden aplicar retenciones a facturas con importe cero."
+
+#. module: xeleste_withholding_base
+#. odoo-python
+#: code:addons/xeleste_withholding_base/models/account_withholding.py:0
+#: code:addons/xeleste_withholding_base/models/account_withholding.py:0
+#, python-format
+msgid "reference %s"
+msgstr "referencia %s"

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_wizard_generate_withholding_iva_form" model="ir.ui.view">
+        <field name="name">wizard.generate.withholding.form</field>
+        <field name="model">wizard.generate.withholding</field>
+        <field name="inherit_id" ref="xeleste_withholding_base.view_wizard_generate_withholding_form"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='withholding_method']" position="after">
+                <field name="retention_agent" invisible="withholding_method != 'iva' or move_type not in ['out_invoice', 'out_refund', 'out_receipt']"/>
+                <field name="iva_withholding_percentage" invisible="withholding_method != 'iva' or move_type not in ['in_invoice', 'in_refund', 'in_receipt']"/>
+                <field name="iva_company_percentage" invisible="withholding_method != 'iva' or move_type not in ['out_invoice', 'out_refund', 'out_receipt']"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

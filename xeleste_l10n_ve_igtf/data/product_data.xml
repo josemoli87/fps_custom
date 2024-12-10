@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="product_product_igtf" model="product.product">
+        <field name="name">IGTF</field>
+        <field name="default_code">IGTF</field>
+        <field name="detailed_type">service</field>
+        <field name="description">Impuesto sobre pagos en divisas</field>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="list_price">0.0</field>
+        <field name="taxes_id" eval="[(5,)]"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_account_payment_register_igtf_form" model="ir.ui.view">
+        <field name="name">account.payment.register.igtf.form</field>
+        <field name="model">account.payment.register</field>
+        <field name="inherit_id" ref="account.view_account_payment_register_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='group2']" position="after">
+                <group name="igtf" string="IGTF" invisible="not company_apply_igtf">
+                    <field name="company_apply_igtf" invisible="1"/>
+                    <field name="apply_igtf"/>
+                    <field name="igtf_product_id" invisible="not apply_igtf" required="apply_igtf"/>
+                    <field name="percentage_igtf" invisible="not apply_igtf"/>
+                    <label for="amount" string="Amount" invisible="not apply_igtf"/>
+                    <div name="amount2" invisible="not apply_igtf">
+                        <field name="amount" readonly="1" class="oe_inline me-2" invisible="not pay_igtf"/>
+                        <field name="amount" readonly="1" class="oe_inline me-2 text-bg-success rounded-pill ps-1 pe-1" invisible="pay_igtf"/>
+                        <span class="oe_inline"> / </span>
+                        <field name="amount_cc" readonly="1" class="oe_inline" invisible="not pay_igtf"/>
+                        <field name="amount_cc" readonly="1" class="oe_inline text-bg-success rounded-pill ps-1 pe-1" invisible="pay_igtf"/>
+                    </div>
+                    <label for="amount_igtf" string="IGTF" invisible="not apply_igtf"/>
+                    <div name="igtf" invisible="not apply_igtf">
+                        <field name="amount_igtf" readonly="1" class="oe_inline me-2"/>
+                        <span class="oe_inline"> / </span>
+                        <field name="amount_igtf_cc" readonly="1" class="oe_inline"/>
+                    </div>
+                    <label for="total_pay_igtf" string="Total" invisible="not apply_igtf"/>
+                    <div name="total" invisible="not apply_igtf">
+                        <field name="total_pay_igtf" readonly="1" class="oe_inline me-2" invisible="pay_igtf"/>
+                        <field name="total_pay_igtf" readonly="1" class="oe_inline me-2 text-bg-success rounded-pill ps-1 pe-1" invisible="not pay_igtf"/>
+                        <span class="oe_inline"> / </span>
+                        <field name="total_pay_igtf_cc" readonly="1" class="oe_inline" invisible="pay_igtf"/>
+                        <field name="total_pay_igtf_cc" readonly="1" class="oe_inline text-bg-success rounded-pill ps-1 pe-1" invisible="not pay_igtf"/>
+                    </div>
+                    <field name="pay_igtf" invisible="not apply_igtf"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

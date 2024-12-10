@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+     <template id="report_withholding_document">
+            <t t-call="web.basic_layout">
+                <t t-set="o" t-value="o.with_context(lang=lang)" />
+                <t t-if="o.withholding_type == 'inbound'" t-set="partner_id" t-value="o.partner_id"/>
+                <t t-else="" t-set="partner_id" t-value="o.company_id.partner_id"/>
+                <t t-if="o.withholding_type == 'inbound'" t-set="w_partner_id" t-value="o.company_id.partner_id"/>
+                <t t-else="" t-set="w_partner_id" t-value="o.partner_id"/>
+
+                <div class="header">
+                    <div class="row">
+                        <div class="col-2">
+                            <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)"
+                                 style="max-height: 45px;" class="float-start" alt="Logo"/>
+                        </div>
+                        <div class="col-7 text-center">
+                            <h1 class="h4"><strong>COMPROBANTE DE RETENCIÓN DEL IMPUESTO AL VALOR AGREGADO</strong></h1>
+                        </div>
+                        <div class="col-3">
+                            <span><strong>N° de Comprobante: </strong> <span t-field="o.number"/></span><br/>
+                            <span><strong>Fecha de Emisión: </strong> <span t-field="o.date"/></span><br/>
+                            <span><strong>Periodo Fiscal: </strong> <span t-esc="o.date.strftime('%Y-%m')"/></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="row">
+                        <div class="col-4 text-center">
+                            _____________________________ <br/>
+                            <t t-if="o.withholding_type == 'inbound'" t-esc="o.partner_id.name"/>
+                            <t t-else="" t-esc="o.company_id.partner_id.name"/><br/>
+                            <span>Firma y Sello</span>
+                        </div>
+                        <div class="col-4"/>
+                        <div class="col-4 text-center">
+                            _____________________________ <br/>
+                            <t t-if="o.withholding_type == 'inbound'" t-esc="o.company_id.partner_id.name"/>
+                            <t t-else="" t-esc="o.partner_id.name"/><br/>
+                            <span>Firma y Sello</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5 clearfix">
+                    <div class="page mb-4">
+                        <br/>
+                        <br/>
+                        <div class="text-muted text-small text-justify">
+                            La Administración Tributaria podrá designar como responsables del
+                            pago   del   impuesto,   en   calidad   de   agentes   de   retención,   a   quienes   por   sus
+                            funciones   públicas   o   por   razón   de   sus   actividades   privadas   intervengan   en
+                            operaciones gravadas con el impuesto establecido en esta Ley.
+                            Asimismo,   la  Administración   Tributaria   podrá   designar   como   responsables   del
+                            pago del impuesto que deba devengarse en las ventas posteriores, en calidad de
+                            agentes de percepción, a quienes por sus funciones públicas o por razón de sus
+                            actividades   privadas   intervengan   en   operaciones   gravadas   con   el   impuesto
+                            establecido en esta Ley...
+                        </div>
+                        <div class="mt-4">
+                            <table class="table table-bordered" style="border: 1px solid #000">
+                                <tr>
+                                    <th style="background-color: #BFBFBF" colspan="3">DATOS DEL AGENTE DE RETENCIÓN</th>
+                                </tr>
+                                <tr>
+                                   <td colspan="2">NOMBRE DEL AGENTE DE RETENCIÓN: <br/><span t-field="partner_id.name"/></td>
+                                   <td>RIF DEL AGENTE DE RETENCIÓN: <br/><span t-field="partner_id.vat"/></td>
+                                </tr>
+                                <tr>
+                                   <td colspan="3">DOMICILIO FISCAL DEL AGENTE DE RETENCIÓN: <br/>
+                                       <span>
+                                       <span t-field="partner_id.street"/> <span t-field="partner_id.street2"/>  <span t-field="partner_id.zip"/>
+                                       <span t-field="partner_id.city"/> <span t-field="partner_id.state_id.name"/> <span t-field="partner_id.country_id.name"/>
+                                       </span>
+                                   </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="mt-4">
+                            <table class="table table-bordered" style="border: 1px solid #000">
+                                <tr>
+                                    <th style="background-color: #BFBFBF" colspan="2">DATOS DEL SUJETO RETENIDO</th>
+                                </tr>
+                                <tr>
+                                   <td>NOMBRE O RAZÓN SOCIAL DEL SUJETO RETENIDO: <br/><span t-field="w_partner_id.name"/></td>
+                                   <td>RIF DEL SUJETO RETENIDO: <br/><span t-field="w_partner_id.vat"/></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="mt-4">
+                            <table class="table table-bordered" style="border: 1px solid #000">
+                                <tr>
+                                    <th style="background-color: #BFBFBF">FECHA FACTURA</th>
+                                    <th style="background-color: #BFBFBF">N° FACTURA</th>
+                                    <th style="background-color: #BFBFBF">N° CONTROL FACTURA</th>
+                                    <th style="background-color: #BFBFBF">N° NOTA DEBITO</th>
+                                    <th style="background-color: #BFBFBF">N° NOTA CREDITO</th>
+                                    <th style="background-color: #BFBFBF">N° FACTURA AFECTADA</th>
+                                    <th style="background-color: #BFBFBF">TIPO TRANSACCION</th>
+                                    <th style="background-color: #BFBFBF">TOTAL COMPRA INCLUYENDO IVA</th>
+                                    <th style="background-color: #BFBFBF">COMPRAS SIN DERECHO A CREDITO FISCAL</th>
+                                    <th style="background-color: #BFBFBF">BASE IMPONIBLE</th>
+                                    <th style="background-color: #BFBFBF">% ALICUOTA</th>
+                                    <th style="background-color: #BFBFBF">IMPUESTO IVA</th>
+                                    <th style="background-color: #BFBFBF">IVA RETENIDO</th>
+                                </tr>
+                                <tr t-foreach="o.withholding_line_ids" t-as="line">
+                                    <td><span t-esc="line.move_id.invoice_date"/></td>
+                                    <td>
+                                        <span t-if="line.move_id.move_type in ('in_invoice', 'in_receipt') and not line.move_id.debit_origin_id" t-field="line.move_id.ref"/>
+                                        <span t-elif="line.move_id.move_type in ('out_invoice', 'out_receipt') and not line.move_id.debit_origin_id" t-field="line.move_id.name"/>
+                                    </td>
+                                    <td><span t-esc="line.move_id.l10n_ve_control_number"/></td>
+                                    <td>
+                                        <span t-if="line.move_id.move_type in ('in_invoice', 'in_receipt') and line.move_id.debit_origin_id" t-field="line.move_id.debit_origin_id.ref"/>
+                                        <span t-elif="line.move_id.move_type in ('out_invoice', 'out_receipt') and line.move_id.debit_origin_id" t-field="line.move_id.debit_origin_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-if="line.move_id.move_type in ('in_refund',)" t-field="line.move_id.ref"/>
+                                        <span t-elif="line.move_id.move_type in ('out_refund',)" t-field="line.move_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-if="line.move_id.move_type in ('in_refund',)" t-field="line.move_id.reversed_entry_id.ref"/>
+                                        <span t-elif="line.move_id.move_type in ('out_refund',)" t-field="line.move_id.reversed_entry_id.name"/>
+                                        <span t-elif="line.move_id.move_type in ('in_invoice', 'in_receipt') and line.move_id.debit_origin_id" t-field="line.move_id.debit_origin_id.ref"/>
+                                        <span t-elif="line.move_id.move_type in ('out_invoice', 'out_receipt') and line.move_id.debit_origin_id" t-field="line.move_id.debit_origin_id.name"/>
+                                    </td>
+                                    <td>01-reg</td>
+                                    <td><span t-field="line.move_id.amount_total"/></td>
+                                    <td>0.00</td>
+                                    <td><span t-field="line.move_id.amount_untaxed"/></td>
+                                    <td><span t-field="line.aliquot"/></td>
+                                    <td><span t-field="line.amount_base"/></td>
+                                    <td><span t-field="line.amount_withholding"/></td>
+                                </tr>
+                                <tr>
+                                    <th colspan="11">TOTAL</th>
+                                    <th><span t-field="o.amount_base"/></th>
+                                    <th><span t-field="o.amount"/></th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </t>
+     </template>
+
+    <template id="report_withholding" inherit_id="xeleste_withholding_base.report_withholding">
+        <xpath expr="//div[@name='template']" psotion="inside">
+            <t t-if="o.withholding_method == 'iva'" t-call="xeleste_withholding_iva.report_withholding_document" t-lang="lang"/>
+        </xpath>
+    </template>
+
+    </data>
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tax_unit_user,tax.unit.all,model_tax_unit,base.group_user,1,0,0,0
+access_tax_unit_manager,tax.unit.manager,model_tax_unit,account.group_account_manager,1,1,1,1
+access_invoice_statements_user,invoice.statements.all,model_invoice_statements,base.group_user,1,0,0,0
+access_invoice_statements_manager,invoice.statements.manager,model_invoice_statements,account.group_account_manager,1,1,1,1

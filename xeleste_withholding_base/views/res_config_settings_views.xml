@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form_withholding" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.withholding</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="xeleste_l10n_ve.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='l10n_ve_section']" position="inside">
+                <setting>
+                    <div class="content-group">
+                        <div class="row mt16">
+                            <label for="apply_withholdings" class="col-lg-3"/>
+                            <field name="apply_withholdings"/>
+                        </div>
+                    </div>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

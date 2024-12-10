@@ -1,0 +1,367 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* xeleste_l10n_ve
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-27 03:35+0000\n"
+"PO-Revision-Date: 2024-06-27 03:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: xeleste_l10n_ve
+#: model_terms:ir.ui.view,arch_db:xeleste_l10n_ve.res_partner_form_xeleste_l10n_ve
+msgid "<span class=\"o_form_label oe_inline\">%</span>"
+msgstr ""
+
+#. module: xeleste_l10n_ve
+#: model_terms:ir.ui.view,arch_db:xeleste_l10n_ve.account_invoice_view_form_inherit_withholding
+msgid "<span class=\"o_stat_text\">Statements</span>"
+msgstr "<span class=\"o_stat_text\">Declaraciones</span>"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model,name:xeleste_l10n_ve.model_account_chart_template
+msgid "Account Chart Template"
+msgstr "Plantilla de plan contable"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__affect_document
+msgid "Affect Document"
+msgstr "Documento Afectado"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_res_partner__retention_agent
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_res_users__retention_agent
+msgid "Agente de Retencion"
+msgstr ""
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_account_tax__l10n_ve_aliquot_type
+msgid "Aliquot Type"
+msgstr "Tipo de Alicuota"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__amount_tax
+msgid "Amount Tax"
+msgstr "Impuestos"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__amount_total
+msgid "Amount Total"
+msgstr "Total"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__amount_untaxed
+msgid "Amount Untaxed"
+msgstr "Base Imponible"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model,name:xeleste_l10n_ve.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__company_id
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_tax_unit__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: xeleste_l10n_ve
+#: model:ir.actions.act_window,name:xeleste_l10n_ve.account_tax_unit_action
+msgid "Concepts ISLR"
+msgstr "Conceptos de ISLR"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model,name:xeleste_l10n_ve.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model,name:xeleste_l10n_ve.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_account_bank_statement_line__l10n_ve_control_number
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_account_move__l10n_ve_control_number
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_account_payment__l10n_ve_control_number
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__control_number
+msgid "Control Number"
+msgstr "Número de Control"
+
+#. module: xeleste_l10n_ve
+#. odoo-python
+#: code:addons/xeleste_l10n_ve/models/res_config_settings.py:0
+#, python-format
+msgid "Control Number Sequence %s"
+msgstr "Secuencia del Número de Control %s"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__create_uid
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_tax_unit__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__create_date
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_tax_unit__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields.selection,name:xeleste_l10n_ve.selection__invoice_statements__document_type__credit
+msgid "Credit Note"
+msgstr "Nota de Crédito"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_tax_unit__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields.selection,name:xeleste_l10n_ve.selection__res_partner__person_type_ve__pjd
+msgid "DOMICILED LEGAL PERSON (PJD)"
+msgstr "PERSONA JURÍDICA DOMICILIADA (PJD)"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__date
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_tax_unit__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields.selection,name:xeleste_l10n_ve.selection__invoice_statements__document_type__debit
+msgid "Debit Note"
+msgstr "Nota de Débito"
+
+#. module: xeleste_l10n_ve
+#: model_terms:ir.ui.view,arch_db:xeleste_l10n_ve.view_invoice_statements_form
+msgid "Declare"
+msgstr "Declarar"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields.selection,name:xeleste_l10n_ve.selection__invoice_statements__state__declared
+msgid "Declared"
+msgstr "Declarado"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__declared_date
+msgid "Declared Date"
+msgstr "Fecha de Declaración"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__display_name
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_tax_unit__display_name
+msgid "Display Name"
+msgstr "Nombre Mostrado"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__document_number
+msgid "Document Number"
+msgstr "Número de Documento"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__document_type
+msgid "Document Type"
+msgstr "Tipo de Documento"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields.selection,name:xeleste_l10n_ve.selection__account_tax__l10n_ve_aliquot_type__exempt
+msgid "Exempt"
+msgstr "Exento"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields.selection,name:xeleste_l10n_ve.selection__account_tax__l10n_ve_aliquot_type__general
+msgid "General"
+msgstr ""
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields.selection,name:xeleste_l10n_ve.selection__account_tax__l10n_ve_aliquot_type__additional
+msgid "General + Additional"
+msgstr "General + Adicional"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__id
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_tax_unit__id
+msgid "ID"
+msgstr ""
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_res_company__iva_withholding_percentage
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_res_config_settings__iva_withholding_percentage
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_res_partner__iva_withholding_percentage
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_res_users__iva_withholding_percentage
+msgid "IVA withholding percentage"
+msgstr "Porcentaje de retención del IVA"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__move_id
+#: model:ir.model.fields.selection,name:xeleste_l10n_ve.selection__invoice_statements__document_type__invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__invoice_date
+msgid "Invoice Date"
+msgstr "Fecha de Factura"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model,name:xeleste_l10n_ve.model_invoice_statements
+msgid "Invoice Statements"
+msgstr "Declaraciones de Facturas"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model,name:xeleste_l10n_ve.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__write_uid
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_tax_unit__write_uid
+msgid "Last Updated by"
+msgstr "Última Actualización por"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__write_date
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_tax_unit__write_date
+msgid "Last Updated on"
+msgstr "Última Actualización el"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__is_modified
+msgid "Modified"
+msgstr "Modificado"
+
+#. module: xeleste_l10n_ve
+#: model_terms:ir.ui.view,arch_db:xeleste_l10n_ve.view_invoice_statements_form
+msgid "Move Statement"
+msgstr "Declaración de Movimiento"
+
+#. module: xeleste_l10n_ve
+#: model_terms:ir.ui.view,arch_db:xeleste_l10n_ve.view_txt_iva_tree
+msgid "Move Statements"
+msgstr "Declaración de Movimientos"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields.selection,name:xeleste_l10n_ve.selection__res_partner__person_type_ve__pjnd
+msgid "NON-DOMICILED LEGAL PERSON (PJND)"
+msgstr "PERSONA JURÍDICA NO DOMICILIADA (PJND)"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields.selection,name:xeleste_l10n_ve.selection__res_partner__person_type_ve__pnnr
+msgid "NON-RESIDENT NATURAL PERSON (PNNR)"
+msgstr "PERSONA NATURAL NO RESIDENTE (PNNR)"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__partner_name
+msgid "Name Partner"
+msgstr "Nombre de Contacto"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields.selection,name:xeleste_l10n_ve.selection__invoice_statements__state__no_declared
+msgid "No Declared"
+msgstr "No Declarado"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields.selection,name:xeleste_l10n_ve.selection__res_partner__person_type_ve__pjncd
+msgid "PERSONA JURÍDICA NO CONSTITUIDA DOMICILIADA (PJNCD)"
+msgstr ""
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_res_company__person_type_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_res_config_settings__person_type_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_res_partner__person_type_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_res_users__person_type_ve
+msgid "Person Type"
+msgstr "Tipo de persona"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_tax_unit__price
+msgid "Price"
+msgstr "Precio"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields.selection,name:xeleste_l10n_ve.selection__res_partner__person_type_ve__pnr
+msgid "RESIDENT NATURAL PERSON (PNR)"
+msgstr "PERSONA NATURAL RESIDENTE (PNR)"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__partner_vat
+msgid "RIF Partner"
+msgstr "RIF del Contacto"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields.selection,name:xeleste_l10n_ve.selection__account_tax__l10n_ve_aliquot_type__reduced
+msgid "Reduced"
+msgstr "Reducida"
+
+#. module: xeleste_l10n_ve
+#: model_terms:ir.ui.view,arch_db:xeleste_l10n_ve.res_config_settings_view_form
+msgid "Settings for company taxes"
+msgstr "Configuración para impuestos de empresa"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__state
+msgid "State"
+msgstr "Estado"
+
+#. module: xeleste_l10n_ve
+#: model:ir.actions.act_window,name:xeleste_l10n_ve.invoice_statements_action
+msgid "Statements"
+msgstr "Declaraciones"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_account_bank_statement_line__statement_ids
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_account_move__statement_ids
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_account_payment__statement_ids
+#: model:ir.ui.menu,name:xeleste_l10n_ve.menu_invoice_statements
+msgid "Statements VE"
+msgstr "Declaraciones VE"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__system_number
+msgid "System Number"
+msgstr "Número en Sistema"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model,name:xeleste_l10n_ve.model_account_tax
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model,name:xeleste_l10n_ve.model_tax_unit
+#: model_terms:ir.ui.view,arch_db:xeleste_l10n_ve.view_tax_unit_tree
+msgid "Tax Unit"
+msgstr "Unidad Tributaria"
+
+#. module: xeleste_l10n_ve
+#: model:ir.ui.menu,name:xeleste_l10n_ve.menu_tax_unit_vendor
+msgid "Tax Units"
+msgstr "Unidades Tributarias"
+
+#. module: xeleste_l10n_ve
+#: model:ir.model.fields,field_description:xeleste_l10n_ve.field_invoice_statements__move_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: xeleste_l10n_ve
+#: model:ir.ui.menu,name:xeleste_l10n_ve.account_reports_ve_menu
+#: model:ir.ui.menu,name:xeleste_l10n_ve.ve_menu
+msgid "Venezuelan"
+msgstr "Venezolana"
+
+#. module: xeleste_l10n_ve
+#: model_terms:ir.ui.view,arch_db:xeleste_l10n_ve.res_config_settings_view_form
+msgid "Venezuelan Localization"
+msgstr "Localización venezolana"
+
+#. module: xeleste_l10n_ve
+#: model_terms:ir.ui.view,arch_db:xeleste_l10n_ve.res_config_settings_view_form
+msgid "Withholdings"
+msgstr "Retenciones"

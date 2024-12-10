@@ -1,4 +1,4 @@
-$dashboard-bg : #ffffff !default;
+$dashboard-bg : #464d4d !default;
 
 .o_action_manager {
     overflow: auto !important;
@@ -47,7 +47,7 @@ $dashboard-bg : #ffffff !default;
         color: #2c9ee6 !important;
     }
     .tk-primary {
-        color: #2b3547 !important;
+        color: #c6c9cf !important;
         font-family: inherit;
     }
 
@@ -70,7 +70,7 @@ $dashboard-bg : #ffffff !default;
     }
     .card:hover {
         transform: translateY(-5px) scale(1.005) translateZ(0);
-        box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11), 0 24px 46px transparent;
+        box-shadow: 0 24px 36px rgba(204, 204, 204, 0.267), 0 24px 46px transparent;
         cursor: pointer;
     }
 }

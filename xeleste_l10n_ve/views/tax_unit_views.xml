@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_tax_unit_tree" model="ir.ui.view">
+        <field name="name">tax.unit.tree</field>
+        <field name="model">tax.unit</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Tax Unit" editable="bottom">
+                <field name="date"/>
+                <field name="price"/>
+                <field name="currency_id"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="account_tax_unit_action" model="ir.actions.act_window">
+        <field name="name">Tax Unit</field>
+        <field name="res_model">tax.unit</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem id="menu_tax_unit_vendor"
+              action="account_tax_unit_action"
+              parent="ve_menu"
+              name="Tax Units"
+              sequence="1"/>
+</odoo>

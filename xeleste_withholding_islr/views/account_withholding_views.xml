@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_account_withholding_islr_form" model="ir.ui.view">
+        <field name="name">account.withholding.islr.form</field>
+        <field name="model">account.withholding</field>
+        <field name="inherit_id" ref="xeleste_withholding_base.view_account_withholding_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='withholding_line_ids']//tree//field[@name='move_id']" position="after">
+                <field name="code_islr" column_invisible="parent.withholding_method != 'islr'"/>
+                <field name="concept_islr" optional="hidden" column_invisible="parent.withholding_method != 'islr'"/>
+            </xpath>
+            <xpath expr="//field[@name='withholding_line_ids']//tree//field[@name='percentage']" position="after">
+                <field name="subt" column_invisible="parent.withholding_method != 'islr'"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

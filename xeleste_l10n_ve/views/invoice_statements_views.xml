@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_invoice_statements_form" model="ir.ui.view">
+        <field name="name">invoice.statements.form</field>
+        <field name="model">invoice.statements</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Move Statement">
+                <header>
+                    <button name="action_declare" string="Declare" type="object" class="oe_highlight"
+                            invisible="state != 'no_declared'" data-hotkey="q" groups="account.group_account_manager"/>
+                    <field name="state" widget="statusbar" statusbar_visible="no_declared,declared"/>
+                </header>
+                <sheet>
+                    <field name="state" invisible="1"/>
+                    <div class="oe_title">
+                        <h1><field name="system_number" readonly="1"/></h1>
+                    </div>
+
+                    <group name="main_group">
+                        <group>
+                            <field name="document_number" readonly="1"/>
+                            <field name="control_number" readonly="1"/>
+                            <field name="document_type" readonly="1"/>
+                            <field name="affect_document" readonly="1"/>
+                            <field name="company_id" groups="base.group_multi_company" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="move_id" invisible="1"/>
+                            <field name="date" readonly="1"/>
+                            <field name="invoice_date" readonly="1"/>
+                            <field name="partner_vat" readonly="1"/>
+                            <field name="partner_name" readonly="1"/>
+                        </group>
+                        <group name="Amounts">
+                            <field name="amount_total" invisible="1"/>
+                            <field name="amount_untaxed" readonly="1"/>
+                            <field name="amount_tax" readonly="1"/>
+                            <field name="is_modified" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="declared_date"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_txt_iva_tree" model="ir.ui.view">
+        <field name="name">invoice.statements.tree</field>
+        <field name="model">invoice.statements</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Move Statements">
+                <field name="system_number"/>
+                <field name="document_number"/>
+                <field name="create_date"/>
+                <field name="is_modified"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="invoice_statements_action" model="ir.actions.act_window">
+        <field name="name">Statements</field>
+        <field name="res_model">invoice.statements</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_invoice_statements" action="invoice_statements_action" groups="account.group_account_manager"
+              parent="xeleste_l10n_ve.account_reports_ve_menu" sequence="50" name="Statements VE"/>
+
+</odoo>

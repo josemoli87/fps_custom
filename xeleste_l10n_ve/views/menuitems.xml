@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+        id="ve_menu"
+        name="Venezuelan"
+        parent="account.menu_finance_configuration"
+        sequence="25"/>
+
+    <menuitem
+            id="account_reports_ve_menu"
+            name="Venezuelan"
+            parent="account.menu_finance_reports"
+            sequence="10"/>
+</odoo>

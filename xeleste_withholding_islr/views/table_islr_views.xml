@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_table_islr_form" model="ir.ui.view">
+        <field name="name">table.islr.form</field>
+        <field name="model">table.islr</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Concept ISLR">
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="active"/>
+                            <field name="date_start"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description" colspan="2"/>
+                    </group>
+                    <notebook>
+                        <page string="Lines" name="lines">
+                            <field name="line_ids">
+                                <tree editable="bottom">
+                                    <field name="code"/>
+                                    <field name="person_type"/>
+                                    <field name="amount_base"/>
+                                    <field name="base_min"/>
+                                    <field name="base_max"/>
+                                    <field name="amount"/>
+                                    <field name="more_that"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_table_islr_tree" model="ir.ui.view">
+        <field name="name">table.islr.tree</field>
+        <field name="model">table.islr</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Concepts ISLR">
+                <field name="name"/>
+                <field name="date_start"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="account_table_islr_action" model="ir.actions.act_window">
+        <field name="name">Concepts ISLR</field>
+        <field name="res_model">table.islr</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_table_islr_vendor"
+              action="account_table_islr_action"
+              parent="xeleste_l10n_ve.ve_menu"
+               name="Concepts ISLR"
+              sequence="5"/>
+</odoo>

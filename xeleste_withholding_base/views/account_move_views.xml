@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_invoice_view_form_inherit_withholding" model="ir.ui.view">
+        <field name="name">account.move.view.form.inherit.withholding</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='id']" position="after">
+                <field name="apply_withholdings" invisible="1"/>
+            </xpath>
+            <xpath expr="//page[@id='other_tab']" position="after">
+                <page id="withholdings_tab" string="Withholdings" name="withholdings" invisible="not withholding_ids or move_type not in ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt')">
+                    <field name="withholding_ids">
+                        <tree>
+                            <field name="withholding_date"/>
+                            <field name="number" string="Number"/>
+                            <field name="journal_id"/>
+                            <field name="partner_id"/>
+                            <field name="amount"/>
+                            <field name="currency_id" column_invisible="1"/>
+                            <field name="state"/>
+                            <button type="object" name="unlink" title="Delete" icon="fa-trash" confirm="This operation is irreversible. Do you wish to proceed to the record deletion?"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+            <xpath expr="//button[@name='action_register_payment']" position="after">
+                <button name="action_generate_withholdings" id="action_generate_withholdings"
+                        type="object" class="oe_highlight"
+                        invisible="apply_withholdings == 'no' or state != 'posted' or payment_state not in ('not_paid', 'partial') or move_type not in ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt')"
+                        context="{'dont_redirect_to_payments': True, 'display_account_trust': True}"
+                        string="Register Withholding" data-hotkey="g"
+                        groups="account.group_account_invoice"/>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>
