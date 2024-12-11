@@ -61,7 +61,7 @@
                             <div class="card-body purple-bg tk-card-body">
                                 <img alt="users" width="40"
                                      src="vehicle_trade/static/src/img/dashboard/5-vendor1.svg"/>
-                                <h4 class="tk-st-1">Vendedores</h4>
+                                <h4 class="tk-st-1">Proveedores</h4>
                                 <h6 class="tk-st-2">
                                     <t t-esc="state.vehiclesStats['vehicle_vendors']"/>
                                 </h6>
