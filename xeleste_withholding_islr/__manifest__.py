@@ -3,7 +3,7 @@
 
 {
     'name': 'Witholding ISLR - Venezuela',
-    'version': '17.0.1.0',
+    'version': '17.0.2.0',
     'license': 'OPL-1',
     'countries': ['ve'],
     'icon': '/xeleste_withholding_islr/static/description/icon.png',

@@ -7,7 +7,7 @@ class AccountWithholding(models.Model):
     withholding_method = fields.Selection(selection_add=[('iva', 'IVA')], ondelete={'iva': 'set default'})
 
     def get_sequence(self):
-        if self.withholding_method == 'iva':
+        if self.withholding_method == 'iva' and self.withholding_type != 'inbound':
             return 'withholding.iva.%s' % self.company_id.id
         return super().get_sequence()
 

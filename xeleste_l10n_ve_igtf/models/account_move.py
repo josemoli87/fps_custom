@@ -54,5 +54,6 @@ class AccountMove(models.Model):
                     'tax_group_base_amount': igtf_amount * 100 / 3,
                     'formatted_tax_group_amount': formatLang(self.env, igtf_amount, currency_obj=move.currency_id),
                     'formatted_tax_group_base_amount': formatLang(self.env, igtf_amount * 100 / 3, currency_obj=move.currency_id),
-                    'ignore': True
+                    'ignore': True,
+                    'hide_base_amount': False
                 }]

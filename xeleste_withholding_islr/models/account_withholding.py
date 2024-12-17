@@ -7,7 +7,7 @@ class AccountWithholding(models.Model):
     withholding_method = fields.Selection(selection_add=[('islr', 'ISLR')], ondelete={'islr': 'set default'})
 
     def get_sequence(self):
-        if self.withholding_method == 'islr':
+        if self.withholding_method == 'islr' and self.withholding_type != 'inbound':
             return 'withholding.islr.%s' % self.env.company.id 
         return super().get_sequence()
 
