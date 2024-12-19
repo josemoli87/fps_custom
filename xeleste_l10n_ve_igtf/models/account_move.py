@@ -48,12 +48,40 @@ class AccountMove(models.Model):
                     move.tax_totals['subtotals_order'] = ['Base Imponible']
                 if not move.tax_totals['groups_by_subtotal']:
                     move.tax_totals['groups_by_subtotal'] = {'Base Imponible': []}
-                move.tax_totals['groups_by_subtotal'][tax_totals['subtotals_order'][0]] += [{
+
+                is_company_currency_requested = move.currency_id != move.company_id.currency_id
+                percentage = move.company_id.igtf_percentage or 3
+                igtf_values = {
+                    'tax_group': 'IGTF 3%',
                     'tax_group_name': 'IGTF 3%',
                     'tax_group_amount': igtf_amount,
-                    'tax_group_base_amount': igtf_amount * 100 / 3,
+                    'tax_amount': igtf_amount,
+                    'tax_group_base_amount': igtf_amount * 100 / percentage,
+                    'base_amount': igtf_amount * 100 / percentage,
                     'formatted_tax_group_amount': formatLang(self.env, igtf_amount, currency_obj=move.currency_id),
-                    'formatted_tax_group_base_amount': formatLang(self.env, igtf_amount * 100 / 3, currency_obj=move.currency_id),
+                    'formatted_tax_group_base_amount': formatLang(self.env, igtf_amount * 100 / percentage, currency_obj=move.currency_id),
                     'ignore': True,
-                    'hide_base_amount': False
-                }]
+                    'hide_base_amount': False,
+                }
+                if is_company_currency_requested:
+                    comp_currency = move.company_id.currency_id
+                    igtf_company_amount = comp_currency.round(move.currency_id._convert(
+                        igtf_amount,
+                        comp_currency,
+                        move.company_id,
+                        move.invoice_date or move.date or fields.Date.today(),
+                    ))
+                    igtf_base_company_amount = comp_currency.round(move.currency_id._convert(
+                            igtf_amount * 100 / percentage,
+                            comp_currency,
+                            move.company_id,
+                            move.invoice_date or move.date or fields.Date.today(),
+                        ))
+                    igtf_values.update({
+                        'base_amount_company_currency': igtf_base_company_amount,
+                        'tax_amount_company_currency': igtf_company_amount,
+                        'tax_group_amount_company_currency': igtf_company_amount,
+                        'tax_group_base_amount_company_currency': igtf_base_company_amount,
+                        'amount_total_company_currency': igtf_company_amount,
+                    })
+                move.tax_totals['groups_by_subtotal'][tax_totals['subtotals_order'][0]] += [igtf_values]

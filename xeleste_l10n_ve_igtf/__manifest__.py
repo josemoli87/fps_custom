@@ -3,7 +3,7 @@
 
 {
     'name': 'IGTF - Venezuela',
-    'version': '17.0.4.0',
+    'version': '17.0.5.0',
     'license': 'OPL-1',
     'countries': ['ve'],
     'icon': '/xeleste_l10n_ve_igtf/static/description/icon.png',
