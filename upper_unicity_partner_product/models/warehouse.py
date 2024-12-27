@@ -10,8 +10,8 @@ class StockWarehouse(models.Model):
 
     @api.onchange('name')
     def _name_maj_warehouse(self):
-        self.name = self.name.title() if self.name else False
+        self.name = self.name.upper() if self.name else False
          
     @api.onchange('code')
     def _code_maj_warehouse(self):
-        self.code = self.code.title() if self.code else False
+        self.code = self.code.upper() if self.code else False

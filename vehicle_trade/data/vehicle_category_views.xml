@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="product_category_vehicle" model="product.category">
+            <field name="parent_id" ref="product.product_category_all"/>
+            <field name="name">Vehicle</field>
+        </record>
+        <record id="vehicle_product_1" model="product.product">
+            <field name="name">Vehicle</field>
+            <field name="detailed_type">service</field>
+            <field name="categ_id" ref="vehicle_trade.product_category_vehicle"/>
+        </record>
+        <record id="vehicle_down_payment_product" model="product.product">
+            <field name="name">Vehicle Down Payment</field>
+            <field name="detailed_type">service</field>
+            <field name="categ_id" ref="vehicle_trade.product_category_vehicle"/>
+        </record>
+    </data>
+</odoo>

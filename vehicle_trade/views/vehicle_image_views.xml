@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="vehicle_image_form_view" model="ir.ui.view">
+            <field name="name">vehicle.image.form.view</field>
+            <field name="model">vehicle.image</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="Vehicle Image">
+                            <field name="vehicle_image" widget="image" style="width: 75%;" nolabel="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="vehicle_image_kanban_view" model="ir.ui.view">
+            <field name="name">vehicle.image.kanban.view</field>
+            <field name="model">vehicle.image</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban">
+                    <field name="id"/>
+                    <field name="vehicle_image"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click"
+                                 style="height: auto;">
+                                <div class="">
+                                    <img alt="vehicle_image" width="250px" height="250px"
+                                         t-att-src="kanban_image('vehicle.image','vehicle_image',record.id.raw_value)"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record id="action_vehicle_image" model="ir.actions.act_window">
+            <field name="name">Vehicle Image</field>
+            <field name="res_model">vehicle.image</field>
+            <field name="view_mode">kanban,form</field>
+        </record>
+    </data>
+</odoo>

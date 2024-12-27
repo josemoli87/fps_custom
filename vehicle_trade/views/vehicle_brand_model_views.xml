@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!--Vehicle Brand-->
+        <record id="vehicle_brand_form_view" model="ir.ui.view">
+            <field name="name">vehicle.brand.form.view</field>
+            <field name="model">vehicle.brand</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="avatar" widget="image" class="oe_avatar" nolabel="1"/>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="e.g. Vehicle Brand"/>
+                            </h1>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="vehicle_brand_tree_view" model="ir.ui.view">
+            <field name="name">vehicle.brand.tree.view</field>
+            <field name="model">vehicle.brand</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="vehicle_brand_search_view" model="ir.ui.view">
+            <field name="name">vehicle.brand.search.view</field>
+            <field name="model">vehicle.brand</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+        <record id="action_vehicle_brand" model="ir.actions.act_window">
+            <field name="name">Vehicle Brand</field>
+            <field name="res_model">vehicle.brand</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+        <!--Vehicle Model-->
+        <record id="vehicle_model_form_view" model="ir.ui.view">
+            <field name="name">vehicle.model.form.view</field>
+            <field name="model">vehicle.model</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="e.g. Vehicle Model"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="vehicle_brand_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="vehicle_model_tree_view" model="ir.ui.view">
+            <field name="name">vehicle.model.tree.view</field>
+            <field name="model">vehicle.model</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="vehicle_brand_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="vehicle_model_search_view" model="ir.ui.view">
+            <field name="name">vehicle.model.search.view</field>
+            <field name="model">vehicle.model</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <group string="Group By">
+                        <filter name="vehicle_brand_id" string="Vehicle Brand"
+                                context="{'group_by': 'vehicle_brand_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="action_vehicle_model" model="ir.actions.act_window">
+            <field name="name">Vehicle Model</field>
+            <field name="res_model">vehicle.model</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="context">{'search_default_vehicle_brand_id': 1}</field>
+        </record>
+    </data>
+</odoo>

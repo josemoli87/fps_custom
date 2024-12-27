@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="previous_service_history_form_view" model="ir.ui.view">
+            <field name="name">previous.service.history.form.view</field>
+            <field name="model">previous.service.history</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="title"/>
+                                <label for="odometer_reading" class="mt-1" string="Odometer Reading"/>
+                                <div name="odometer_reading">
+                                    <field name="odometer_reading" class="oe_inline"/>
+                                    <strong>&#160;Km</strong>
+                                </div>
+                            </group>
+                            <group>
+                                <field name="date_of_service"/>
+                                <field name="previous_service_description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="previous_service_history_tree_view" model="ir.ui.view">
+            <field name="name">previous.service.history.tree.view</field>
+            <field name="model">previous.service.history</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="title"/>
+                    <field name="date_of_service"/>
+                    <field name="odometer_reading"/>
+                    <field name="previous_service_description"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_previous_service_history" model="ir.actions.act_window">
+            <field name="name">Previous Service History</field>
+            <field name="res_model">previous.service.history</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

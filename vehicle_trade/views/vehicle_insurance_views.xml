@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!--Vehicle Insurance Type-->
+        <record id="vehicle_insurance_type_tree_view" model="ir.ui.view">
+            <field name="name">vehicle.insurance.type.tree.view</field>
+            <field name="model">vehicle.insurance.type</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_vehicle_insurance_type" model="ir.actions.act_window">
+            <field name="name">Vehicle Insurance</field>
+            <field name="res_model">vehicle.insurance.type</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <!--Vehicle Insurance-->
+        <record id="vehicle_insurance_tree_view" model="ir.ui.view">
+            <field name="name">vehicle.insurance.tree.view</field>
+            <field name="model">vehicle.insurance</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="vehicle_insurance_type_id"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="insurance_status"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_vehicle_insurance" model="ir.actions.act_window">
+            <field name="name">Insurance Details</field>
+            <field name="res_model">vehicle.insurance</field>
+            <field name="view_mode">tree</field>
+        </record>
+    </data>
+</odoo>
