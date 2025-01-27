@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="vehicle_booking_form_view" model="ir.ui.view">
+            <field name="name">vehicle.booking.form.view</field>
+            <field name="model">vehicle.booking</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="is_registered_vehicle" invisible="1"/>
+                        <field name="booking_stages" widget="statusbar" statusbar_visible="draft"/>
+                        <button string="Register Vehicle in Customer" name="action_create_vehicle_registration"
+                                class="btn btn-info" type="object"
+                                invisible="vehicle_from != 'new' or is_registered_vehicle != False or booking_stages != 'draft'"/>
+
+                        <button string="Vehicle Inspection" name="draft_to_vehicle_inspection" type="object"
+                                class="oe_highlight"
+                                invisible="booking_type != 'only_inspection' or inspection_job_card_id != False or booking_stages == 'cancel'"/>
+
+                        <button string="Vehicle Repair" name="vehicle_inspection_to_vehicle_repair" type="object"
+                                class="oe_highlight"
+                                invisible="booking_type != 'only_repair' or repair_job_card_id != False or booking_stages == 'cancel'"/>
+
+                        <button string="Vehicle Inspection + Repair" name="vehicle_repair_to_vehicle_inspection_repair"
+                                type="object" class="oe_highlight"
+                                invisible="booking_type != 'inspection_and_repair' or inspection_job_card_id != False or booking_stages == 'cancel'"/>
+
+                        <button string="Cancel" name="vehicle_inspection_repair_to_cancel" type="object" icon="fa-close"
+                                class="btn btn-danger" groups="tk_advance_vehicle_repair.vehicle_repair_manager"
+                                confirm="Are you sure you want to cancel the booking?"
+                                invisible="booking_stages == 'cancel' or inspection_job_card_id != False or repair_job_card_id != False"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="booking_number"/>
+                                <br/>
+                                <h3>
+                                    <field name="vehicle_from" widget="radio" options="{'horizontal': true}"
+                                           readonly="booking_stages != 'draft'"/>
+                                </h3>
+                            </h1>
+                        </div>
+                        <group string="Vehicle Details">
+                            <group>
+                                <field name="customer_id" required="1" readonly="booking_stages != 'draft'"
+                                       options="{'no_create': True, 'no_create_edit': True}"/>
+                                <field name="fleet_vehicle_id" invisible="vehicle_from != 'fleet_vehicle'"
+                                       options="{'no_create': True, 'no_create_edit': True}"
+                                       readonly="booking_stages != 'draft'"/>
+                                <field name="register_vehicle_id" invisible="vehicle_from != 'customer_vehicle'"
+                                       options="{'no_create': True, 'no_create_edit': True}"
+                                       readonly="booking_stages != 'draft'"/>
+                                <field name="vehicle_brand_id" required="1" readonly="booking_stages != 'draft'"
+                                       options="{'no_create': True, 'no_create_edit': True}"/>
+                                <field name="registration_no" required="1" readonly="booking_stages != 'draft'"/>
+                            </group>
+                            <group>
+                                <field name="vehicle_model_id" required="1" readonly="booking_stages != 'draft'"
+                                       options="{'no_create': True, 'no_create_edit': True}"/>
+                                <field name="vehicle_fuel_type_id" required="1" readonly="booking_stages != 'draft'"
+                                       options="{'no_create': True, 'no_create_edit': True}"/>
+                                <field name="vin_no" readonly="booking_stages != 'draft'"/>
+                                <field name="transmission_type" widget="radio" options="{'horizontal': true}"
+                                       readonly="booking_stages != 'draft'"/>
+                            </group>
+                        </group>
+                        <group string="Address Details">
+                            <group>
+                                <span class="o_form_label o_td_label" name="address_name">Address
+                                </span>
+                                <div class="o_address_format">
+                                    <field name="street" placeholder="Street..." class="o_address_street"
+                                           readonly="booking_stages != 'draft'"/>
+                                    <field name="street2" placeholder="Street 2..." class="o_address_street"
+                                           readonly="booking_stages != 'draft'"/>
+                                    <field name="city" placeholder="City" class="o_address_city"
+                                           readonly="booking_stages != 'draft'"/>
+                                    <field name="state_id" class="o_address_state" placeholder="State"
+                                           options="{'no_create':True,'no_create_edit':True,'no_open':True}"
+                                           readonly="booking_stages != 'draft'"/>
+                                    <field name="zip" placeholder="ZIP" class="o_address_zip"
+                                           readonly="booking_stages != 'draft'"/>
+                                    <field name="country_id" placeholder="Country" class="o_address_country"
+                                           options="{'no_create':True,'no_create_edit':True,'no_open':True}"
+                                           readonly="booking_stages != 'draft'"/>
+                                </div>
+                            </group>
+                            <group>
+                                <field name="phone" readonly="booking_stages != 'draft'"/>
+                                <field name="email" readonly="booking_stages != 'draft'"/>
+                            </group>
+                        </group>
+                        <group string="Booking Details">
+                            <group>
+                                <field name="booking_source" widget="radio" options="{'horizontal': true}"
+                                       readonly="1"/>
+                                <field name="booking_type" widget="radio" readonly="booking_stages != 'draft'"/>
+                            </group>
+                            <group>
+                                <field name="booking_date" required="1" readonly="booking_stages != 'draft'"/>
+                                <field name="booking_appointment_id" readonly="1" force_save="1"
+                                       invisible="booking_source != 'direct'"/>
+                                <field name="booking_appointment_slot_id" readonly="booking_stages != 'draft'"
+                                       options="{'no_create': True, 'no_create_edit': True}"/>
+                                <field name="inspection_job_card_id" invisible="inspection_job_card_id == False"
+                                       readonly="1"/>
+                                <field name="repair_job_card_id" invisible="repair_job_card_id == False" readonly="1"/>
+                            </group>
+                        </group>
+                        <group string="Vehicle Services &amp; Spare Parts"
+                               invisible="booking_type == 'only_inspection'">
+                            <group>
+                                <field name="vehicle_service_ids" widget="many2many_tags"
+                                       readonly="booking_stages != 'draft'"
+                                       options="{'color_field': 'color', 'no_create': True, 'no_create_edit': True}"/>
+                            </group>
+                            <group>
+                                <field name="vehicle_spare_part_ids" widget="many2many_tags"
+                                       readonly="booking_stages != 'draft'"
+                                       options="{'color_field': 'color', 'no_create': True, 'no_create_edit': True}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Additional Information">
+                                <field name="company_id" required="1" readonly="booking_stages != 'draft'"
+                                       options="{'no_create': True, 'no_create_edit': True}"/>
+                                <field name="responsible_id" widget="many2one_avatar_user" required="1"
+                                       readonly="booking_stages != 'draft'"
+                                       options="{'no_create': True, 'no_create_edit': True}"/>
+                            </group>
+                            <group string="Quick Estimation Cost" invisible="booking_type == 'only_inspection'">
+                                <field name="estimate_cost" readonly="booking_stages != 'draft'"/>
+                                <field name="company_id" invisible="1"/>
+                                <field name="currency_id" invisible="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="customer_observation" string="Customer Observations">
+                                <field name="customer_observation" nolabel="1" readonly="booking_stages != 'draft'"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="vehicle_booking_tree_view" model="ir.ui.view">
+            <field name="name">vehicle.booking.tree.view</field>
+            <field name="model">vehicle.booking</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="booking_number"/>
+                    <field name="booking_date"/>
+                    <field name="customer_id"/>
+                    <field name="vehicle_brand_id"/>
+                    <field name="registration_no"/>
+                    <field name="booking_source"/>
+                    <field name="booking_type"/>
+                    <field name="booking_appointment_slot_id"/>
+                    <field name="booking_stages" widget="badge"
+                           decoration-info="booking_stages == 'draft'"
+                           decoration-warning="booking_stages == 'vehicle_inspection'"
+                           decoration-primary="booking_stages == 'vehicle_repair'"
+                           decoration-success="booking_stages == 'vehicle_inspection_repair'"
+                           decoration-danger="booking_stages == 'cancel'"/>
+                </tree>
+            </field>
+        </record>
+        <record id="vehicle_booking_kanban_view" model="ir.ui.view">
+            <field name="name">vehicle.booking.kanban.view</field>
+            <field name="model">vehicle.booking</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile" sample="1" records_draggable="false">
+                    <field name="booking_number"/>
+                    <field name="booking_date"/>
+                    <field name="vehicle_brand_id"/>
+                    <field name="registration_no"/>
+                    <field name="booking_stages"/>
+                    <field name="customer_id"/>
+                    <field name="activity_ids"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                <div class="o_kanban_record_top mb16">
+                                    <div class="o_kanban_record_headings mt4">
+                                        <strong>
+                                            <field name="vehicle_brand_id"/>&#160;-&#160;
+                                            <field name="vehicle_model_id"/>
+                                        </strong>
+                                        <br/>
+                                        <field name="customer_id"/>
+                                    </div>
+                                    <strong>
+                                        <field name="booking_date"/>
+                                    </strong>
+                                </div>
+                                <div class="o_kanban_record_bottom">
+                                    <div class="oe_kanban_bottom_left text-muted">
+                                        <span>
+                                            <strong>
+                                                <field name="booking_number"/>
+                                            </strong>
+                                        </span>
+                                        <field name="activity_ids" widget="kanban_activity"/>
+                                    </div>
+                                    <div class="oe_kanban_bottom_left">
+                                        <field name="booking_stages" widget="label_selection"
+                                               options="{'classes': {'draft': 'info', 'vehicle_inspection': 'warning', 'vehicle_repair': 'success', 'vehicle_inspection_repair': 'info', 'cancel': 'danger'}}"/>
+                                    </div>
+                                    <div class="oe_kanban_bottom_right">
+                                        <field name="responsible_id" widget="many2one_avatar_user"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record id="vehicle_booking_search_view" model="ir.ui.view">
+            <field name="name">vehicle.booking.search.view</field>
+            <field name="model">vehicle.booking</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="booking_number"/>
+                    <field name="vehicle_brand_id"/>
+                    <field name="vehicle_model_id"/>
+                    <field name="customer_id"/>
+                    <field name="registration_no"/>
+                    <field name="vehicle_fuel_type_id"/>
+                    <group string="Group By">
+                        <filter name="booking_stages" string="Booking Stages"
+                                context="{'group_by': 'booking_stages'}"/>
+                        <filter name="booking_source" string="Booking Source"
+                                context="{'group_by': 'booking_source'}"/>
+                        <filter name="customer_id" string="Customer"
+                                context="{'group_by': 'customer_id'}"/>
+                        <filter name="vehicle_fuel_type_id" string="Fuel Type"
+                                context="{'group_by': 'vehicle_fuel_type_id'}"/>
+                        <filter name="vehicle_brand_id" string="Vehicle Brand"
+                                context="{'group_by': 'vehicle_brand_id'}"/>
+                        <filter name="vehicle_model_id" string="Vehicle Model"
+                                context="{'group_by': 'vehicle_model_id'}"/>
+                        <filter name="transmission_type" string="Transmission Type"
+                                context="{'group_by': 'transmission_type'}"/>
+                        <filter name="booking_type" string="Booking Type"
+                                context="{'group_by': 'booking_type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="vehicle_booking_pivot_view" model="ir.ui.view">
+            <field name="name">vehicle.booking.pivot.view</field>
+            <field name="model">vehicle.booking</field>
+            <field name="priority">60</field>
+            <field name="arch" type="xml">
+                <pivot string="Vehicle Booking Details" sample="1">
+                    <field name="booking_stages" type="col"/>
+                    <field name="booking_date" interval="month" type="row"/>
+                    <field name="booking_number" type="row"/>
+                    <field name="vehicle_brand_id" type="row"/>
+                    <field name="customer_id" type="row"/>
+                </pivot>
+            </field>
+        </record>
+        <record id="action_vehicle_booking" model="ir.actions.act_window">
+            <field name="name">Booking</field>
+            <field name="res_model">vehicle.booking</field>
+            <field name="view_mode">kanban,tree,form,search,pivot,activity</field>
+        </record>
+    </data>
+</odoo>

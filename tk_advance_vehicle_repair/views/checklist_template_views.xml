@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="checklist_template_form_view" model="ir.ui.view">
+            <field name="name">checklist.template.form.view</field>
+            <field name="model">checklist.template</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="e.g.Template Name"/>
+                            </h1>
+                        </div>
+                        <notebook>
+                            <page name="checklist_details" string="Checklist Items">
+                                <field name="checklist_template_item_ids" widget="section_and_note_one2many"
+                                       nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="sequence" widget="handle"/>
+                                        <control>
+                                            <create name="add_product_control" string="Add a item"/>
+                                            <create name="add_section_control" string="Add a section"
+                                                    context="{'default_display_type': 'line_section'}"/>
+                                        </control>
+                                        <field name="name" widget="section_and_note_text"/>
+                                        <field name="display_type" column_invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="checklist_template_tree_view" model="ir.ui.view">
+            <field name="name">checklist.template.tree.view</field>
+            <field name="model">checklist.template</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="checklist_template_item_ids" widget="many2many_tags"/>
+                </tree>
+            </field>
+        </record>
+        <record id="checklist_template_search_view" model="ir.ui.view">
+            <field name="name">checklist.template.search.view</field>
+            <field name="model">checklist.template</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+        <record id="action_checklist_template" model="ir.actions.act_window">
+            <field name="name">Checklist Template</field>
+            <field name="res_model">checklist.template</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,16 @@
+.inspection-btn {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 0px !important;
+}
+
+.inspection-btn-tree {
+    width: 25px !important;
+    height: 25px !important;
+    border-radius: 0px !important;
+    padding: 0 !important;
+}
+
+.inspection-btn-tree > .fa-fw {
+    width: 100% !important;
+}

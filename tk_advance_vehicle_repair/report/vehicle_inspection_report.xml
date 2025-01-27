@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="vehicle_inspection_report_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.basic_layout">
+                        <div class="page">
+                            <style type="text/css">
+                                .inspection-text {
+                                font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+                                Ubuntu, "Noto Sans", Arial, "Odoo Unicode Support Noto", sans-serif, "Apple Color
+                                Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"';
+                                }
+                            </style>
+                            <!-- Header-->
+                            <table style="margin: 0px; font-size: 10px;" class="table table-borderless">
+                                <tr>
+                                    <td style="width: 15%;">
+                                    </td>
+                                    <td style="width: 70%; vertical-align: top; text-align: center;">
+                                        <h5 style="font-weight: bold; margin: 0px;">
+                                            Vehicle Inspection Report
+                                        </h5>
+                                        <h6 style="font-weight: bold; margin: 0px;">
+                                            <span t-field="o.company_id.name"/>
+                                        </h6>
+                                        <span>
+                                            <t t-if="o.company_id.street">
+                                                <span t-field="o.company_id.street"/>
+                                                ,
+                                            </t>
+                                            <t t-if="o.company_id.street2">
+                                                <span t-field="o.company_id.street2"/>
+                                                ,
+                                            </t>
+                                            <t t-if="o.company_id.city">
+                                                <span t-field="o.company_id.city"/>
+                                                ,
+                                            </t>
+                                            <t t-if="o.company_id.zip">
+                                                <span t-field="o.company_id.zip"/>
+                                                ,
+                                            </t>
+                                            <t t-if="o.company_id.state_id">
+                                                <span t-field="o.company_id.state_id"/>
+                                                ,
+                                            </t>
+                                            <t t-if="o.company_id.country_id">
+                                                <span t-field="o.company_id.country_id"/>
+                                                ,
+                                            </t>
+                                            |
+                                            <span t-field="o.company_id.phone"/>
+                                            |
+                                            <span t-field="o.company_id.email"/>
+                                        </span>
+                                        <br/>
+                                        <span>
+                                            <span t-field="o.company_id.website"/>
+                                        </span>
+                                    </td>
+                                    <td style="width: 15%; vertical-align: top;">
+                                        <t t-if="o.company_id.logo">
+                                            <img t-att-src="image_data_uri(o.company_id.logo)"
+                                                 style="max-width: 130px; max-height: 80px; object-fit: cover;"/>
+                                        </t>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div style="border-top: 1px solid #dee3ec; margin-bottom: 8px;"/>
+                            <table style="margin: 0px 0px 0px 0px; font-size: 13px;" class="table table-borderless">
+                                <tr>
+                                    <td style="padding: 0px; width: 8%; vertical-align: middle;">
+                                        <strong>
+                                            Customer:
+                                        </strong>
+                                    </td>
+                                    <td style="padding: 0px; border-bottom: 1px solid #dee3ec; width: 42%; vertical-align: middle;padding-left:3px;">
+                                        <span t-field="o.customer_id"/>
+                                    </td>
+                                    <td style="padding: 0px; width: 10%; vertical-align: middle;">
+                                        <strong>
+                                            Brand/Model:
+                                        </strong>
+                                    </td>
+                                    <td style="padding: 0px; border-bottom: 1px solid #dee3ec; width: 40%; vertical-align: middle;padding-left:3px;">
+                                        <span t-field="o.vehicle_brand_id"/>&#160;/
+                                        <span t-field="o.vehicle_model_id"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="margin: 4px 0px 0px 0px; font-size: 13px;" class="table table-borderless">
+                                <tr>
+                                    <td style="padding: 0px; width: 14%;vertical-align: middle;">
+                                        <strong>
+                                            Inspection Date:
+                                        </strong>
+                                    </td>
+                                    <td style="padding: 0px; border-bottom: 1px solid #dee3ec; width: 16%; vertical-align: middle;padding-left:3px;">
+                                        <span t-field="o.inspection_date"/>
+                                    </td>
+                                    <td style="padding: 0px; width: 5%; vertical-align: middle;">
+                                        <strong>
+                                            VIN:
+                                        </strong>
+                                    </td>
+                                    <td style="padding: 0px; border-bottom: 1px solid #dee3ec; width: 25%; vertical-align: middle;padding-left:3px;">
+                                        <span t-field="o.vin_no"/>
+                                    </td>
+                                    <td style="padding: 0px; width: 14%; vertical-align: middle;">
+                                        <strong>
+                                            Registration No:
+                                        </strong>
+                                    </td>
+                                    <td style="padding: 0px; border-bottom: 1px solid #dee3ec; width: 26%; vertical-align: middle;padding-left:3px;">
+                                        <span t-field="o.registration_no"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="margin: 4px 0px 0px 0px; font-size: 13px;" class="table table-borderless">
+                                <tr>
+                                    <td style="padding: 0px; width: 12%; vertical-align: middle;">
+                                        <strong>
+                                            Repair Order:
+                                        </strong>
+                                    </td>
+                                    <td style="padding: 0px; border-bottom: 1px solid #dee3ec; width: 38%; vertical-align: middle;padding-left:3px;">
+                                        <span t-field="o.repair_job_card_id"/>
+                                    </td>
+                                    <td style="padding: 0px; width: 14%; vertical-align: middle;">
+                                        <strong>
+                                            Service Advisor:
+                                        </strong>
+                                    </td>
+                                    <td style="padding: 0px; border-bottom: 1px solid #dee3ec; width: 36%; vertical-align: middle;padding-left:3px;">
+                                        <span t-field="o.responsible_id"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div style="border-top: 1px solid #dee3ec; margin-bottom: 8px; margin-top: 8px;"/>
+                            <t t-if="o.inspection_report_type == 'classic_inspection'">
+                                <!-- Color information-->
+                                <table style="margin: 4px 0px 8px 0px; font-size: 13px;" class="table table-borderless">
+                                    <tr>
+                                        <td style="padding: 0px;">
+                                            <div style="border: 10px solid green; height: 2px; width: 2px;">
+                                            </div>
+                                        </td>
+                                        <td style="padding: 0px; vertical-align: middle;">
+                                            Checked and OK at this time
+                                        </td>
+                                        <td style="padding: 0px;">
+                                            <div style="border: 10px solid yellow; height: 2px; width: 2px;">
+                                            </div>
+                                        </td>
+                                        <td style="padding: 0px; vertical-align: middle;">
+                                            Requires future attention
+                                        </td>
+                                        <td style="padding: 0px;">
+                                            <div style="border: 10px solid red;height: 2px; width: 2px;">
+                                            </div>
+                                        </td>
+                                        <td style="padding: 0px; vertical-align: middle;">
+                                            Requires immediate attention
+                                        </td>
+                                        <td style="padding: 0px;">
+                                            <div style="border: 10px solid #71639e;height: 2px; width: 2px;">
+                                            </div>
+                                        </td>
+                                        <td style="padding: 0px; vertical-align: middle;">
+                                            Not inspected
+                                        </td>
+                                        <td style="padding: 0px;">
+                                            <div style="border: 10px solid #17a2b8;height: 2px; width: 2px;">
+                                            </div>
+                                        </td>
+                                        <td style="padding: 0px; vertical-align: middle;">
+                                            Filled
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <table style="margin:0px;margin-bottom:8px; font-size: 12px;"
+                                       class="table table-borderless inspection-text"
+                                       t-if="o.exterior_vehicle_part_ids">
+                                    <tr>
+                                        <td colspan="5"
+                                            style="font-size: 13px; background-color: #348185;color: white; padding: 2px;">
+                                            <strong>Exterior</strong>
+                                        </td>
+                                    </tr>
+                                    <tr t-foreach="o.exterior_vehicle_part_ids" t-as="exterior"
+                                        style="border-bottom:1px solid #7dc4c9;">
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="exterior.okay_for_now">
+                                                <div style="height: 20px; width: 20px; background-color: green; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid green; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="exterior.further_attention">
+                                                <div style="height: 20px; width: 20px; background-color: yellow; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true" style="color: black;">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid yellow; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="exterior.required_attention">
+                                                <div style="height: 20px; width: 20px; background-color: red; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid red; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="exterior.not_inspected">
+                                                <div style="height: 20px; width: 20px; background-color: #71639e; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid #71639e; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 0px; width: 92%; vertical-align: middle;">
+                                            <span t-field="exterior.vehicle_part_info_id"/>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <table style="margin:0px;margin-bottom:8px; font-size: 12px;"
+                                       class="table table-borderless inspection-text"
+                                       t-if="o.interior_vehicle_part_ids">
+                                    <tr>
+                                        <td colspan="5"
+                                            style="font-size: 13px; background-color: #348185;color: white; padding: 2px;">
+                                            <strong>Interior</strong>
+                                        </td>
+                                    </tr>
+                                    <tr t-foreach="o.interior_vehicle_part_ids" t-as="interior"
+                                        style="border-bottom:1px solid #7dc4c9;">
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="interior.okay_for_now">
+                                                <div style="height: 20px; width: 20px; background-color: green; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid green; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="interior.further_attention">
+                                                <div style="height: 20px; width: 20px; background-color: yellow; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true" style="color: black;">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid yellow; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="interior.required_attention">
+                                                <div style="height: 20px; width: 20px; background-color: red; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid red; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="interior.not_inspected">
+                                                <div style="height: 20px; width: 20px; background-color: #71639e; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid #71639e; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 0px; width: 92%; vertical-align: middle;">
+                                            <span t-field="interior.vehicle_part_info_id"/>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <table style="margin:0px;margin-bottom:8px; font-size: 12px;"
+                                       class="table table-borderless inspection-text"
+                                       t-if="o.under_hood_vehicle_part_ids">
+                                    <tr>
+                                        <td colspan="5"
+                                            style="font-size: 13px; background-color: #348185;color: white; padding: 2px;">
+                                            <strong>Under Hood</strong>
+                                        </td>
+                                    </tr>
+                                    <tr t-foreach="o.under_hood_vehicle_part_ids" t-as="under_hood"
+                                        style="border-bottom:1px solid #7dc4c9;">
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="under_hood.okay_for_now">
+                                                <div style="height: 20px; width: 20px; background-color: green; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true" style="color: black;">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid green; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="under_hood.further_attention">
+                                                <div style="height: 20px; width: 20px; background-color: yellow; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid yellow; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="under_hood.required_attention">
+                                                <div style="height: 20px; width: 20px; background-color: red; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid red; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="under_hood.not_inspected">
+                                                <div style="height: 20px; width: 20px; background-color: #71639e; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid #71639e; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 0px; width: 92%; vertical-align: middle;">
+                                            <span t-field="under_hood.vehicle_part_info_id"/>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <table style="margin:0px;margin-bottom:8px; font-size: 12px;"
+                                       class="table table-borderless inspection-text"
+                                       t-if="o.under_vehicle_part_ids">
+                                    <tr>
+                                        <td colspan="5"
+                                            style="font-size: 13px; background-color: #348185;color: white; padding: 2px;">
+                                            <strong>Under Vehicle</strong>
+                                        </td>
+                                    </tr>
+                                    <tr t-foreach="o.under_vehicle_part_ids" t-as="under_vehicle"
+                                        style="border-bottom:1px solid #7dc4c9;">
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="under_vehicle.okay_for_now">
+                                                <div style="height: 20px; width: 20px; background-color: green; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid green; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="under_vehicle.further_attention">
+                                                <div style="height: 20px; width: 20px; background-color: yellow; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true" style="color: black;">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid yellow; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="under_vehicle.required_attention">
+                                                <div style="height: 20px; width: 20px; background-color: red; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid red; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="under_vehicle.not_inspected">
+                                                <div style="height: 20px; width: 20px; background-color: #71639e; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid #71639e; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 0px; width: 92%; vertical-align: middle;">
+                                            <span t-field="under_vehicle.vehicle_part_info_id"/>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <table style="margin:0px;margin-bottom:8px; font-size: 12px;"
+                                       class="table table-borderless inspection-text" t-if="o.fluids_vehicle_part_ids">
+                                    <tr>
+                                        <td colspan="6"
+                                            style="font-size: 13px; background-color: #348185;color: white; padding: 2px;">
+                                            <strong>Fluids</strong>
+                                        </td>
+                                    </tr>
+                                    <tr t-foreach="o.fluids_vehicle_part_ids" t-as="vehicle_fluids"
+                                        style="border-bottom:1px solid #7dc4c9;">
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="vehicle_fluids.okay_for_now">
+                                                <div style="height: 20px; width: 20px; background-color: green; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid green; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="vehicle_fluids.further_attention">
+                                                <div style="height: 20px; width: 20px; background-color: yellow; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true" style="color: black;">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid yellow; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="vehicle_fluids.required_attention">
+                                                <div style="height: 20px; width: 20px; background-color: red; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid red; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="vehicle_fluids.not_inspected">
+                                                <div style="height: 20px; width: 20px; background-color: #71639e; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid #71639e; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="vehicle_fluids.filled">
+                                                <div style="height: 20px; width: 20px; background-color: #17a2b8; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid #17a2b8; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 0px; width: 90%; vertical-align: middle;">
+                                            <span t-field="vehicle_fluids.vehicle_part_info_id"/>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <table style="margin:0px;margin-bottom:8px; font-size: 12px;"
+                                       class="table table-borderless inspection-text" t-if="o.vehicle_part_tires_ids">
+                                    <tr>
+                                        <td colspan="4"
+                                            style="font-size: 13px; background-color: #348185;color: white; padding: 2px; width: 8%">
+                                            <strong>Tires</strong>
+                                        </td>
+                                        <td style="font-size: 12px; background-color: #348185;color: white; padding: 2px; width: 25%">
+                                            <strong>Tire Pressure:</strong>
+                                        </td>
+                                        <td style="font-size: 12px; background-color: #348185;color: white; padding: 2px; width: 25%">
+                                            <strong>Incoming</strong>
+                                        </td>
+                                        <td style="font-size: 12px; background-color: #348185;color: white; padding: 2px; width: 21%">
+                                            <strong>Adjusted to</strong>
+                                        </td>
+                                        <td style="font-size: 12px; background-color: #348185;color: white; padding: 2px; width: 21%">
+                                            <strong>Tread Depth</strong>
+                                        </td>
+                                    </tr>
+                                    <tr t-foreach="o.vehicle_part_tires_ids" t-as="tires"
+                                        style="border-bottom:1px solid #7dc4c9;">
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="tires.okay_for_now">
+                                                <div style="height: 20px; width: 20px; background-color: green; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true" style="color: black;">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid green; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="tires.further_attention">
+                                                <div style="height: 20px; width: 20px; background-color: yellow; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true" style="color: black;">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid yellow; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="tires.required_attention">
+                                                <div style="height: 20px; width: 20px; background-color: red; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true" style="color: black;">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid red; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="tires.not_inspected">
+                                                <div style="height: 20px; width: 20px; background-color: #71639e; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true" style="color: black;">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid #71639e; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 0px; width: 25%; vertical-align: middle;">
+                                            <span t-field="tires.vehicle_part_info_id"/>
+                                        </td>
+                                        <td style="padding: 0px; width: 25%; vertical-align: middle;">
+                                            <span t-field="tires.incoming"/>
+                                        </td>
+                                        <td style="padding: 0px; width: 21%; vertical-align: middle;">
+                                            <span t-field="tires.adjusted_to"/>
+                                        </td>
+                                        <td style="padding: 0px; width: 21%; vertical-align: middle;">
+                                            <span t-field="tires.tread_depth"/>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <table style="margin:0px;margin-bottom:8px; font-size: 12px;"
+                                       class="table table-borderless inspection-text"
+                                       t-if="o.vehicle_brake_condition_ids">
+                                    <tr>
+                                        <td colspan="5"
+                                            style="font-size: 13px; background-color: #348185;color: white; padding: 2px;">
+                                            <strong>Brake Condition</strong>
+                                        </td>
+                                    </tr>
+                                    <tr t-foreach="o.vehicle_brake_condition_ids" t-as="brake"
+                                        style="border-bottom:1px solid #7dc4c9;">
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="brake.okay_for_now">
+                                                <div style="height: 20px; width: 20px; background-color: green; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true" style="color: black;">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid green; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="brake.further_attention">
+                                                <div style="height: 20px; width: 20px; background-color: yellow; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true" style="color: black;">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid yellow; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="brake.required_attention">
+                                                <div style="height: 20px; width: 20px; background-color: red; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true" style="color: black;">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid red; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px; width: 2%;padding-right: 5px;vertical-align: middle;">
+                                            <t t-if="brake.not_inspected">
+                                                <div style="height: 20px; width: 20px; background-color: #71639e; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;">
+                                                    <i class="fa fa-check" aria-hidden="true" style="color: black;">
+                                                    </i>
+                                                </div>
+                                            </t>
+                                            <t t-else="">
+                                                <div style="height: 20px; width: 20px; border: 2.5px solid #71639e; text-align: center; vertical-align: middle; padding: 3px;color:white;padding-top: 4px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 0px; width: 92%; vertical-align: middle;">
+                                            <span t-field="brake.vehicle_part_info_id"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class="table table-borderless" style="width: 100%; margin: 0px;"
+                                       t-if="o.inspection_image_ids">
+                                    <t t-set="img_count" t-value="0"/>
+                                    <tr>
+                                        <td style="font-size: 13px; background-color: #348185;color: white; padding: 2px; text-align: center;">
+                                            <strong>Inspection Images</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0px;">
+                                            <t t-foreach="o.inspection_image_ids" t-as="img">
+                                                <t t-set="img_count" t-value="img_count + 1"/>
+                                                <div style="display: inline-block;text-align:center;padding:4px! important;">
+                                                    <t t-if="img.avatar">
+                                                        <img t-att-src="image_data_uri(img.avatar)"
+                                                             style="width: 138px; height: 138px;"/>
+                                                    </t>
+                                                    <h6>
+                                                        <span t-field="img.name"/>
+                                                    </h6>
+                                                </div>
+                                                <t t-if="img_count % 5 == 0">
+                                                    <br/>
+                                                </t>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- Recommendations-->
+                                <table style="margin:10px 0px 0px 0px; font-size: 10px;" class="table table-borderless">
+                                    <tr>
+                                        <td style="font-size: 12px; padding: 0px; width: 100%;" colspan="2">
+                                            <strong>Comments &amp; Recommendations:</strong>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #dee3ec; height: 2rem;">
+                                        <td style="padding: 0px; width: 100%; vertical-align: middle;" colspan="2">
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #dee3ec; height: 2rem;">
+                                        <td style="padding: 0px; width: 100%; vertical-align: middle;" colspan="2">
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #dee3ec; height: 2rem;">
+                                        <td style="padding: 0px; width: 100%; vertical-align: middle;" colspan="2">
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #dee3ec; height: 3rem;">
+                                        <td style="padding: 0px; width: 100%; vertical-align: middle;" colspan="2">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="row" style="text-align: center;">
+                                    <div class="col-8">
+                                    </div>
+                                    <div class="col-4">
+                                        Date:
+                                        <span t-field="o.date"/>
+                                        <br/>
+                                        <t t-if="o.signature">
+                                            <img t-att-src="image_data_uri(o.signature)" att="Logo"
+                                                 style="width: 100px; height: 40px; margin-bottom: -10px;"/>
+                                        </t>
+                                        <hr style="margin-bottom: -10px; width: 12rem; margin-left: 3rem;  margin-right: 3rem;"/>
+                                        <br/>
+                                        Authorized Signature
+                                    </div>
+                                </div>
+                            </t>
+                            <t t-if="o.sale_order_id">
+                                <t t-set="doc" t-value="o.sale_order_id"/>
+                                <div class="oe_structure"/>
+                                <h2 class="mt-4">
+                                    <span t-if="env.context.get('proforma', False) or is_pro_forma">Pro-Forma
+                                        Invoice #
+                                    </span>
+                                    <span t-elif="doc.state in ['draft','sent']">Quotation #</span>
+                                    <span t-else="">Order #</span>
+                                    <span t-field="doc.name">SO0000</span>
+                                </h2>
+                                <div class="row mt-4 mb-2" id="informations">
+                                    <div t-if="doc.client_order_ref" class="col-auto col-3 mw-100 mb-2"
+                                         name="informations_reference">
+                                        <strong>Your Reference:</strong>
+                                        <br/>
+                                        <span class="m-0" t-field="doc.client_order_ref">SO0000</span>
+                                    </div>
+                                    <div t-if="doc.date_order" class="col-auto col-3 mw-100 mb-2"
+                                         name="informations_date">
+                                        <strong t-if="doc.state in ['draft', 'sent']">Quotation Date:</strong>
+                                        <strong t-else="">Order Date:</strong>
+                                        <br/>
+                                        <span class="m-0" t-field="doc.date_order" t-options='{"widget": "date"}'>
+                                            2023-12-31
+                                        </span>
+                                    </div>
+                                    <div t-if="doc.validity_date and doc.state in ['draft', 'sent']"
+                                         class="col-auto col-3 mw-100 mb-2"
+                                         name="expiration_date">
+                                        <strong>Expiration:</strong>
+                                        <br/>
+                                        <span class="m-0" t-field="doc.validity_date">2023-12-31</span>
+                                    </div>
+                                    <div t-if="doc.user_id.name" class="col-auto col-3 mw-100 mb-2">
+                                        <strong>Salesperson:</strong>
+                                        <br/>
+                                        <span class="m-0" t-field="doc.user_id">Mitchell Admin</span>
+                                    </div>
+                                </div>
+                                <!-- Is there a discount on at least one line? -->
+                                <t t-set="lines_to_report" t-value="doc._get_order_lines_to_report()"/>
+                                <t t-set="display_discount" t-value="any(l.discount for l in lines_to_report)"/>
+                                <div class="oe_structure">
+                                </div>
+                                <table class="table table-sm o_main_table table-borderless mt-4">
+                                    <!-- In case we want to repeat the header, remove "display: table-row-group" -->
+                                    <thead style="display: table-row-group">
+                                        <tr>
+                                            <th name="th_description" class="text-start">Description</th>
+                                            <th name="th_quantity" class="text-end">Quantity</th>
+                                            <th name="th_priceunit" class="text-end">Unit Price</th>
+                                            <th name="th_discount" t-if="display_discount" class="text-end">
+                                                <span>Disc.%</span>
+                                            </th>
+                                            <th name="th_taxes" class="text-end">Taxes</th>
+                                            <th name="th_subtotal" class="text-end">
+                                                <span>Amount</span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="sale_tbody">
+                                        <t t-set="current_subtotal" t-value="0"/>
+                                        <t t-foreach="lines_to_report" t-as="line">
+                                            <t t-set="current_subtotal"
+                                               t-value="current_subtotal + line.price_subtotal"/>
+                                            <tr t-att-class="'bg-200 fw-bold o_line_section' if line.display_type == 'line_section' else 'fst-italic o_line_note' if line.display_type == 'line_note' else ''">
+                                                <t t-if="not line.display_type">
+                                                    <td name="td_name">
+                                                        <span t-field="line.name">Bacon Burger</span>
+                                                    </td>
+                                                    <td name="td_quantity" class="text-end">
+                                                        <span t-field="line.product_uom_qty">3</span>
+                                                        <span t-field="line.product_uom">units</span>
+                                                        <span t-if="line.product_packaging_id">
+                                                            (
+                                                            <span t-field="line.product_packaging_qty"
+                                                                  t-options='{"widget": "integer"}'/>
+                                                            <span t-field="line.product_packaging_id"/>)
+                                                        </span>
+                                                    </td>
+                                                    <td name="td_priceunit" class="text-end">
+                                                        <span t-field="line.price_unit">3</span>
+                                                    </td>
+                                                    <td t-if="display_discount" class="text-end">
+                                                        <span t-field="line.discount">-</span>
+                                                    </td>
+                                                    <td name="td_taxes" class="text-end">
+                                                        <span t-out="', '.join(map(lambda x: (x.description or x.name), line.tax_id))">
+                                                            Tax 15%
+                                                        </span>
+                                                    </td>
+                                                    <td t-if="not line.is_downpayment" name="td_subtotal"
+                                                        class="text-end o_price_total">
+                                                        <span t-field="line.price_subtotal">27.00</span>
+                                                    </td>
+                                                </t>
+                                                <t t-elif="line.display_type == 'line_section'">
+                                                    <td name="td_section_line" colspan="99">
+                                                        <span t-field="line.name">A section title</span>
+                                                    </td>
+                                                    <t t-set="current_section" t-value="line"/>
+                                                    <t t-set="current_subtotal" t-value="0"/>
+                                                </t>
+                                                <t t-elif="line.display_type == 'line_note'">
+                                                    <td name="td_note_line" colspan="99">
+                                                        <span t-field="line.name">A note, whose content usually
+                                                            applies to the section or product above.
+                                                        </span>
+                                                    </td>
+                                                </t>
+                                            </tr>
+                                            <t t-if="current_section and (line_last or doc.order_line[line_index+1].display_type == 'line_section') and not line.is_downpayment">
+                                                <tr class="is-subtotal text-end">
+                                                    <td name="td_section_subtotal" colspan="99">
+                                                        <strong class="mr16">Subtotal</strong>
+                                                        <span t-out="current_subtotal"
+                                                              t-options='{"widget": "monetary", "display_currency": doc.currency_id}'
+                                                        >31.05
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                        </t>
+                                    </tbody>
+                                </table>
+                                <div class="clearfix" name="so_total_summary">
+                                    <div id="total" class="row" name="total">
+                                        <div t-attf-class="#{'col-6' if report_type != 'html' else 'col-sm-7 col-md-6'} ms-auto">
+                                            <table class="table table-sm table-borderless">
+                                                <!-- Tax totals -->
+                                                <t t-set="tax_totals" t-value="doc.tax_totals"/>
+                                                <t t-call="sale.document_tax_totals"/>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="oe_structure">
+                                </div>
+                                <div t-if="not doc.signature" class="oe_structure">
+                                </div>
+                                <div t-else="" class="mt-4 ml64 mr4" name="signature">
+                                    <div class="offset-8">
+                                        <strong>Signature</strong>
+                                    </div>
+                                    <div class="offset-8">
+                                        <img t-att-src="image_data_uri(doc.signature)"
+                                             style="max-height: 4cm; max-width: 8cm;"/>
+                                    </div>
+                                    <div class="offset-8 text-center">
+                                        <span t-field="doc.signed_by">Oscar Morgan</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span t-field="doc.note"
+                                          t-attf-style="#{'text-align:justify;text-justify:inter-word;' if doc.company_id.terms_type != 'html' else ''}"
+                                          name="order_note"/>
+                                    <p t-if="not is_html_empty(doc.payment_term_id.note)">
+                                        <span t-field="doc.payment_term_id.note">The payment should also be
+                                            transmitted with
+                                            love
+                                        </span>
+                                    </p>
+                                    <p t-if="doc.fiscal_position_id and not is_html_empty(doc.fiscal_position_id.sudo().note)"
+                                       id="fiscal_position_remark">
+                                        <strong>Fiscal Position Remark:</strong>
+                                        <span t-field="doc.fiscal_position_id.sudo().note">No further requirements
+                                            for this
+                                            payment
+                                        </span>
+                                    </p>
+                                </div>
+                            </t>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="vehicle_inspection_report" model="ir.actions.report">
+            <field name="name">Vehicle Inspection Report</field>
+            <field name="model">inspection.job.card</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">tk_advance_vehicle_repair.vehicle_inspection_report_template</field>
+            <field name="report_file">tk_advance_vehicle_repair.vehicle_inspection_report_template</field>
+            <field name="binding_model_id" ref="model_inspection_job_card"/>
+            <field name="paperformat_id" ref="inspection_report_paper_format"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

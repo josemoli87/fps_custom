@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="inspection_repair_sale_order_form_view" model="ir.ui.view">
+        <field name="name">inspection.repair.sale.order.form.view</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sale_order_template_id']" position="after">
+                <field name="inspection_job_card_id" invisible="inspection_job_card_id == False" readonly="1"/>
+                <field name="repair_job_card_id" invisible="repair_job_card_id == False" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

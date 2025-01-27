@@ -1,0 +1,1738 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="inspection_job_card_report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="inspect">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <table class="table table-borderless" width="100%">
+                            <tr>
+                                <td colspan="2"
+                                    style="font-size: 20px; background-color: #F8F8F8; padding: 2px; text-align: center; border: aliceblue;">
+                                    <strong>Inspection Job Card Report</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2px; vertical-align: middle;">Job Card No:
+                                    <span t-field="inspect.inspection_number"/>
+                                </td>
+                                <td style="padding: 2px; vertical-align: middle;">Date:
+                                    <span t-field="inspect.inspection_date"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2px; font-size: 16px; vertical-align: middle;" colspan="2">
+                                    <strong>Vehicle Details</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2px; vertical-align: middle;">Name:
+                                    <span t-field="inspect.vehicle_brand_id"/>
+                                </td>
+                                <td style="padding: 2px; vertical-align: middle;">Model:
+                                    <span t-field="inspect.vehicle_model_id"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2px; vertical-align: middle;">Fuel Type:
+                                    <span t-field="inspect.vehicle_fuel_type_id"/>
+                                </td>
+                                <td style="padding: 2px; vertical-align: middle;">Transmission Type:
+                                    <span t-field="inspect.transmission_type"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2px; vertical-align: middle;">Registration No:
+                                    <span t-field="inspect.registration_no"/>
+                                </td>
+                                <td style="padding: 2px; vertical-align: middle;">VIN No:
+                                    <span t-field="inspect.vin_no"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2px; font-size: 16px; vertical-align: middle;" colspan="2">
+                                    <strong>Customer Details</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2px; vertical-align: middle;">Customer:
+                                    <span t-field="inspect.customer_id"/>
+                                </td>
+                                <td style="padding: 2px; vertical-align: middle;">Address:
+                                    <span t-field="inspect.street"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2px; vertical-align: middle;">Phone:
+                                    <span t-field="inspect.phone"/>
+                                </td>
+                                <td style="padding: 2px; vertical-align: middle;">
+                                    <span t-field="inspect.street2"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2px; vertical-align: middle;">Email:
+                                    <span t-field="inspect.email"/>
+                                </td>
+                                <td style="padding: 2px; vertical-align: middle;">
+                                    <span t-field="inspect.city"/>&#160;&#160;-&#160;
+                                    <span t-field="inspect.state_id"/>&#160;&#160;-&#160;
+                                    <span t-field="inspect.country_id"/>&#160;&#160;-&#160;
+                                    <span t-field="inspect.zip"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2px; font-size: 16px; vertical-align: middle;" colspan="2">
+                                    <strong>Inspection Details</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2px; vertical-align: middle;">Inspection Type:
+                                    <span t-field="inspect.inspect_type"/>
+                                </td>
+                                <td style="padding: 2px; vertical-align: middle;">Type of Inspection:
+                                    <span t-field="inspect.inspection_type"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <t t-if="inspect.inspection_type == 'full_inspection'">
+                            <!--Customer Observations-->
+                            <table class="table table-sm o_main_table mt-4" t-if="inspect.customer_observation">
+                                <tr>
+                                    <td colspan="100%;"
+                                        style="font-size: 14px; background-color: #F8F8F8; padding: 2px; border: aliceblue;">
+                                        <strong>➤&#160;Customer Observations</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" style="padding: 2px;">
+                                        <span t-field="inspect.customer_observation"/>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!--Vehicle Spare Parts Assessments-->
+                            <table class="table table-sm o_main_table mt-4">
+                                <tr>
+                                    <td colspan="100%;"
+                                        style="font-size: 14px; background-color: #F8F8F8; padding: 2px; border: aliceblue;">
+                                        <strong>➤&#160;Vehicle Spare Parts Assessments</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.wd">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">4WD
+                                    </td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.abs">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">ABS
+                                    </td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.awd">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">AWD
+                                    </td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.gps">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">GPS
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.bed_liner">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Bed Liner
+                                    </td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.wide_tires">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Wide
+                                        Tires
+                                    </td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.power_locks">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Power Locks</td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.power_seats">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Power Seats</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.running_boards">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Running Boards</td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.roof_rack">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Roof Rack</td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.camper_shell">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Camper Shell</td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.sport_wheels">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Sport Wheels</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.cruise_control">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Cruise Control</td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.cvt_transmission">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Cvt Transmission</td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.infotainment_system">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Infotainment System</td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.moon_sun_roof">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Moon / Sun Roof</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.rear_window_wiper">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Rear Window Wiper</td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.rear_lift_gate">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Rear Lift Gate</td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.air_conditioning">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Air Conditioning</td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.leather_interior">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Leather Interior</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.auto_transmission">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Auto Transmission</td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.am_fm_radio">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">AM / FM Radio</td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.cd_usb_bluetooth">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">CD/USB/Bluetooth</td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.luxury_sport_pkg">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Luxury Sport Pkg</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.stereo">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Stereo</td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.power_windows">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Power Windows</td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.tilt_wheel">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Tilt Wheel</td>
+
+                                    <td style="width: 5%; padding-left: 1.5rem;">
+                                        <t t-if="inspect.rear_sliding_window">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                 style="width: 10px; height: 10px;"/>
+                                        </t>
+                                    </td>
+                                    <td style="width: 20%; padding-left: 0.5rem;">Rear Sliding Window</td>
+                                </tr>
+                            </table>
+
+                            <!--Vehicle Body Inner Conditions-->
+
+                            <table class="table table-sm o_main_table mt-4" style="font-size: 13px; width: 100%;"
+                                   t-if="inspect.interior_item_condition_ids">
+                                <tr>
+                                    <td colspan="3"
+                                        style="font-size: 14px; background-color: #F8F8F8; padding: 2px; border: aliceblue;">
+                                        <strong>➤&#160;Vehicle Body Inner Conditions</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="25%" style="padding: 2px;">
+                                        <strong>Name</strong>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <strong>Condition</strong>
+                                    </td>
+                                    <td width="50%" style="padding: 2px;">
+                                        <strong>Remarks</strong>
+                                    </td>
+                                </tr>
+                                <tr t-foreach="inspect.interior_item_condition_ids" t-as="interior">
+                                    <td width="25%" style="padding: 2px;">
+                                        <span t-field="interior.vehicle_item_id"/>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <span t-field="interior.interior_condition"/>
+                                    </td>
+                                    <td width="50%" style="padding: 2px;">
+                                        <span t-field="interior.interior_condition_notes"/>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!--Vehicle Body Outer Conditions-->
+                            <table class="table table-sm o_main_table mt-4" style="font-size: 13px; width: 100%;"
+                                   t-if="inspect.vehicle_condition_line_ids">
+                                <tr>
+                                    <td colspan="4"
+                                        style="font-size: 14px; background-color: #F8F8F8; padding: 2px; border: aliceblue;">
+                                        <strong>➤&#160;Vehicle Body Outer Conditions</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="25%" style="padding: 2px;">
+                                        <strong>View</strong>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <strong>Location</strong>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <strong>Condition</strong>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <strong>Condition Code</strong>
+                                    </td>
+                                </tr>
+                                <tr t-foreach="inspect.vehicle_condition_line_ids" t-as="line">
+                                    <td width="25%" style="padding: 2px;">
+                                        <span t-field="line.vehicle_view"/>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <span t-field="line.vehicle_condition_location_id"/>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <span t-field="line.vehicle_condition_id"/>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <span t-field="line.condition_code"/>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!--Mechanical Conditions-->
+                            <table class="table table-sm o_main_table mt-4"
+                                   t-if="inspect.mechanical_item_condition_ids">
+                                <tr>
+                                    <td colspan="3"
+                                        style="font-size: 14px; background-color: #F8F8F8; padding: 2px; border: aliceblue;">
+                                        <strong>➤&#160;Mechanical Conditions</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="25%" style="padding: 2px;">
+                                        <strong>Name</strong>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <strong>Condition</strong>
+                                    </td>
+                                    <td width="50%" style="padding: 2px;">
+                                        <strong>Remarks</strong>
+                                    </td>
+                                </tr>
+                                <tr t-foreach="inspect.mechanical_item_condition_ids" t-as="mechanical">
+                                    <td width="25%" style="padding: 2px;">
+                                        <span t-field="mechanical.vehicle_item_id"/>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <span t-field="mechanical.mechanical_condition"/>
+                                    </td>
+                                    <td width="50%" style="padding: 2px;">
+                                        <span t-field="mechanical.mechanical_condition_notes"/>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!--Vehicle Components-->
+                            <table class="table table-sm o_main_table mt-4" t-if="inspect.vehicle_components_ids">
+                                <tr>
+                                    <td colspan="4"
+                                        style="font-size: 14px; background-color: #F8F8F8; padding: 2px; border: aliceblue;">
+                                        <strong>➤&#160;Vehicle Components</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="25%" style="padding: 2px;">
+                                        <strong>Vehicle Side</strong>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <strong>Component</strong>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <strong>Present Condition</strong>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <strong>Remarks</strong>
+                                    </td>
+                                </tr>
+                                <tr t-foreach="inspect.vehicle_components_ids" t-as="component">
+                                    <td width="25%" style="padding: 2px;">
+                                        <span t-field="component.c_vehicle_side"/>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <span t-field="component.vehicle_component_id"/>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <span t-field="component.condition"/>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <span t-field="component.remarks"/>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!--Vehicle Fluids-->
+                            <table class="table table-sm o_main_table mt-4" t-if="inspect.vehicle_fluids_ids">
+                                <tr>
+                                    <td colspan="4"
+                                        style="font-size: 14px; background-color: #F8F8F8; padding: 2px; border: aliceblue;">
+                                        <strong>➤&#160;Vehicle Fluids</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="25%" style="padding: 2px;">
+                                        <strong>Vehicle Side</strong>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <strong>Component</strong>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <strong>Present Condition</strong>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <strong>Remarks</strong>
+                                    </td>
+                                </tr>
+                                <tr t-foreach="inspect.vehicle_fluids_ids" t-as="fluid">
+                                    <td width="25%" style="padding: 2px;">
+                                        <span t-field="fluid.f_vehicle_side"/>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <span t-field="fluid.vehicle_fluid_id"/>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <span t-field="fluid.condition"/>
+                                    </td>
+                                    <td width="25%" style="padding: 2px;">
+                                        <span t-field="fluid.remarks"/>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!--Tyre Inspections-->
+                            <table class="table table-sm o_main_table mt-4" t-if="inspect.tyre_inspection_ids">
+                                <tr>
+                                    <td colspan="6"
+                                        style="font-size: 14px; background-color: #F8F8F8; padding: 2px; border: aliceblue;">
+                                        <strong>➤&#160; Tyre Inspections</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 2px;">
+                                        <strong>Tyre Location</strong>
+                                    </td>
+                                    <td style="padding: 2px;">
+                                        <strong>Present Condition</strong>
+                                    </td>
+                                    <td style="padding: 2px;">
+                                        <strong>Tread Wear</strong>
+                                    </td>
+                                    <td style="padding: 2px;">
+                                        <strong>Tread Depth</strong>
+                                    </td>
+                                    <td style="padding: 2px;">
+                                        <strong>Tyre Pressure</strong>
+                                    </td>
+                                    <td style="padding: 2px;">
+                                        <strong>Brake Pads(%)</strong>
+                                    </td>
+                                </tr>
+                                <tr t-foreach="inspect.tyre_inspection_ids" t-as="tyre">
+                                    <td style="padding: 2px;">
+                                        <span t-field="tyre.tyre"/>
+                                    </td>
+                                    <td style="padding: 2px;">
+                                        <span t-field="tyre.condition"/>
+                                    </td>
+                                    <td style="padding: 2px;">
+                                        <span t-field="tyre.tread_wear"/>
+                                    </td>
+                                    <td style="padding: 2px;">
+                                        <span t-field="tyre.tread_depth"/>
+                                    </td>
+                                    <td style="padding: 2px;">
+                                        <span t-field="tyre.tyre_pressure"/>
+                                    </td>
+                                    <td style="padding: 2px;">
+                                        <span t-field="tyre.brake_pads"/>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!--Inspection Checklist-->
+                            <table class="table table-sm o_main_table mt-4" t-if="inspect.inspection_checklist_ids">
+                                <tr>
+                                    <td colspan="3"
+                                        style="font-size: 14px; background-color: #F8F8F8; padding: 2px; border: aliceblue;">
+                                        <strong>➤&#160;Inspection Checklists</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 2px;" width="10%;">
+                                        <strong>Check</strong>
+                                    </td>
+                                    <td style="padding: 2px;" width="45%;">
+                                        <strong>Name</strong>
+                                    </td>
+                                    <td style="padding: 2px;" width="45%;">
+                                        <strong>Description</strong>
+                                    </td>
+                                </tr>
+                                <tr t-foreach="inspect.inspection_checklist_ids" t-as="check">
+                                    <t t-if="check.display_type == 'line_section'">
+                                        <td name="td_section_line" style="background-color: #d3d5db; padding: 2px;"
+                                            width="100%;" colspan="3">
+                                            <span t-field="check.name"/>
+                                        </td>
+                                    </t>
+                                    <t t-else="">
+                                        <td style="width: 10%; padding-left: 1.5rem; padding: 2px;" width="20%;">
+                                            <t t-if="check.is_check">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px;" width="45%;">
+                                            <span t-field="check.name"/>
+                                        </td>
+                                        <td style="padding: 2px;" width="45%;">
+                                            <span t-field="check.description"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                            </table>
+                        </t>
+
+                        <t t-if="inspect.inspection_type == 'specific_inspection'">
+                            <t t-if="inspect.part_assessment">
+                                <!--Vehicle Spare Parts Assessments-->
+                                <table class="table table-sm o_main_table mt-4">
+                                    <tr>
+                                        <td colspan="100%;"
+                                            style="font-size: 14px; background-color: #F8F8F8; padding: 2px; border: aliceblue;">
+                                            <strong>➤&#160;Vehicle Spare Parts Assessments</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.wd">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">4WD
+                                        </td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.abs">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">ABS
+                                        </td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.awd">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">AWD
+                                        </td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.gps">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">GPS
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.bed_liner">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Bed Liner
+                                        </td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.wide_tires">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Wide
+                                            Tires
+                                        </td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.power_locks">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Power Locks</td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.power_seats">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Power Seats</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.running_boards">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Running Boards</td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.roof_rack">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Roof Rack</td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.camper_shell">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Camper Shell</td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.sport_wheels">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Sport Wheels</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.cruise_control">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Cruise Control</td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.cvt_transmission">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Cvt Transmission</td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.infotainment_system">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Infotainment System</td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.moon_sun_roof">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Moon / Sun Roof</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.rear_window_wiper">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Rear Window Wiper</td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.rear_lift_gate">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Rear Lift Gate</td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.air_conditioning">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Air Conditioning</td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.leather_interior">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Leather Interior</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.auto_transmission">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Auto Transmission</td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.am_fm_radio">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">AM / FM Radio</td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.cd_usb_bluetooth">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">CD/USB/Bluetooth</td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.luxury_sport_pkg">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Luxury Sport Pkg</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.stereo">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Stereo</td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.power_windows">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Power Windows</td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.tilt_wheel">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Tilt Wheel</td>
+
+                                        <td style="width: 5%; padding-left: 1.5rem;">
+                                            <t t-if="inspect.rear_sliding_window">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="width: 20%; padding-left: 0.5rem;">Rear Sliding Window</td>
+                                    </tr>
+                                </table>
+                            </t>
+                            <t t-if="inspect.inner_body_inspection">
+                                <!--Vehicle Body Inner Conditions-->
+                                <table class="table table-sm o_main_table mt-4"
+                                       t-if="inspect.interior_item_condition_ids">
+                                    <tr>
+                                        <td colspan="3"
+                                            style="font-size: 14px; background-color: #F8F8F8; padding: 2px; border: aliceblue;">
+                                            <strong>➤&#160; Vehicle Body Inner Conditions</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="25%" style="padding: 2px;">
+                                            <strong>Name</strong>
+                                        </td>
+                                        <td width="25%" style="padding: 2px;">
+                                            <strong>Condition</strong>
+                                        </td>
+                                        <td width="50%" style="padding: 2px;">
+                                            <strong>Remarks</strong>
+                                        </td>
+                                    </tr>
+                                    <tr t-foreach="inspect.interior_item_condition_ids" t-as="interior">
+                                        <td width="25%" style="padding: 2px;">
+                                            <span t-field="interior.vehicle_item_id"/>
+                                        </td>
+                                        <td width="25%" style="padding: 2px;">
+                                            <span t-field="interior.interior_condition"/>
+                                        </td>
+                                        <td width="50%" style="padding: 2px;">
+                                            <span t-field="interior.interior_condition_notes"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </t>
+                            <t t-if="inspect.outer_body_inspection">
+                                <!--Vehicle Body Outer Conditions-->
+                                <table class="table table-sm o_main_table mt-4"
+                                       t-if="inspect.vehicle_condition_line_ids">
+                                    <tr>
+                                        <td colspan="4"
+                                            style="font-size: 14px; background-color: #F8F8F8; padding: 2px; border: aliceblue;">
+                                            <strong>➤&#160;Vehicle Body Outer Conditions</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th width="25%" style="padding: 2px;">
+                                            <span>View</span>
+                                        </th>
+                                        <th width="30%" style="padding: 2px;">
+                                            <span>Location</span>
+                                        </th>
+                                        <th width="25%" style="padding: 2px;">
+                                            <span>Condition</span>
+                                        </th>
+                                        <th width="20%" style="padding: 2px;">
+                                            <span>Condition Code</span>
+                                        </th>
+                                    </tr>
+                                    <tr t-foreach="inspect.vehicle_condition_line_ids" t-as="line">
+                                        <td width="25%" style="padding: 2px;">
+                                            <span t-field="line.vehicle_view"/>
+                                        </td>
+                                        <td width="30%" style="padding: 2px;">
+                                            <span t-field="line.vehicle_condition_location_id"/>
+                                        </td>
+                                        <td width="25%" style="padding: 2px;">
+                                            <span t-field="line.vehicle_condition_id"/>
+                                        </td>
+                                        <td width="20%" style="padding: 2px;">
+                                            <span t-field="line.condition_code"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </t>
+                            <t t-if="inspect.mechanical_condition">
+                                <!--Mechanical Conditions-->
+                                <table class="table table-sm o_main_table mt-4"
+                                       t-if="inspect.mechanical_item_condition_ids">
+                                    <tr>
+                                        <td colspan="3"
+                                            style="font-size: 14px; background-color: #F8F8F8; padding: 2px; border: aliceblue;">
+                                            <strong>➤&#160;Mechanical Conditions</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="25%" style="padding: 2px;">
+                                            <strong>Name</strong>
+                                        </td>
+                                        <td width="25%" style="padding: 2px;">
+                                            <strong>Condition</strong>
+                                        </td>
+                                        <td width="50%" style="padding: 2px;">
+                                            <strong>Remarks</strong>
+                                        </td>
+                                    </tr>
+                                    <tr t-foreach="inspect.mechanical_item_condition_ids" t-as="mechanical">
+                                        <td width="25%" style="padding: 2px;">
+                                            <span t-field="mechanical.vehicle_item_id"/>
+                                        </td>
+                                        <td width="25%" style="padding: 2px;">
+                                            <span t-field="mechanical.mechanical_condition"/>
+                                        </td>
+                                        <td width="50%" style="padding: 2px;">
+                                            <span t-field="mechanical.mechanical_condition_notes"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </t>
+                            <t t-if="inspect.vehicle_component">
+                                <!--Vehicle Components-->
+                                <table class="table table-sm o_main_table mt-4" t-if="inspect.vehicle_components_ids">
+                                    <tr>
+                                        <td colspan="4"
+                                            style="font-size: 14px; background-color: #F8F8F8; padding: 2px; border: aliceblue;">
+                                            <strong>➤&#160;Vehicle Components</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="25%" style="padding: 2px;">
+                                            <strong>Vehicle Side</strong>
+                                        </td>
+                                        <td width="25%" style="padding: 2px;">
+                                            <strong>Component</strong>
+                                        </td>
+                                        <td width="25%" style="padding: 2px;">
+                                            <strong>Present Condition</strong>
+                                        </td>
+                                        <td width="25%" style="padding: 2px;">
+                                            <strong>Remarks</strong>
+                                        </td>
+                                    </tr>
+                                    <tr t-foreach="inspect.vehicle_components_ids" t-as="component">
+                                        <td width="25%" style="padding: 2px;">
+                                            <span t-field="component.c_vehicle_side"/>
+                                        </td>
+                                        <td width="25%" style="padding: 2px;">
+                                            <span t-field="component.vehicle_component_id"/>
+                                        </td>
+                                        <td width="25%" style="padding: 2px;">
+                                            <span t-field="component.condition"/>
+                                        </td>
+                                        <td width="25%" style="padding: 2px;">
+                                            <span t-field="component.remarks"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </t>
+                            <t t-if="inspect.vehicle_fluid">
+                                <!--Vehicle Fluids-->
+                                <table class="table table-sm o_main_table mt-4" t-if="inspect.vehicle_fluids_ids">
+                                    <tr>
+                                        <td colspan="4"
+                                            style="font-size: 14px; background-color: #F8F8F8; padding: 2px; border: aliceblue;">
+                                            <strong>➤&#160;Vehicle Fluids</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="25%" style="padding: 2px;">
+                                            <strong>Vehicle Side</strong>
+                                        </td>
+                                        <td width="25%" style="padding: 2px;">
+                                            <strong>Component</strong>
+                                        </td>
+                                        <td width="25%" style="padding: 2px;">
+                                            <strong>Present Condition</strong>
+                                        </td>
+                                        <td width="25%" style="padding: 2px;">
+                                            <strong>Remarks</strong>
+                                        </td>
+                                    </tr>
+                                    <tr t-foreach="inspect.vehicle_fluids_ids" t-as="fluid">
+                                        <td width="25%" style="padding: 2px;">
+                                            <span t-field="fluid.f_vehicle_side"/>
+                                        </td>
+                                        <td width="25%" style="padding: 2px;">
+                                            <span t-field="fluid.vehicle_fluid_id"/>
+                                        </td>
+                                        <td width="25%" style="padding: 2px;">
+                                            <span t-field="fluid.condition"/>
+                                        </td>
+                                        <td width="25%" style="padding: 2px;">
+                                            <span t-field="fluid.remarks"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </t>
+                            <t t-if="inspect.tyre_inspection">
+                                <!--Tyre Inspections-->
+                                <table class="table table-sm o_main_table mt-4" t-if="inspect.tyre_inspection_ids">
+                                    <tr>
+                                        <td colspan="6"
+                                            style="font-size: 14px; background-color: #F8F8F8; padding: 2px; border: aliceblue;">
+                                            <strong>➤&#160;Tyre Inspections</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 2px;">
+                                            <strong>Tyre Location</strong>
+                                        </td>
+                                        <td style="padding: 2px;">
+                                            <strong>Present Condition</strong>
+                                        </td>
+                                        <td style="padding: 2px;">
+                                            <strong>Tread Wear</strong>
+                                        </td>
+                                        <td style="padding: 2px;">
+                                            <strong>Tread Depth</strong>
+                                        </td>
+                                        <td style="padding: 2px;">
+                                            <strong>Tyre Pressure</strong>
+                                        </td>
+                                        <td style="padding: 2px;">
+                                            <strong>Brake Pads(%)</strong>
+                                        </td>
+                                    </tr>
+                                    <tr t-foreach="inspect.tyre_inspection_ids" t-as="tyre">
+                                        <td style="padding: 2px;">
+                                            <span t-field="tyre.tyre"/>
+                                        </td>
+                                        <td style="padding: 2px;">
+                                            <span t-field="tyre.condition"/>
+                                        </td>
+                                        <td style="padding: 2px;">
+                                            <span t-field="tyre.tread_wear"/>
+                                        </td>
+                                        <td style="padding: 2px;">
+                                            <span t-field="tyre.tread_depth"/>
+                                        </td>
+                                        <td style="padding: 2px;">
+                                            <span t-field="tyre.tyre_pressure"/>
+                                        </td>
+                                        <td style="padding: 2px;">
+                                            <span t-field="tyre.brake_pads"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </t>
+                            <!--Inspection Checklist-->
+                            <table class="table table-sm o_main_table mt-4" t-if="inspect.inspection_checklist_ids">
+                                <tr>
+                                    <td colspan="3"
+                                        style="font-size: 14px; background-color: #F8F8F8; padding: 2px; border: aliceblue;">
+                                        <strong>➤&#160;Inspection Checklists</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 2px; width: 10%;">
+                                        <strong>Check</strong>
+                                    </td>
+                                    <td style="padding: 2px; width: 45%;">
+                                        <strong>Name</strong>
+                                    </td>
+                                    <td style="padding: 2px; width: 45%;">
+                                        <strong>Description</strong>
+                                    </td>
+                                </tr>
+                                <tr t-foreach="inspect.inspection_checklist_ids" t-as="check">
+                                    <t t-if="check.display_type == 'line_section'">
+                                        <td name="td_section_line" style="background-color: #d3d5db; padding: 2px;"
+                                            width="100%;" colspan="3">
+                                            <span t-field="check.name"/>
+                                        </td>
+                                    </t>
+                                    <t t-else="">
+                                        <td style="width: 10%; padding-left: 1.5rem; padding: 2px;" width="20%;">
+                                            <t t-if="check.is_check">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/true.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <img src="/tk_advance_vehicle_repair/static/src/img/false.png"
+                                                     style="width: 10px; height: 10px;"/>
+                                            </t>
+                                        </td>
+                                        <td style="padding: 2px;" width="45%;">
+                                            <span t-field="check.name"/>
+                                        </td>
+                                        <td style="padding: 2px;" width="45%;">
+                                            <span t-field="check.description"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                            </table>
+                        </t>
+
+                        <!-- Vehicle Spare Parts-->
+                        <t t-if="inspect.inspect_type == 'inspection_and_repair'">
+                            <table class="table table-sm o_main_table mt-4" t-if="inspect.vehicle_spare_part_ids">
+                                <tr>
+                                    <td colspan="4"
+                                        style="font-size: 14px; background-color: #F8F8F8; padding: 2px; border: aliceblue;">
+                                        <strong>➤&#160;Vehicle Spare Parts</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="55%" style="padding: 2px;">
+                                        <span>Spare Part</span>
+                                    </td>
+                                    <td style="padding: 2px; text-align: right; width: 15%;">
+                                        <span>Quantity</span>
+                                    </td>
+                                    <td style="padding: 2px; text-align: right; width: 15%;">
+                                        <span>Unit Price</span>
+                                    </td>
+                                    <td style="padding: 2px; text-align: right; width: 15%;">
+                                        <span>Sub Total</span>
+                                    </td>
+                                </tr>
+                                <tr t-foreach="inspect.vehicle_spare_part_ids" t-as="part">
+                                    <td width="55%" style="padding: 2px;">
+                                        <span t-field="part.product_id"/>
+                                    </td>
+                                    <td style="padding: 2px; text-align: right; width: 15%;">
+                                        <span t-field="part.qty"/>
+                                    </td>
+                                    <td style="padding: 2px; text-align: right; width: 15%;">
+                                        <span t-field="part.unit_price"/>
+                                    </td>
+                                    <td style="padding: 2px; text-align: right; width: 15%;">
+                                        <span t-field="part.sub_total"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="100%" style="text-align: Right;">Parts Price:
+                                        <span t-field="inspect.part_price"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </t>
+                        <t t-else="">
+                        </t>
+                        <!-- Vehicle Services-->
+                        <t t-if="inspect.inspect_type == 'inspection_and_repair'">
+                            <table class="table table-sm o_main_table mt-4" t-if="inspect.inspection_repair_team_ids">
+                                <tr>
+                                    <td colspan="4"
+                                        style="font-size: 14px; background-color: #F8F8F8; padding: 2px; border: aliceblue;">
+                                        <strong>➤&#160;Vehicle Services</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 2px; width: 40%;">
+                                        <strong>Service</strong>
+                                    </td>
+                                    <td style="padding: 2px; width: 20%;">
+                                        <strong>Start Date</strong>
+                                    </td>
+                                    <td style="padding: 2px; width: 20%;">
+                                        <strong>End Date</strong>
+                                    </td>
+                                    <td style="padding: 2px; text-align: right; width: 20%;">
+                                        <strong>Service Charge</strong>
+                                    </td>
+                                </tr>
+                                <tr t-foreach="inspect.inspection_repair_team_ids" t-as="service">
+                                    <td style="padding: 2px; width: 40%;">
+                                        <span t-field="service.vehicle_service_id"/>
+                                    </td>
+                                    <td style="padding: 2px; width: 20%;">
+                                        <span t-field="service.start_date"/>
+                                    </td>
+                                    <td style="padding: 2px; width: 20%;">
+                                        <span t-field="service.end_date"/>
+                                    </td>
+                                    <td style="padding: 2px; text-align: right; width: 20%;">
+                                        <span t-field="service.service_charge"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="text-align: Right; padding: 2px;">Service Charges:
+                                        <span t-field="inspect.service_charge"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </t>
+                        <t t-else="">
+                        </t>
+                        <table class="table table-bordered" style="width: 100%;" t-if="inspect.inspection_image_ids">
+                            <t t-set="img_count" t-value="0"/>
+                            <tr>
+                                <td style="background-color: #F8F8F8; text-align: center; font-size: 13px;">
+                                    <strong>Inspection Images</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <t t-foreach="inspect.inspection_image_ids" t-as="img">
+                                        <t t-set="img_count" t-value="img_count + 1"/>
+                                        <div style="display: inline-block;text-align:center;padding:4px! important;">
+                                            <t t-if="img.avatar">
+                                                <img t-att-src="image_data_uri(img.avatar)"
+                                                     style="width: 153px; height: 153px;"/>
+                                            </t>
+                                            <h6>
+                                                <span t-field="img.name"/>
+                                            </h6>
+                                        </div>
+                                        <t t-if="img_count % 5 == 0">
+                                            <br/>
+                                        </t>
+                                    </t>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="row" style="text-align: center;">
+                            <div class="col-8">
+                            </div>
+                            <div class="col-4">
+                                Date:
+                                <span t-field="inspect.date"/>
+                                <br/>
+                                <t t-if="inspect.signature">
+                                    <img t-att-src="image_data_uri(inspect.signature)" att="Logo"
+                                         style="width: 100px; height: 40px; margin-bottom: -10px;"/>
+                                </t>
+                                <hr style="margin-bottom: -10px; width: 12rem; margin-left: 3rem;  margin-right: 3rem;"/>
+                                <br/>
+                                Authorized Signature
+                            </div>
+                        </div>
+                        <p style="page-break-after:always;"/>
+                        <t t-if="inspect.sale_order_id">
+                            <t t-set="doc" t-value="inspect.sale_order_id"/>
+                            <div class="oe_structure"/>
+                            <h2 class="mt-4">
+                                <span t-if="env.context.get('proforma', False) or is_pro_forma">Pro-Forma
+                                    Invoice #
+                                </span>
+                                <span t-elif="doc.state in ['draft','sent']">Quotation #</span>
+                                <span t-else="">Order #</span>
+                                <span t-field="doc.name">SO0000</span>
+                            </h2>
+                            <div class="row mt-4 mb-2" id="informations">
+                                <div t-if="doc.client_order_ref" class="col-auto col-3 mw-100 mb-2"
+                                     name="informations_reference">
+                                    <strong>Your Reference:</strong>
+                                    <br/>
+                                    <span class="m-0" t-field="doc.client_order_ref">SO0000</span>
+                                </div>
+                                <div t-if="doc.date_order" class="col-auto col-3 mw-100 mb-2"
+                                     name="informations_date">
+                                    <strong t-if="doc.state in ['draft', 'sent']">Quotation Date:</strong>
+                                    <strong t-else="">Order Date:</strong>
+                                    <br/>
+                                    <span class="m-0" t-field="doc.date_order" t-options='{"widget": "date"}'>
+                                        2023-12-31
+                                    </span>
+                                </div>
+                                <div t-if="doc.validity_date and doc.state in ['draft', 'sent']"
+                                     class="col-auto col-3 mw-100 mb-2"
+                                     name="expiration_date">
+                                    <strong>Expiration:</strong>
+                                    <br/>
+                                    <span class="m-0" t-field="doc.validity_date">2023-12-31</span>
+                                </div>
+                                <div t-if="doc.user_id.name" class="col-auto col-3 mw-100 mb-2">
+                                    <strong>Salesperson:</strong>
+                                    <br/>
+                                    <span class="m-0" t-field="doc.user_id">Mitchell Admin</span>
+                                </div>
+                            </div>
+                            <!-- Is there a discount on at least one line? -->
+                            <t t-set="lines_to_report" t-value="doc._get_order_lines_to_report()"/>
+                            <t t-set="display_discount" t-value="any(l.discount for l in lines_to_report)"/>
+                            <div class="oe_structure">
+                            </div>
+                            <table class="table table-sm o_main_table table-borderless mt-4">
+                                <!-- In case we want to repeat the header, remove "display: table-row-group" -->
+                                <thead style="display: table-row-group">
+                                    <tr>
+                                        <th name="th_description" class="text-start">Description</th>
+                                        <th name="th_quantity" class="text-end">Quantity</th>
+                                        <th name="th_priceunit" class="text-end">Unit Price</th>
+                                        <th name="th_discount" t-if="display_discount" class="text-end">
+                                            <span>Disc.%</span>
+                                        </th>
+                                        <th name="th_taxes" class="text-end">Taxes</th>
+                                        <th name="th_subtotal" class="text-end">
+                                            <span>Amount</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="sale_tbody">
+                                    <t t-set="current_subtotal" t-value="0"/>
+                                    <t t-foreach="lines_to_report" t-as="line">
+                                        <t t-set="current_subtotal"
+                                           t-value="current_subtotal + line.price_subtotal"/>
+                                        <tr t-att-class="'bg-200 fw-bold o_line_section' if line.display_type == 'line_section' else 'fst-italic o_line_note' if line.display_type == 'line_note' else ''">
+                                            <t t-if="not line.display_type">
+                                                <td name="td_name">
+                                                    <span t-field="line.name">Bacon Burger</span>
+                                                </td>
+                                                <td name="td_quantity" class="text-end">
+                                                    <span t-field="line.product_uom_qty">3</span>
+                                                    <span t-field="line.product_uom">units</span>
+                                                    <span t-if="line.product_packaging_id">
+                                                        (
+                                                        <span t-field="line.product_packaging_qty"
+                                                              t-options='{"widget": "integer"}'/>
+                                                        <span t-field="line.product_packaging_id"/>)
+                                                    </span>
+                                                </td>
+                                                <td name="td_priceunit" class="text-end">
+                                                    <span t-field="line.price_unit">3</span>
+                                                </td>
+                                                <td t-if="display_discount" class="text-end">
+                                                    <span t-field="line.discount">-</span>
+                                                </td>
+                                                <td name="td_taxes" class="text-end">
+                                                    <span t-out="', '.join(map(lambda x: (x.description or x.name), line.tax_id))">
+                                                        Tax 15%
+                                                    </span>
+                                                </td>
+                                                <td t-if="not line.is_downpayment" name="td_subtotal"
+                                                    class="text-end o_price_total">
+                                                    <span t-field="line.price_subtotal">27.00</span>
+                                                </td>
+                                            </t>
+                                            <t t-elif="line.display_type == 'line_section'">
+                                                <td name="td_section_line" colspan="99">
+                                                    <span t-field="line.name">A section title</span>
+                                                </td>
+                                                <t t-set="current_section" t-value="line"/>
+                                                <t t-set="current_subtotal" t-value="0"/>
+                                            </t>
+                                            <t t-elif="line.display_type == 'line_note'">
+                                                <td name="td_note_line" colspan="99">
+                                                    <span t-field="line.name">A note, whose content usually
+                                                        applies to the section or product above.
+                                                    </span>
+                                                </td>
+                                            </t>
+                                        </tr>
+                                        <t t-if="current_section and (line_last or doc.order_line[line_index+1].display_type == 'line_section') and not line.is_downpayment">
+                                            <tr class="is-subtotal text-end">
+                                                <td name="td_section_subtotal" colspan="99">
+                                                    <strong class="mr16">Subtotal</strong>
+                                                    <span t-out="current_subtotal"
+                                                          t-options='{"widget": "monetary", "display_currency": doc.currency_id}'
+                                                    >31.05
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </t>
+                                </tbody>
+                            </table>
+                            <div class="clearfix" name="so_total_summary">
+                                <div id="total" class="row" name="total">
+                                    <div t-attf-class="#{'col-6' if report_type != 'html' else 'col-sm-7 col-md-6'} ms-auto">
+                                        <table class="table table-sm table-borderless">
+                                            <!-- Tax totals -->
+                                            <t t-set="tax_totals" t-value="doc.tax_totals"/>
+                                            <t t-call="sale.document_tax_totals"/>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="oe_structure">
+                            </div>
+                            <div t-if="not doc.signature" class="oe_structure">
+                            </div>
+                            <div t-else="" class="mt-4 ml64 mr4" name="signature">
+                                <div class="offset-8">
+                                    <strong>Signature</strong>
+                                </div>
+                                <div class="offset-8">
+                                    <img t-att-src="image_data_uri(doc.signature)"
+                                         style="max-height: 4cm; max-width: 8cm;"/>
+                                </div>
+                                <div class="offset-8 text-center">
+                                    <span t-field="doc.signed_by">Oscar Morgan</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span t-field="doc.note"
+                                      t-attf-style="#{'text-align:justify;text-justify:inter-word;' if doc.company_id.terms_type != 'html' else ''}"
+                                      name="order_note"/>
+                                <p t-if="not is_html_empty(doc.payment_term_id.note)">
+                                    <span t-field="doc.payment_term_id.note">The payment should also be
+                                        transmitted with
+                                        love
+                                    </span>
+                                </p>
+                                <p t-if="doc.fiscal_position_id and not is_html_empty(doc.fiscal_position_id.sudo().note)"
+                                   id="fiscal_position_remark">
+                                    <strong>Fiscal Position Remark:</strong>
+                                    <span t-field="doc.fiscal_position_id.sudo().note">No further requirements
+                                        for this
+                                        payment
+                                    </span>
+                                </p>
+                            </div>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_inspection_job_card_report" model="ir.actions.report">
+        <field name="name">Inspection Job Card Report</field>
+        <field name="model">inspection.job.card</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">tk_advance_vehicle_repair.inspection_job_card_report_template</field>
+        <field name="report_file">tk_advance_vehicle_repair.inspection_job_card_report_template</field>
+        <field name="binding_model_id" ref="model_inspection_job_card"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

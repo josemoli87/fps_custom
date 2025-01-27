@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!--Vehicle Item-->
+        <record id="vehicle_item_tree_view" model="ir.ui.view">
+            <field name="name">vehicle.item.tree.view</field>
+            <field name="model">vehicle.item</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                    <field name="item_category"/>
+                </tree>
+            </field>
+        </record>
+        <record id="vehicle_item_search_view" model="ir.ui.view">
+            <field name="name">vehicle.item.search.view</field>
+            <field name="model">vehicle.item</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <group string="Group By">
+                        <filter name="item_category" string="Category"
+                                context="{'group_by': 'item_category'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="action_vehicle_item" model="ir.actions.act_window">
+            <field name="name">Vehicle Item</field>
+            <field name="res_model">vehicle.item</field>
+            <field name="view_mode">tree,search</field>
+            <field name="context">{'search_default_item_category': 1}</field>
+        </record>
+
+        <!--Mechanical Item Condition-->
+        <record id="mechanical_item_condition_form_view" model="ir.ui.view">
+            <field name="name">mechanical.item.condition.form.view</field>
+            <field name="model">mechanical.item.condition</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="row">
+                            <div class="col-6">
+                                <group string="Mechanical Item Condition">
+                                    <field name="vehicle_item_id" placeholder="e.g. Brakes.."
+                                           options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                                    <field name="mechanical_condition"/>
+                                    <field name="mechanical_condition_notes"/>
+                                </group>
+                            </div>
+                            <div class="col-6 text-center">
+                                <field name="avatar" nolabel="1" widget="image"
+                                       options='{"size": [400, 400]}' class="bg-view"/>
+                            </div>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="mechanical_item_condition_tree_view" model="ir.ui.view">
+            <field name="name">mechanical.item.condition.tree.view</field>
+            <field name="model">mechanical.item.condition</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="vehicle_item_id"/>
+                    <field name="mechanical_condition"/>
+                    <field name="mechanical_condition_notes"/>
+                </tree>
+            </field>
+        </record>
+        <record id="mechanical_item_condition_search_view" model="ir.ui.view">
+            <field name="name">mechanical.item.condition.search.view</field>
+            <field name="model">mechanical.item.condition</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="vehicle_item_id"/>
+                    <group string="Group By">
+                        <filter name="mechanical_condition" string="Mechanical Condition"
+                                context="{'group_by': 'mechanical_condition'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="action_mechanical_item_condition" model="ir.actions.act_window">
+            <field name="name">Mechanical Item</field>
+            <field name="res_model">mechanical.item.condition</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+        <!--Interior Item Condition-->
+        <record id="interior_item_condition_form_view" model="ir.ui.view">
+            <field name="name">interior.item.condition.form.view</field>
+            <field name="model">interior.item.condition</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="row">
+                            <div class="col-6">
+                                <group string="Interior Item Condition">
+                                    <field name="vehicle_item_id" placeholder="e.g. Seat.."
+                                           options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                                    <field name="interior_condition"/>
+                                    <field name="interior_condition_notes"/>
+                                </group>
+                            </div>
+                            <div class="col-6 text-center">
+                                <field name="avatar" nolabel="1" widget="image"
+                                       options='{"size": [400, 400]}' class="bg-view"/>
+                            </div>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="interior_item_condition_tree_view" model="ir.ui.view">
+            <field name="name">interior.item.condition.tree.view</field>
+            <field name="model">interior.item.condition</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="vehicle_item_id"/>
+                    <field name="interior_condition"/>
+                    <field name="interior_condition_notes"/>
+                </tree>
+            </field>
+        </record>
+        <record id="interior_item_condition_search_view" model="ir.ui.view">
+            <field name="name">interior.item.condition.search.view</field>
+            <field name="model">interior.item.condition</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="vehicle_item_id"/>
+                    <group string="Group By">
+                        <filter name="interior_condition" string="Interior Condition"
+                                context="{'group_by': 'interior_condition'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="action_interior_item_condition" model="ir.actions.act_window">
+            <field name="name">Interior Item</field>
+            <field name="res_model">interior.item.condition</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+    </data>
+</odoo>

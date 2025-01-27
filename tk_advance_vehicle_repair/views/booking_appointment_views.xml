@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="booking_appointment_form_view" model="ir.ui.view">
+            <field name="name">booking.appointment.form.view</field>
+            <field name="model">booking.appointment</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" invisible="1"/>
+                                <field name="appointment_day" readonly="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="appointment_slots" string="Appointment Slots">
+                                <field name="booking_appointment_slot_ids" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="title"/>
+                                        <field name="from_time" widget="float_time"/>
+                                        <field name="to_time" widget="float_time"/>
+                                        <field name="booking_appointment_id" column_invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="booking_appointment_tree_view" model="ir.ui.view">
+            <field name="name">booking.appointment.tree.view</field>
+            <field name="model">booking.appointment</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="appointment_day"/>
+                </tree>
+            </field>
+        </record>
+        <record id="booking_appointment_search_view" model="ir.ui.view">
+            <field name="name">booking.appointment.search.view</field>
+            <field name="model">booking.appointment</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="appointment_day"/>
+                    <group string="Group By">
+                        <filter name="appointment_day" string="Appointment Day"
+                                context="{'group_by': 'appointment_day'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="action_booking_appointment" model="ir.actions.act_window">
+            <field name="name">Booking Appointment</field>
+            <field name="res_model">booking.appointment</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+    </data>
+</odoo>
