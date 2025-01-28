@@ -14,7 +14,7 @@
                             <div class="card-body info-bg tk-card-body">
                                 <img alt="users" width="40"
                                      src="tk_advance_vehicle_repair/static/src/img/dashboard/1-total-booking.svg"/>
-                                <h4 class="tk-st-1"> Reservas Totales </h4>
+                                <h4 class="tk-st-1"> Citas Totales </h4>
                                 <h6 class="tk-st-2">
                                     <t t-esc="state.bookingStats['total_vehicle_booking']"/>
                                 </h6>
@@ -77,7 +77,7 @@
 
                 <div class="row">
                     <div class="col-md-4 mt32">
-                        <h4 class="tk-primary">Detalles de la reserva</h4>
+                        <h4 class="tk-primary">Detalles de citas</h4>
                         <hr class="border-primary"/>
                         <div class="row">
                              <div class="col-md-6 mb-4 mt8 mb16"
@@ -122,13 +122,13 @@
                         </div>
                     </div>
                     <div class="col-md-4 mt32">
-                        <h4 class="tk-primary">Fuentes de reserva</h4>
+                        <h4 class="tk-primary">Fuentes de cita</h4>
                         <hr class="border-primary"/>
                         <div class="tk-os-chart" t-ref="booking_source_graph">
                         </div>
                     </div>
                     <div class="col-md-4 mt32">
-                        <h4 class="tk-primary">Combustibles más comunes utilizados en vehículos</h4>
+                        <h4 class="tk-primary">Combustibles utilizados en vehículos</h4>
                         <hr class="border-primary"/>
                         <div class="tk-os-chart" t-ref="most_common_fuel_used_in_vehicle">
                         </div>
@@ -137,7 +137,7 @@
 
                 <div class="row">
                     <div class="col-md-6 mt32">
-                        <h4 class="tk-primary">Detalles de la tarjeta de inspección</h4>
+                        <h4 class="tk-primary">Detalles de inspección</h4>
                         <hr class="border-primary"/>
                         <div class="row">
                             <div class="col-md-4 mb-4 mt8 mb16"

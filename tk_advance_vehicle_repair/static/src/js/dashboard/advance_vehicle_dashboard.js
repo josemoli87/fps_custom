@@ -226,7 +226,7 @@ class AdvanceVehicleDashboard extends Component {
                 horizontalAlign: 'left',
             },
             title: {
-                text: 'Booking Details',
+                text: 'Detalle de cita',
                 align: 'center',
                 margin: 10,
                 style: {
@@ -253,11 +253,11 @@ class AdvanceVehicleDashboard extends Component {
 
         const colors = chart.get("colors");
         const data = [{
-            bookingSourceType: "Direct",
+            bookingSourceType: "Directa",
             value: bookingData['y-axis'][0],
             columnSettings: { fill: colors.next() }
         }, {
-            bookingSourceType: "Website",
+            bookingSourceType: "Web",
             value: bookingData['y-axis'][1],
             columnSettings: { fill: colors.next() }
         }];
@@ -370,27 +370,27 @@ class AdvanceVehicleDashboard extends Component {
 
         const colors = chart.get("colors");
         const data = [{
-            status: "Assign",
+            status: "Asignado",
             value: bookingData['y-axis'][0],
             columnSettings: { fill: colors.next() }
         }, {
-            status: "In Diagnosis",
+            status: "En Diagnostico",
             value: bookingData['y-axis'][1],
             columnSettings: { fill: colors.next() }
         }, {
-            status: "In Inspection",
+            status: "En Inspección",
             value: bookingData['y-axis'][2],
             columnSettings: { fill: colors.next() }
         }, {
-            status: "Hold",
+            status: "Confirmada",
             value: bookingData['y-axis'][3],
             columnSettings: { fill: colors.next() }
         }, {
-            status: "Completed",
+            status: "Completa",
             value: bookingData['y-axis'][4],
             columnSettings: { fill: colors.next() }
         }, {
-            status: "Cancelled",
+            status: "Cancelada",
             value: bookingData['y-axis'][5],
             columnSettings: { fill: colors.next() }
         }];

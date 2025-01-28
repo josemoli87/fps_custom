@@ -25,7 +25,7 @@ class AdvanceVehicleRepairDashboard(models.Model):
         booking_cancel = vehicle_bookings.search_count([('booking_stages', '=', 'cancel')])
         booking_source_direct = vehicle_bookings.search_count([('booking_source', '=', 'direct')])
         booking_source_website = vehicle_bookings.search_count([('booking_source', '=', 'website')])
-        booking_details = [['Vehicle Inspection', 'Vehicle Repair', 'Vehicle Inspection and Repair'],
+        booking_details = [['Inspecciones', 'Reparaciones', 'Inspeciones y Reparaciones'],
                            [vehicle_inspection, vehicle_repair, vehicle_inspection_repair]]
         booking_source = [['Direct', 'Website'], [booking_source_direct, booking_source_website]]
 

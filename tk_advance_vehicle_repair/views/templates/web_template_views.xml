@@ -15,12 +15,12 @@
                         </t>
                         <t t-if="website_slot_booking">
                             <div class="alert alert-warning alert-dismissible fade show d-none" id="alert" role="alert">
-                                <strong>Slot not available</strong>
+                                <strong>Tiempo no disponible</strong>
                             </div>
                         </t>
                         <h3 class="mb-2 text-center text-primary">
                             <span>
-                                Booking Request
+                                Solicitud de cita
                             </span>
                         </h3>
                         <form role="form" action="/create/vehicle-booking" method="POST" enctype="multipart/form-data">
@@ -28,19 +28,19 @@
                             <h5 class="display-7 py-2 border-bottom border-primary text-primary">
                                 <i class="fa fa-car me-1" aria-hidden="true">
                                 </i>
-                                Vehicle Details
+                                Detalle de Vehículo
                             </h5>
                             <div class="row mt0 mb16">
                                 <div class="col d-flex align-items-center">
                                     <div class="form-check active" id="new" style="margin-right: 1rem;">
                                         <input class="form-check-input" type="radio" name="vehicle_from"
                                                checked="checked" value="new"/>
-                                        <label class="form-check-label">New</label>
+                                        <label class="form-check-label">Nuevo</label>
                                     </div>
                                     <div class="form-check" id="customer_vehicle" style="margin-right: 1rem;">
                                         <input class="form-check-input" type="radio" name="vehicle_from"
                                                value="customer_vehicle"/>
-                                        <label class="form-check-label">Vehicle From Customer</label>
+                                        <label class="form-check-label">Vehículo de Cliente</label>
                                     </div>
                                 </div>
                             </div>
@@ -48,11 +48,11 @@
                             <div class="row mt8 mb8 d-none" id="from_customer_vehicle">
                                 <div class="col">
                                     <div class="input-group mb-3">
-                                        <span class="input-group-text" id="register_vehicle_name">Registered Vehicle
+                                        <span class="input-group-text" id="register_vehicle_name">Vehículo registrado
                                         </span>
                                         <select name="register_vehicle_id" id="register_vehicle_id"
                                                 class="form-control link-style">
-                                            <option selected="selected" value="">Select Vehicle</option>
+                                            <option selected="selected" value="">Seleccionar vehículo</option>
                                             <t t-foreach="register_vehicles" t-as="register">
                                                 <option t-att-value="register.id" t-esc="register.display_name"/>
                                             </t>
@@ -66,7 +66,7 @@
                             <div class="row mt8 mb8">
                                 <div class="col">
                                     <div class="input-group mb-3">
-                                        <label for="vehicle_brand_id" class="input-group-text">Vehicle
+                                        <label for="vehicle_brand_id" class="input-group-text">Vehículo
                                             <span class="required-details">*</span>
                                         </label>
                                         <select name="vehicle_brand_id" id="vehicle_brand_id"
@@ -79,7 +79,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="input-group mb-3">
-                                        <label for="vehicle_model_id" class="input-group-text">Model
+                                        <label for="vehicle_model_id" class="input-group-text">Modelo
                                             <span class="required-details">*</span>
                                         </label>
                                         <select name="vehicle_model_id" id="vehicle_model_id"
@@ -95,7 +95,7 @@
                             <div class="row mt8 mb8">
                                 <div class="col">
                                     <div class="input-group mb-3">
-                                        <span class="input-group-text" id="vehicle_fuel_type">Fuel Type
+                                        <span class="input-group-text" id="vehicle_fuel_type">Tipo de Combustible
                                             <span class="required-details">*</span>
                                         </span>
                                         <select name="vehicle_fuel_type_id" id="vehicle_fuel_type_id"
@@ -110,7 +110,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="input-group mb-3">
-                                        <span class="input-group-text" id="v_no">VIN No</span>
+                                        <span class="input-group-text" id="v_no">VIN</span>
                                         <input type="text" class="form-control" id="vin_no" t-att-value="vin_no"
                                                placeholder="4S3BHB68B360" name="vin_no"/>
                                     </div>
@@ -120,7 +120,7 @@
                             <div class="row mt8 mb8">
                                 <div class="col">
                                     <div class="input-group mb-3">
-                                        <span class="input-group-text" id="reg_no">Registration No
+                                        <span class="input-group-text" id="reg_no">Placa
                                             <span class="required-details">*</span>
                                         </span>
                                         <input type="text" class="form-control" id="registration_no"
@@ -132,7 +132,7 @@
                                         <div class="col-4">
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text" id="transmission">
-                                                    Transmission Type
+                                                    Tipo de Transmisión
                                                 </span>
                                             </div>
                                         </div>
@@ -144,7 +144,7 @@
                                             <div class="form-check">
                                                 <input id="automatic" class="form-check-input transmission_type"
                                                        type="radio" name="transmission_type" value="automatic"/>
-                                                Automatic
+                                                Automático
                                             </div>
                                             <div class="form-check">
                                                 <input id="cvt" class="form-check-input transmission_type" type="radio"
@@ -158,31 +158,29 @@
                             <h5 class="display-7 py-2 border-bottom border-primary text-primary">
                                 <i class="fa fa-pencil-square-o me-1" aria-hidden="true">
                                 </i>
-                                Booking Details
+                                Detalles de cita
                             </h5>
                             <div class="row mt8 mb8">
                                 <div class="col">
                                     <div class="row">
                                         <div class="col-3">
                                             <div class="input-group mb-3">
-                                                <span class="input-group-text" id="booking_type">Booking Type
+                                                <span class="input-group-text" id="booking_type">Tipo de Cita
                                                 </span>
                                             </div>
                                         </div>
                                         <div class="col-9">
                                             <div class="form-check active" id="only_inspection">
                                                 <input class="form-check-input" type="radio" name="booking_type"
-                                                       value="only_inspection" checked="checked"/>Only Vehicle
-                                                Inspection
+                                                       value="only_inspection" checked="checked"/>Solo Inspección
                                             </div>
                                             <div class="form-check" id="only_repair">
                                                 <input class="form-check-input" type="radio" name="booking_type"
-                                                       value="only_repair"/>Only Vehicle Repair
+                                                       value="only_repair"/>Solo Reparación
                                             </div>
                                             <div class="form-check" id="inspection_and_repair">
                                                 <input class="form-check-input" type="radio" name="booking_type"
-                                                       value="inspection_and_repair"/>Vehicle Inspection +
-                                                Vehicle Repair
+                                                       value="inspection_and_repair"/>Inspección + Reparación
                                             </div>
                                         </div>
                                     </div>
@@ -190,7 +188,7 @@
 
                                 <div class="col">
                                     <div class="input-group mb-3">
-                                        <span class="input-group-text" id="booking_date_span">Booking Date</span>
+                                        <span class="input-group-text" id="booking_date_span">Fecha de cita</span>
                                         <input type="date" class="form-control" id="booking_date"
                                                t-att-value="booking_date" name="booking_date"/>
                                     </div>
@@ -203,7 +201,7 @@
                                     </div>
                                     <div class="col">
                                         <div class="input-group mb-3">
-                                            <span class="input-group-text" id="booking_slot">Booking Slot</span>
+                                            <span class="input-group-text" id="booking_slot">Horario de cita</span>
                                             <select name="booking_appointment_slot_id" id="booking_appointment_slot_id"
                                                     class="form-control link-style">
                                             </select>
@@ -215,7 +213,7 @@
                             <div class="row mt8 mb8">
                                 <div class="col">
                                     <div class="input-group">
-                                        <span class="input-group-text">Required Services</span>
+                                        <span class="input-group-text">Servicio requerido</span>
                                         <textarea class="form-control" aria-label="With textarea"
                                                   id="customer_observation" name="customer_observation"
                                                   t-att-value="customer_observation"/>
@@ -226,19 +224,19 @@
                             <h5 class="display-7 py-2 border-bottom border-primary text-primary">
                                 <i class="fa fa-user me-1" aria-hidden="true">
                                 </i>
-                                Customer Details
+                                Detalle de cliente
                             </h5>
                             <div class="row mt8 mb8">
                                 <div class="col">
                                     <div class="input-group mb-3">
-                                        <span class="input-group-text">Request By</span>
+                                        <span class="input-group-text">Solicitado por</span>
                                         <input type="text" class="form-control"
                                                t-att-value="request.env.user.partner_id.name" readonly="readonly"/>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="input-group mb-3">
-                                        <span class="input-group-text" id="street">Street</span>
+                                        <span class="input-group-text" id="street">Calle</span>
                                         <input type="text" class="form-control" id="street" t-att-value="street"
                                                placeholder="Street" name="street"/>
                                     </div>
@@ -247,14 +245,14 @@
                             <div class="row mt8 mb8">
                                 <div class="col">
                                     <div class="input-group mb-3">
-                                        <span class="input-group-text">Phone</span>
+                                        <span class="input-group-text">Telf.</span>
                                         <input type="text" class="form-control"
                                                t-att-value="request.env.user.partner_id.phone" readonly="readonly"/>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="input-group mb-3">
-                                        <span class="input-group-text" id="street2">Street2</span>
+                                        <span class="input-group-text" id="street2">Dirección</span>
                                         <input type="text" class="form-control" id="street2" name="street2"
                                                t-att-value="street2" placeholder="Street"/>
                                     </div>
@@ -272,7 +270,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class="input-group mb-3">
-                                                <span class="input-group-text" id="city">City</span>
+                                                <span class="input-group-text" id="city">Ciudad</span>
                                                 <input type="text" class="form-control" id="city" name="city"
                                                        placeholder="City" t-att-value="city"/>
                                             </div>
@@ -295,7 +293,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class="input-group mb-3">
-                                                <label for="country_id" class="input-group-text">Country</label>
+                                                <label for="country_id" class="input-group-text">País</label>
                                                 <select name="country_id" id="country_id" class="form-control">
                                                     <t t-foreach="customer_country" t-as="country">
                                                         <option t-att-value="country.id" t-esc="country.name"/>
@@ -305,7 +303,7 @@
                                         </div>
                                         <div class="col">
                                             <div class="input-group mb-3">
-                                                <label for="state_id" class="input-group-text">State</label>
+                                                <label for="state_id" class="input-group-text">Estado</label>
                                                 <select name="state_id" id="state_id" class="form-control">
                                                     <t t-foreach="customer_state" t-as="state">
                                                         <option t-att-value="state.id" t-esc="state.name"/>
@@ -318,7 +316,7 @@
                             </div>
                             <br/>
                             <div class="text-end">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Enviar</button>
                             </div>
                         </form>
                     </div>
@@ -338,7 +336,7 @@
                                 <span class="d-block fa fa-4x fa-thumbs-up mx-auto rounded-circle bg-primary">
                                 </span>
                                 <br/>
-                                <h1 class="text-center">Thank You!</h1>
+                                <h1 class="text-center">Gracias!</h1>
                                 <div class="pb16 pt16 s_hr" data-snippet="s_hr"
                                      data-name="Separator">
                                     <hr class="mx-auto border-top w-50 border-dark text-center"/>
@@ -347,7 +345,7 @@
                                     <span class="fa fa-check-circle">
                                     </span>
                                     <span>
-                                        Your vehicle booking request for
+                                        Su solicitud de cita de vehículo para
                                         <br/>
                                         <a t-attf-href="/booking/request-information/#{booking_details.id}/">
                                             <strong>
@@ -355,7 +353,7 @@
                                             </strong>
                                         </a>
                                         <br/>
-                                        has been successfully submitted.
+                                        enviado exitosamente.
                                     </span>
                                 </h5>
                             </div>
@@ -371,9 +369,9 @@
         <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
             <t t-call="portal.portal_docs_entry">
                 <t t-set="icon" t-value="'/tk_advance_vehicle_repair/static/src/img/booking.png'"/>
-                <t t-set="title">Vehicle Booking Requests</t>
+                <t t-set="title">Solicitudes de citas de vehículos</t>
                 <t t-set="url" t-value="'/booking/vehicle-booking-details'"/>
-                <t t-set="text">Follow, view booking requests</t>
+                <t t-set="text">Seguir, ver solicitudes de cita</t>
                 <t t-set="placeholder_count" t-value="'count'"/>
             </t>
         </xpath>
@@ -385,11 +383,11 @@
         <xpath position="inside" expr="//ol[hasclass('o_portal_submenu')]">
             <!--Booking Requests-->
             <li t-if="page_name == 'booking_request_tree'" class="breadcrumb-item">
-                Booking Requests
+                Solicitudes de cita
             </li>
             <li t-if="page_name == 'booking_request_form'" class="breadcrumb-item">
                 <a t-att-href="'/booking/vehicle-booking-details'">
-                    Booking Requests
+                    Solicitudes de cita
                 </a>
             </li>
             <li t-if="page_name == 'booking_request_form'" class="breadcrumb-item">
@@ -404,20 +402,20 @@
             <t t-if="not booking_requests">
                 <div class="alert alert-info">
                     <strong>
-                        <p>There are currently no requests for your account.</p>
+                        <p>Actualmente no hay solicitudes para su cuenta.</p>
                     </strong>
                 </div>
             </t>
             <t t-if="booking_requests" t-call="portal.portal_table">
                 <thead>
                     <tr class="active">
-                        <th>Booking Number #</th>
-                        <th class="text-center">Booking Date</th>
-                        <th class="text-center">Vehicle Brand</th>
-                        <th class="text-center">Registration No</th>
-                        <th class="text-center">Booking Type</th>
-                        <th class="text-center">Booking Slot</th>
-                        <th class="text-center">Status</th>
+                        <th>Número de cita #</th>
+                        <th class="text-center">Fecha de cita</th>
+                        <th class="text-center">Marca</th>
+                        <th class="text-center">Placa</th>
+                        <th class="text-center">Tipo de cita</th>
+                        <th class="text-center">Horario de cita</th>
+                        <th class="text-center">Estatus</th>
                     </tr>
                 </thead>
                 <t t-foreach="booking_requests" t-as="req">
@@ -445,27 +443,27 @@
                         <td class="text-center">
                             <t t-if="req.booking_stages == 'draft'">
                                 <span class="status-badge text-bg-info">
-                                    New
+                                    Nuevo
                                 </span>
                             </t>
                             <t t-if="req.booking_stages == 'vehicle_inspection'">
                                 <span class="status-badge text-bg-warning">
-                                    Vehicle Inspection
+                                    Inspección de Vehículo
                                 </span>
                             </t>
                             <t t-if="req.booking_stages == 'vehicle_repair'">
                                 <span class="status-badge text-bg-primary">
-                                    Vehicle Repair
+                                    Reparación de Vehículo
                                 </span>
                             </t>
                             <t t-if="req.booking_stages == 'vehicle_inspection_repair'">
                                 <span class="status-badge text-bg-success">
-                                    Inspection + Repair
+                                    Inspección + Reparación
                                 </span>
                             </t>
                             <t t-if="req.booking_stages == 'cancel'">
                                 <span class="status-badge text-bg-danger">
-                                    Cancelled
+                                    Cancelado
                                 </span>
                             </t>
                         </td>
@@ -495,31 +493,31 @@
                                             <span class="status-badge text-bg-secondary py-1"
                                                   t-if="vehicle_bookings.booking_stages == 'draft'">
                                                 <span class="px-2">
-                                                    Draft
+                                                    Borrador
                                                 </span>
                                             </span>
                                             <span class="status-badge text-bg-warning py-1"
                                                   t-if="vehicle_bookings.booking_stages == 'vehicle_inspection'">
                                                 <span class="px-2">
-                                                    Vehicle Inspection
+                                                    Inspección de Vehículo
                                                 </span>
                                             </span>
                                             <span class="status-badge text-bg-primary py-1"
                                                   t-if="vehicle_bookings.booking_stages == 'vehicle_repair'">
                                                 <span class="px-2">
-                                                    Vehicle Repair
+                                                    Reparación de Vehículo
                                                 </span>
                                             </span>
                                             <span class="status-badge text-bg-success py-1"
                                                   t-if="vehicle_bookings.booking_stages == 'vehicle_inspection_repair'">
                                                 <span class="px-2">
-                                                    Inspection + Repair
+                                                    Inspección + Reparación
                                                 </span>
                                             </span>
                                             <span class="status-badge text-bg-danger py-1"
                                                   t-if="vehicle_bookings.booking_stages == 'cancel'">
                                                 <span class="px-2">
-                                                    Cancelled
+                                                    Cancelado
                                                 </span>
                                             </span>
                                         </t>
@@ -537,46 +535,46 @@
                                         <h5 class="d-inline text-primary">
                                             <i class="fa fa-car me-1" aria-hidden="true">
                                             </i>
-                                            Vehicle Details
+                                            Detalles de Vehículo
                                         </h5>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-3 col-sm-12 c-field" t-if="vehicle_bookings.vehicle_from">
-                                            <span class="c-label text-muted">Vehicle From</span>
+                                            <span class="c-label text-muted">Vehículo</span>
                                             <span class="c-value" t-field="vehicle_bookings.vehicle_from"/>
                                         </div>
                                         <div class="col-md-3 col-sm-12 c-field"
                                              t-if="vehicle_bookings.vehicle_brand_id">
-                                            <span class="c-label text-muted">Vehicle Brand</span>
+                                            <span class="c-label text-muted">Marca</span>
                                             <span class="c-value" t-field="vehicle_bookings.vehicle_brand_id"/>
                                         </div>
                                         <div class="col-md-3 col-sm-12 c-field" t-if="vehicle_bookings.registration_no">
-                                            <span class="c-label text-muted">Registration Number</span>
+                                            <span class="c-label text-muted">Placa</span>
                                             <span class="c-value" t-field="vehicle_bookings.registration_no"/>
                                         </div>
                                         <div class="col-md-3 col-sm-12 c-field"
                                              t-if="vehicle_bookings.vehicle_fuel_type_id">
-                                            <span class="c-label text-muted">Fuel Type</span>
+                                            <span class="c-label text-muted">Tipo de Combustible</span>
                                             <span class="c-value" t-field="vehicle_bookings.vehicle_fuel_type_id"/>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-3 col-sm-12 c-field" t-if="vehicle_bookings.booking_date">
-                                            <span class="c-label text-muted">Booking Date</span>
+                                            <span class="c-label text-muted">Fecha de cita</span>
                                             <span class="c-value" t-field="vehicle_bookings.booking_date"/>
                                         </div>
                                         <div class="col-md-3 col-sm-12 c-field"
                                              t-if="vehicle_bookings.vehicle_model_id">
-                                            <span class="c-label text-muted">Model</span>
+                                            <span class="c-label text-muted">Modelo</span>
                                             <span class="c-value" t-field="vehicle_bookings.vehicle_model_id"/>
                                         </div>
                                         <div class="col-md-3 col-sm-12 c-field" t-if="vehicle_bookings.vin_no">
-                                            <span class="c-label text-muted">VIN No</span>
+                                            <span class="c-label text-muted">VIN</span>
                                             <span class="c-value" t-field="vehicle_bookings.vin_no"/>
                                         </div>
                                         <div class="col-md-3 col-sm-12 c-field"
                                              t-if="vehicle_bookings.transmission_type">
-                                            <span class="c-label text-muted">Transmission Type</span>
+                                            <span class="c-label text-muted">Tipo de transmisión</span>
                                             <span class="c-value" t-field="vehicle_bookings.transmission_type"/>
                                         </div>
                                     </div>
@@ -586,26 +584,26 @@
                                         <h5 class="d-inline text-primary">
                                             <i class="fa fa-user me-1" aria-hidden="true">
                                             </i>
-                                            Customer Details
+                                            Detalles de cliente
                                         </h5>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12 c-field" t-if="vehicle_bookings.customer_id">
-                                            <span class="c-label text-muted">Customer</span>
+                                            <span class="c-label text-muted">Cliente</span>
                                             <span class="c-value" t-field="vehicle_bookings.customer_id"/>
                                         </div>
                                         <div class="col-md-6 col-sm-12 c-field" t-if="vehicle_bookings.street">
-                                            <span class="c-label text-muted">Street</span>
+                                            <span class="c-label text-muted">Calle</span>
                                             <span class="c-value" t-field="vehicle_bookings.street"/>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12 c-field" t-if="vehicle_bookings.phone">
-                                            <span class="c-label text-muted">Phone</span>
+                                            <span class="c-label text-muted">Telf.</span>
                                             <span class="c-value" t-field="vehicle_bookings.phone"/>
                                         </div>
                                         <div class="col-md-6 col-sm-12 c-field" t-if="vehicle_bookings.street2">
-                                            <span class="c-label text-muted">Street 2</span>
+                                            <span class="c-label text-muted">Dirección</span>
                                             <span class="c-value" t-field="vehicle_bookings.street2"/>
                                         </div>
                                     </div>
@@ -615,11 +613,11 @@
                                             <span class="c-value" t-field="vehicle_bookings.email"/>
                                         </div>
                                         <div class="col-md-2 col-sm-12 c-field" t-if="vehicle_bookings.city">
-                                            <span class="c-label text-muted">City</span>
+                                            <span class="c-label text-muted">Ciudad</span>
                                             <span class="c-value" t-field="vehicle_bookings.city"/>
                                         </div>
                                         <div class="col-md-2 col-sm-12 c-field" t-if="vehicle_bookings.state_id">
-                                            <span class="c-label text-muted">State</span>
+                                            <span class="c-label text-muted">Estado</span>
                                             <span class="c-value" t-field="vehicle_bookings.state_id"/>
                                         </div>
                                         <div class="col-md-1 col-sm-12 c-field" t-if="vehicle_bookings.zip">
@@ -627,7 +625,7 @@
                                             <span class="c-value" t-field="vehicle_bookings.zip"/>
                                         </div>
                                         <div class="col-md-1 col-sm-12 c-field" t-if="vehicle_bookings.country_id">
-                                            <span class="c-label text-muted">Country</span>
+                                            <span class="c-label text-muted">País</span>
                                             <span class="c-value" t-field="vehicle_bookings.country_id"/>
                                         </div>
                                     </div>
@@ -637,21 +635,21 @@
                                         <h5 class="d-inline text-primary">
                                             <i class="fa fa-pencil-square-o me-1" aria-hidden="true">
                                             </i>
-                                            Booking Details
+                                            Detalles de citas
                                         </h5>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-4 col-sm-12 c-field" t-if="vehicle_bookings.booking_type">
-                                            <span class="c-label text-muted">Booking Type</span>
+                                            <span class="c-label text-muted">Tipo de Cita</span>
                                             <span class="c-value" t-field="vehicle_bookings.booking_type"/>
                                         </div>
                                         <div class="col-md-4 col-sm-12 c-field" t-if="vehicle_bookings.booking_date">
-                                            <span class="c-label text-muted">Booking Date</span>
+                                            <span class="c-label text-muted">Fecha de cita</span>
                                             <span class="c-value" t-field="vehicle_bookings.booking_date"/>
                                         </div>
                                         <div class="col-md-4 col-sm-12 c-field"
                                              t-if="vehicle_bookings.booking_appointment_slot_id">
-                                            <span class="c-label text-muted">Booking Slot</span>
+                                            <span class="c-label text-muted">Horario de cita</span>
                                             <span class="c-value"
                                                   t-field="vehicle_bookings.booking_appointment_slot_id"/>
                                         </div>
@@ -662,7 +660,7 @@
                                         <h5 class="d-inline text-primary">
                                             <i class="fa fa-wrench me-1" aria-hidden="true">
                                             </i>
-                                            Vehicle Services
+                                            Servicios de vehículos
                                         </h5>
                                     </div>
                                     <div class="row">
@@ -677,7 +675,7 @@
                 </div>
 
                 <div id="repair_order_page" data-anchor="true">
-                    <h3>Communication history</h3>
+                    <h3>Historial de comunicación</h3>
                     <t t-call="portal.message_thread">
                         <t t-set="object" t-value="vehicle_bookings"/>
                     </t>
