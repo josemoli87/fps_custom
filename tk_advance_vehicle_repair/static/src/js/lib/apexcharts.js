@@ -2841,13 +2841,13 @@
   		"Dec"
   	],
   	days: [
-  		"Sunday",
-  		"Monday",
-  		"Tuesday",
-  		"Wednesday",
-  		"Thursday",
-  		"Friday",
-  		"Saturday"
+  		"Domingo",
+  		"Lunes",
+  		"Martes",
+  		"Miércoles",
+  		"Jueves",
+  		"Viernes",
+  		"Sábado"
   	],
   	shortDays: [
   		"Sun",

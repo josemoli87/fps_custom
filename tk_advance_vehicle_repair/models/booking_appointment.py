@@ -11,9 +11,9 @@ class BookingAppointment(models.Model):
     _rec_name = 'name'
 
     name = fields.Char(string="Name")
-    appointment_day = fields.Selection([('monday', "Monday"), ('tuesday', "Tuesday"), ('wednesday', "Wednesday"),
-                                        ('thursday', "Thursday"), ('friday', "Friday"), ('saturday', "Saturday"),
-                                        ('sunday', "Sunday")], string="Appointment Day")
+    appointment_day = fields.Selection([('monday', "Lunes"), ('tuesday', "Martes"), ('wednesday', "Miércoles"),
+                                        ('thursday', "Jueves"), ('friday', "Viernes"), ('saturday', "Sábado"),
+                                        ('sunday', "Domingo")], string="Appointment Day")
     booking_appointment_slot_ids = fields.One2many(comodel_name='booking.appointment.slot',
                                                    inverse_name='booking_appointment_id')
 

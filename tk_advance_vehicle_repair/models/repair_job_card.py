@@ -148,11 +148,11 @@ class RepairJobCard(models.Model):
     def draft_to_assign_to_technician(self):
         """Required Services Check"""
         if not self.vehicle_service_team_ids:
-            return self._repair_notification("Please choose the required service")
+            return self._repair_notification("Por favor elija el servicio requerido")
         for record in self.vehicle_service_team_ids:
             if not record.service_team_id or not record.vehicle_service_team_members_ids:
                 return self._repair_notification(
-                    "In service tab: Please assign a team and team members each listed service")
+                    "En la pestaña de servicio: asigne un equipo y tecnicos a cada servicio.")
         self.stages = 'assign_to_technician'
 
     def assign_to_technician_to_in_diagnosis(self):
@@ -160,14 +160,14 @@ class RepairJobCard(models.Model):
         if self.vehicle_service_team_ids:
             task_created = all(rec.team_task_id for rec in self.vehicle_service_team_ids)
             if not task_created:
-                return self._repair_notification("First, create tasks for all listed services.")
+                return self._repair_notification("Primero, cree tareas para todos los servicios.")
         self.stages = 'in_diagnosis'
 
     def in_diagnosis_to_supervisor_inspection(self):
         """Team Task Check"""
         team_work_complete = all(rec.work_is_done for rec in self.vehicle_service_team_ids)
         if not team_work_complete:
-            return self._repair_notification("Please complete all team tasks")
+            return self._repair_notification("Por favor completa todas las tareas del equipo.")
         self.stages = 'supervisor_inspection'
 
     def supervisor_inspection_to_reject(self):
@@ -177,7 +177,7 @@ class RepairJobCard(models.Model):
     def reject_to_complete(self):
         """Checklist Template Check"""
         if any(not rec.is_check and not rec.display_type for rec in self.repair_checklist_ids):
-            return self._repair_notification("Please complete the checklist template")
+            return self._repair_notification("Por favor complete el Checklist.")
         self.stages = 'complete'
         mail_template = self.env.ref('tk_advance_vehicle_repair.repair_job_card_mail_template')
         if mail_template:
@@ -290,7 +290,7 @@ class RepairJobCard(models.Model):
         """Register Vehicle In Customer"""
         if not self.vehicle_brand_id or not self.vehicle_model_id:
             return self._repair_notification(
-                "Please provide the vehicle name and model along with any other relevant vehicle details.")
+                "Proporcione el nombre y modelo del vehículo junto con cualquier otro detalle relevante del vehículo..")
         register_vehicle_id = self.env['register.vehicle'].create({
             'customer_id': self.customer_id.id,
             'vehicle_brand_id': self.vehicle_brand_id.id,
@@ -350,12 +350,12 @@ class RepairJobCard(models.Model):
         # Check if there are Parts
         if not self.vehicle_order_spare_part_ids:
             return self._repair_quote_notification(
-                "Please add the necessary spare parts to the 'Vehicle Spare Parts' tab."
+                "Por favor agregue los repuestos necesarios a la pestaña 'Repuestos'."
             )
         # Check if there are Services
         if not self.vehicle_service_team_ids:
             return self._repair_quote_notification(
-                "Please add the necessary services."
+                "Por favor agregue las Mano de obra."
             )
         # Add Spare Parts to the Order Line
         order_line.append((0, 0, {
@@ -398,7 +398,7 @@ class RepairJobCard(models.Model):
         # Ensure there are Order Lines
         if not order_line:
             return self._repair_quote_notification(
-                "The total value of the sale order cannot be zero. Please ensure all required parts and services are correctly entered."
+                "El valor total de la orden de venta no puede ser cero. Asegúrese de que todas las piezas y servicios requeridos estén ingresados ​​correctamente."
             )
         # Create the Sale Order
         repair_sale_order_id = self.env['sale.order'].sudo().create(data)
@@ -474,7 +474,7 @@ class RepairJobCard(models.Model):
             'tag': 'display_notification',
             'params': {
                 'type': 'success',
-                'message': _("Quotation is successfully updated"),
+                'message': _("La cotización se actualizó exitosamente"),
                 'sticky': False,
             }
         }
@@ -485,4 +485,4 @@ class RepairJobCard(models.Model):
             if rec.stages != 'locked':
                 super(RepairJobCard, rec).unlink()
             else:
-                raise ValidationError(_('You cannot delete the locked order.'))
+                raise ValidationError(_('No puedes eliminar una orde bloqueada.'))

@@ -7,7 +7,7 @@
                     <t t-call="web.basic_layout">
                         <div class="page">
                             <h2 style="text-align: center;">
-                                Scratch Report
+                                Detalles Externos
                             </h2>
                             <br/>
                             <div id="information" class="row mt8 mb8">
@@ -18,7 +18,7 @@
                                 </div>
                                 <div class="col-auto col-4 mw-100 mb-2" t-if="rec.vehicle_brand_id"
                                      name="vehicle_brand_id" style="text-align: center;">
-                                    <strong>Vehicle</strong>
+                                    <strong>Vehículo</strong>
                                     <p class="m-0">
                                         <span t-field="rec.vehicle_brand_id"/>&#160;-
                                         <span t-field="rec.vehicle_model_id"/>
@@ -33,7 +33,7 @@
                             <div id="information" class="row mt8 mb8">
                                 <div class="col-auto col-4 mw-100 mb-2" t-if="rec.customer_id"
                                      name="customer_id" style="text-align: left;">
-                                    <strong>Customer</strong>
+                                    <strong>Cliente</strong>
                                     <p class="m-0" t-field="rec.customer_id"/>
                                 </div>
                                 <div class="col-auto col-4 mw-100 mb-2" t-if="rec.responsible_id"
